@@ -1,0 +1,70 @@
+﻿<Window x:Class="EasyCaster_Alarm.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:EasyCaster_Alarm"
+        mc:Ignorable="d"
+        Title="{DynamicResource authWindowTitle}" Height="350" Width="350" Topmost="True" Closing="Window_Closing" Icon="/Resources/Icona.ico">
+    <Window.Resources>
+        <!-- Button style -->
+        <ControlTemplate x:Key="ControlButton" TargetType="Button">
+            <Border Name="border" BorderBrush="#FF484848" BorderThickness="2" CornerRadius="5" Background="{TemplateBinding Background}" VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Padding="{TemplateBinding Padding}">
+                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="#787878"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!-- TextBox style -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#ffffff"/>
+            <Setter Property="Foreground" Value="#FF969696"/>
+            <Setter Property="BorderThickness" Setter.Value="1"/>
+            <Setter Property="BorderBrush" Setter.Value="#bec6db"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border Background="#ffffff" 
+                                    BorderBrush="#a3a3a3" 
+                                    BorderThickness="2" 
+                                    CornerRadius="5" Opacity="1">
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                                  Foreground="#FF787878" 
+                                                  BorderThickness="0" IsTabStop="False" 
+                                                  Margin="0" Padding="{TemplateBinding Padding}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Canvas>
+        <Label x:Name="auth_title" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource authTitle}" Width="350" Canvas.Top="5" Padding="5,5,5,5"/>
+        <Label FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource authPhone}" FontStyle="Normal" Canvas.Top="43" Width="350" FontSize="16"/>
+        <StackPanel x:Name="auth_verification_block" Canvas.Top="182" Visibility="Hidden" Canvas.Left="-1" Height="68">
+            <Label FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource authVerification}" FontStyle="Normal" Width="351" FontSize="16"/>
+            <TextBox x:Name="auth_verification" Height="30" TextWrapping="Wrap" Width="280" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <TextBox x:Name="auth_password" Height="30" TextWrapping="Wrap" Width="280" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="35" Canvas.Top="152"/>
+        <Label FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource authPassword}" FontStyle="Normal" Canvas.Top="104" Width="350" FontSize="16"/>
+        <Label FontWeight="Normal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource authPasswordSub}" FontStyle="Normal" FontSize="11" Height="17" Padding="5,0,5,0" Foreground="#FF5F5F5F" Canvas.Top="135" Width="350"/>
+        <TextBox x:Name="auth_phone" Height="30" TextWrapping="Wrap" Width="280" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="35" Canvas.Top="74" LostFocus="auth_phone_LostFocus"/>
+        <fa:ImageAwesome x:Name="auth_spinner" Icon="Refresh" Spin="True" Height="48" Width="48" Canvas.Left="156" Canvas.Top="195" Visibility="Hidden" />
+        <Button x:Name="auth_submit" Width="280" Height="36" Template="{DynamicResource ControlButton}" Canvas.Left="35" Canvas.Top="255" Cursor="Hand" Background="#FFF0F0F0" HorizontalContentAlignment="Center" Padding="1,1,1,1" Click="auth_submit_Click">
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" Content="{DynamicResource authSubmit}"/>
+        </Button>
+    </Canvas>
+</Window>

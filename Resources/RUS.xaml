@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- App menu -->
+    <system:String x:Key="m_about">О нас</system:String>
+    <system:String x:Key="m_feedback">Обратная связь</system:String>
+    <system:String x:Key="m_help">Справка</system:String>
+    <system:String x:Key="m_lang">Смена языка</system:String>
+
+    <!-- Auth -->
+    <system:String x:Key="authTitle">Авторизация</system:String>
+    <system:String x:Key="authPhone">Телефон</system:String>
+    <system:String x:Key="authPassword">2FA пароль</system:String>
+    <system:String x:Key="authPasswordSub">(если включена двухфакторная авторизация)</system:String>
+    <system:String x:Key="authSubmit">Отправить</system:String>
+    <system:String x:Key="authVerification">Верификационный код</system:String>
+    <system:String x:Key="authWindowTitle">Авторизация Telegram</system:String>
+
+    <!-- Settings -->
+    <system:String x:Key="settingsTitle">Настройки</system:String>
+    <system:String x:Key="settingsConfigTitle">Файл настроек</system:String>
+    <system:String x:Key="settingsConfigLoad">Загрузить</system:String>
+    <system:String x:Key="settingsConfigSave">Сохранить файл</system:String>
+    <system:String x:Key="settingsEdit">Редактировать</system:String>
+    <system:String x:Key="settingsSave">Сохранить</system:String>
+    <system:String x:Key="settingsMainChannelTitle">Основной канал</system:String>
+    <system:String x:Key="settingsChannelName">Название</system:String>
+    <system:String x:Key="settingsChannelLink">Ссылка</system:String>
+    <system:String x:Key="settingsTestChannelTitle">Тестовый канал</system:String>
+    <system:String x:Key="settingsAutostart">Автостарт программы</system:String>
+    <system:String x:Key="settingsKeyTitle">Ключевые фразы</system:String>
+    <system:String x:Key="settingsKeyTitle1">Ключевая фраза #1</system:String>
+    <system:String x:Key="settingsKeyTitle2">Ключевая фраза #2</system:String>
+    <system:String x:Key="settingsKeyTitle3">Ключевая фраза #3</system:String>
+    <system:String x:Key="settingsKeyTitle4">Ключевая фраза #4</system:String>
+    <system:String x:Key="settingsKeyApp1">Приложение #1</system:String>
+    <system:String x:Key="settingsKeyApp2">Приложение #2</system:String>
+    <system:String x:Key="settingsKeyApp3">Приложение #3</system:String>
+    <system:String x:Key="settingsKeyApp4">Приложение #4</system:String>
+    <system:String x:Key="settingsKeyLabel1">Кнопка для нажатия #1</system:String>
+    <system:String x:Key="settingsKeyLabel2">Кнопка для нажатия #2</system:String>
+    <system:String x:Key="settingsKeyLabel3">Кнопка для нажатия #3</system:String>
+    <system:String x:Key="settingsKeyLabel4">Кнопка для нажатия #4</system:String>
+    <system:String x:Key="settingsExceptionTitle">Исключения</system:String>
+    <system:String x:Key="settingsExceptionTitle1">Исключение #1</system:String>
+    <system:String x:Key="settingsExceptionTitle2">Исключение #2</system:String>
+    <system:String x:Key="settingsExceptionTitle3">Исключение #3</system:String>
+    <system:String x:Key="settingsExceptionTitle4">Исключение #4</system:String>
+    <system:String x:Key="settingsAppLogout">Выход</system:String>
+
+    <!-- Logs -->
+    <system:String x:Key="logsTitle">История</system:String>
+    <system:String x:Key="logsTime">Время</system:String>
+    <system:String x:Key="logsMessage">Сообщение</system:String>
+
+    <!-- Close app -->
+    <system:String x:Key="closeAppTitle">Выйти?</system:String>
+    <system:String x:Key="closeAppAnswer">Вы уверены, что хотите закрыть приложение?</system:String>
+
+    <!-- About -->
+    <system:String x:Key="a_header">О программе</system:String>
+    <system:String x:Key="a_t_1">Программа Easycaster Alert предназначена для автоматизации вывода в эфир телеканала или радиостанции тревожных сообщений гражданской обороны из официальных телеграмм каналов и групп в вашем регионе.</system:String>
+    <system:String x:Key="a_v">Версия программы</system:String>
+
+    <!-- Feedback -->
+    <system:String x:Key="f_header">Обратная связь</system:String>
+    <system:String x:Key="f_t_1">Наши контакты</system:String>
+    <system:String x:Key="f_t_2">Тел.: +380951157048</system:String>
+    <system:String x:Key="f_t_3">Сайт:</system:String>
+    <system:String x:Key="f_t_4">Связаться с нами</system:String>
+
+    <!-- Help -->
+    <system:String x:Key="h_header">Справка</system:String>
+    <system:String x:Key="h_h1_header">Общие сведения</system:String>
+    <system:String x:Key="h_h1_t1">Программа Easycaster Alert предназначена для автоматизации вывода в эфир телеканала или радиостанции тревожных сообщений гражданской обороны из официальных телеграмм каналов и групп в вашем регионе.</system:String>
+    <system:String x:Key="h_h1_t2">Принцип действия – программа читает сообщения в выбранном телеграмм канале и при наличии ключевых фраз эмулирует нажатие горячих клавиш, которые запускают необходимые действия в видеомикшере или в плейауте.</system:String>
+    <system:String x:Key="h_h1_t3">*  Программа устанавливается на сервере с видеомикшером или плейаутом.</system:String>
+    <system:String x:Key="h_h1_t4">**  ПО совместимо с Windows 7 и новее, но тестировалось только на Windows 10.</system:String>
+    <system:String x:Key="h_h1_t5">Для начала работы в Easycaster Alert необходимо авторизоваться под своей учетной записью в Телеграмме.</system:String>
+    <system:String x:Key="h_h2_header">Настройки программы</system:String>
+    <system:String x:Key="h_h2_t1">Основной канал – телеграмм канал, из которого программа будет получать нужные уведомления. Введите название канала (группы) и ссылку на него в формате https://t.me/....</system:String>
+    <system:String x:Key="h_h2_t2">Тестовый канал – дополнительный канал или группа, где вы сами можете отправить необходимые сообщения для проверки системы.</system:String>
+    <system:String x:Key="h_h2_t3">Ключевая фраза - Приложение - Горячая клавиша  – настройка логики работы программы. Введите ключевое слово или фразу, выберите необходимую горячую клавишу и приложение, для которого будет эмулироваться нажатие клавиши.</system:String>
+    <system:String x:Key="h_h2_t4">Тестовая кнопка – кнопка для проверки вывода сообщений по каждому ключевому слову при запуске и отладке программы.</system:String>
+    <system:String x:Key="h_h2_t5">Исключения – в вашем телеграмм канале могут быть сообщения, которые содержат ключевые фразы, но не являются уведомлениями о событии. Для предотвращения ложных срабатываний добавьте текст таких сообщений в исключения.</system:String>
+    <system:String x:Key="h_h2_t6">История – информация о последних  15 срабатываниях программы по ключевым словам.</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>
+    <system:String x:Key="alarmMessage">Внимание, тревога!</system:String>
+    <system:String x:Key="noAlarmMessage">Отбой тревоги!</system:String>
+</ResourceDictionary>
