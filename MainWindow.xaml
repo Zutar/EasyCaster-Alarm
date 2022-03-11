@@ -151,7 +151,7 @@
                     </MenuItem>
                 </Menu>
 
-                <StackPanel x:Name="alarm_block" Margin="25,15,25,0" Visibility="Visible" Height="40">
+                <StackPanel x:Name="alarm_block" Margin="25,5,25,0" Visibility="Hidden" Height="40">
                     <Border CornerRadius="5" BorderBrush="#FFC9CFD6" BorderThickness="1" Background="#FFC9CFD6" MinHeight="55" >
                         <Grid>
                             <Label x:Name="alarm_text" Margin="0,0,162,78" Foreground="#FF464646" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource alarmMessage}" Height="39" VerticalAlignment="Bottom" />
@@ -160,7 +160,7 @@
                     </Border>
                 </StackPanel>
 
-                <StackPanel Margin="25,15,25,5" ClipToBounds="True">
+                <StackPanel Margin="25,5,25,5" ClipToBounds="True">
                     <Border CornerRadius="5" BorderBrush="#FFC9CFD6" BorderThickness="1" Background="#FFC9CFD6" MinHeight="55" >
                         <DockPanel MinHeight="55">
                             <DockPanel DockPanel.Dock="Top" Height="55" Margin="0,0,0.4,0">
@@ -174,7 +174,7 @@
                                     </Button>
                                 </Canvas>
                             </DockPanel>
-                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="667" Visibility="Visible" Width="560">
+                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="667" Visibility="Collapsed" Width="560">
                                 <Button x:Name="settings_edit" Width="100" Height="30" Template="{DynamicResource ControlButton}" Cursor="Hand" Background="#FFF0F0F0" HorizontalContentAlignment="Center" Padding="1,1,1,1" Canvas.Top="25" Click="settings_edit_Click">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" Content="{DynamicResource settingsEdit}" FontSize="11" Margin="-1,-1,-1,-1"/>
                                 </Button>
@@ -310,7 +310,7 @@
                                     </Grid>
                                 </StackPanel>
 
-                                <StackPanel Height="214" Width="560" Canvas.Top="450" Orientation="Vertical">
+                                <StackPanel Height="214" Width="560" Canvas.Top="466" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsExceptionTitle}" Padding="5,5,5,-1"/>
                                     <Grid>
                                         <StackPanel>
@@ -361,7 +361,7 @@
                                     </Button>
                                 </Canvas>
                             </DockPanel>
-                            <Grid x:Name="logs_block" DockPanel.Dock="Bottom" Margin="45,0,43.4,10" MinHeight="50" Height="300" Visibility="Visible" Background="White">
+                            <Grid x:Name="logs_block" DockPanel.Dock="Bottom" Margin="45,0,43.4,10" MinHeight="50" Height="500" Visibility="Visible" Background="White">
                                 <ListBox x:Name="logs_list" Width="559" HorizontalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="{x:Null}">
                                     <ListBox.Template>
                                         <ControlTemplate>
@@ -371,8 +371,8 @@
                                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                                     </Grid.ColumnDefinitions>
-                                                    <Label Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF464646" FontWeight="Bold" FontSize="14" Content="{DynamicResource logsTime}"/>
-                                                    <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#FF464646" Content="{DynamicResource logsMessage}"/>
+                                                    <Label Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF464646" FontWeight="Bold" FontSize="14" Content="{DynamicResource logsTime}" Padding="5,2,5,2"/>
+                                                    <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#FF464646" Content="{DynamicResource logsMessage}" Padding="5,2,5,2"/>
                                                 </Grid>
                                                 <ItemsPresenter></ItemsPresenter>
                                             </DockPanel>

@@ -39,6 +39,9 @@ namespace EasyCaster_Alarm
     {
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
+        [DllImport("User32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         bool settingsOpen = false;
         bool logsOpen = true;
@@ -77,16 +80,16 @@ namespace EasyCaster_Alarm
             action_app_list_3.ItemsSource = processNames;
             action_app_list_4.ItemsSource = processNames;
 
-            updateProcessListTimer.Interval = TimeSpan.FromSeconds(60);
+            updateProcessListTimer.Interval = TimeSpan.FromSeconds(5);
             updateProcessListTimer.Tick += updateProcessList_Timer;
             updateProcessListTimer.Start();
 
-            async void updateProcessList_Timer(object sender, EventArgs e)
+            void updateProcessList_Timer(object sender, EventArgs e)
             {
                 processNames = getActiveProcessNames();
             }
 
-            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Interval = TimeSpan.FromSeconds(10);
             timer.Tick += timer_Tick;
             timer.Start();
 
@@ -159,10 +162,25 @@ namespace EasyCaster_Alarm
                     IntPtr currentH = currentProcess.MainWindowHandle;
                     IntPtr h = p.MainWindowHandle;
 
+                    ShowWindow(currentH, 9);
+                    ShowWindow(currentH, 9);
                     SetForegroundWindow(currentH);
-                    SetForegroundWindow(h);
 
-                    System.Windows.Forms.SendKeys.SendWait("{" + keyName + "}");
+                    DispatcherTimer appTimer = new DispatcherTimer();
+                    appTimer.Interval = TimeSpan.FromSeconds(1);
+                    appTimer.Tick += app_Timer;
+                    appTimer.Start();
+
+                    void app_Timer(object sender, EventArgs e)
+                    {
+                        ShowWindow(h, 9);
+                        ShowWindow(h, 9);
+                        SetForegroundWindow(h);
+
+                        System.Windows.Forms.SendKeys.SendWait("{" + keyName + "}");
+
+                        appTimer.Stop();
+                    }
                 }
             }catch(Exception error) { }
         }
@@ -201,7 +219,7 @@ namespace EasyCaster_Alarm
 
             async void wait_Timer(object sender, EventArgs e)
             {
-                alarm_block.Visibility = Visibility.Collapsed;
+                alarm_block.Visibility = Visibility.Hidden;
                 alarmBlinkAnimation.Stop();
                 waitTimer.Stop();
             }
@@ -381,6 +399,7 @@ namespace EasyCaster_Alarm
             tg_channel_test_link.IsEnabled = true;
 
             app_autostart.IsEnabled = true;
+            app_autoauth.IsEnabled = true;
 
             action_key_phrase_1.IsEnabled = true;
             action_key_phrase_2.IsEnabled = true;
@@ -410,6 +429,7 @@ namespace EasyCaster_Alarm
             tg_channel_test_link.IsEnabled = false;
 
             app_autostart.IsEnabled = false;
+            app_autoauth.IsEnabled = false;
 
             action_key_phrase_1.IsEnabled = false;
             action_key_phrase_2.IsEnabled = false;
