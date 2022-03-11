@@ -17,6 +17,7 @@
     <system:String x:Key="authWindowTitle">Авторизація Telegram</system:String>
     <system:String x:Key="authError">Щось пішло не так... Спробуйте знову</system:String>
     <system:String x:Key="authSuccess">Вхід виконано</system:String>
+    <system:String x:Key="settingsAutoauth">Автоматичний вхід у telegram</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">Історія</system:String>
@@ -83,13 +84,15 @@
     <system:String x:Key="h_h2_header">Налаштування програми</system:String>
     <system:String x:Key="h_h2_t1">Основний канал – телеграм канал, з якого програма отримуватиме потрібні повідомлення. Введіть назву каналу (групи) та посилання на нього у форматі https://t.me/....</system:String>
     <system:String x:Key="h_h2_t2">Тестовий канал – додатковий канал або група, де ви можете відправити необхідні повідомлення для перевірки системи.</system:String>
-        <system:String x:Key="h_h2_t3">Ключова фраза - Програма - Гаряча клавіша – налаштування логіки роботи програми. Введіть ключове слово або фразу, виберіть потрібну гарячу клавішу та програму, для якої буде емульоване натискання клавіши.</system:String>
+    <system:String x:Key="h_h2_t3">Ключова фраза - Програма - Гаряча клавіша – налаштування логіки роботи програми. Введіть ключове слово або фразу, виберіть потрібну гарячу клавішу та програму, для якої буде емульоване натискання клавіши.</system:String>
     <system:String x:Key="h_h2_t4">Тестова кнопка – кнопка для перевірки виведення повідомлень за кожним ключовим словом під час запуску та налагодження програми.</system:String>
     <system:String x:Key="h_h2_t5">Винятки – у вашому телеграм каналі можуть бути повідомлення, які містять ключові фрази, але не є повідомленнями про подію. Для запобігання помилковим спрацьовуванням додайте текст таких повідомлень у виключення.</system:String>
     <system:String x:Key="h_h2_t6">Історія – інформація про останні 15 спрацьовування програми за ключовими словами</system:String>
-
+    <system:String x:Key="h_h2_t7">Увага!</system:String>
+    <system:String x:Key="h_h2_t8">1. Посилання на канал (групу) має бути постійним, а не динамічним</system:String>
+    <system:String x:Key="h_h2_t0">2. Ви маєте бути підписані на цей канал (групу)</system:String>
+    
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>
     <system:String x:Key="alarmMessage">Знайдено збіг!</system:String>
-    <system:String x:Key="noAlarmMessage">Відбій тривоги!</system:String>
 </ResourceDictionary>

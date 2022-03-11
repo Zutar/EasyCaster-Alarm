@@ -310,5 +310,17 @@ namespace EasyCaster_Alarm.Properties {
                 this["actionKeyException4"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoauth {
+            get {
+                return ((bool)(this["autoauth"]));
+            }
+            set {
+                this["autoauth"] = value;
+            }
+        }
     }
 }

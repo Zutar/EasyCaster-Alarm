@@ -36,6 +36,9 @@ namespace EasyCaster_Alarm
                 auth_verification_block.Visibility = Visibility.Hidden;
                 error_msg.Visibility = Visibility.Hidden;
                 success_msg.Visibility = Visibility.Hidden;
+
+                bool autoauth = Properties.Settings.Default.autoauth;
+                if(autoauth) login();
             }
 
             isActivate = false;
@@ -153,11 +156,12 @@ namespace EasyCaster_Alarm
             else
             {
                 error_msg.Visibility = Visibility.Visible;
-                auth_phone.IsEnabled = true;
-                auth_password.IsEnabled = true;
                 auth_verification_block.Visibility = Visibility.Hidden;
                 auth_spinner.Visibility = Visibility.Hidden;
                 auth_submit.Visibility = Visibility.Visible;
+
+                auth_phone.IsEnabled = true;
+                auth_password.IsEnabled = true;
             }
 
             Properties.Settings.Default.mobilePhone = auth_phone.Text;
@@ -167,7 +171,7 @@ namespace EasyCaster_Alarm
         }
         private async void auth_submit_Click(object sender, RoutedEventArgs e)
         {
-            login();
+            await login();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

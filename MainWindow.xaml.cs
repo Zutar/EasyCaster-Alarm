@@ -152,10 +152,16 @@ namespace EasyCaster_Alarm
                 }
 
                 Process p = Process.GetProcessesByName(applicationName).FirstOrDefault();
-                if (p != null)
+                Process currentProcess = Process.GetCurrentProcess();
+
+                if (currentProcess != null && p != null)
                 {
+                    IntPtr currentH = currentProcess.MainWindowHandle;
                     IntPtr h = p.MainWindowHandle;
+
+                    SetForegroundWindow(currentH);
                     SetForegroundWindow(h);
+
                     System.Windows.Forms.SendKeys.SendWait("{" + keyName + "}");
                 }
             }catch(Exception error) { }
@@ -234,6 +240,7 @@ namespace EasyCaster_Alarm
                 tg_channel_test_link.Text = Properties.Settings.Default.tgTestChannelLink;
 
                 app_autostart.IsChecked = Properties.Settings.Default.autostart;
+                app_autoauth.IsChecked = Properties.Settings.Default.autoauth;
 
                 action_key_phrase_1.Text = Properties.Settings.Default.actionKeyPhrase1;
                 action_key_phrase_2.Text = Properties.Settings.Default.actionKeyPhrase2;
@@ -429,6 +436,7 @@ namespace EasyCaster_Alarm
             disableAll();
             SaveSettings();
             unactiveAnimationButton(settings_save);
+            activeAnimationButton(settings_edit, "editButtonAnimation");
         }
 
         private void SaveSettings()
@@ -437,7 +445,9 @@ namespace EasyCaster_Alarm
             Properties.Settings.Default.tgMainChannelLink = tg_channel_main_link.Text;
             Properties.Settings.Default.tgTestChannelName = tg_channel_test_name.Text;
             Properties.Settings.Default.tgTestChannelLink = tg_channel_test_link.Text;
+
             Properties.Settings.Default.autostart = (bool)app_autostart.IsChecked;
+            Properties.Settings.Default.autoauth = (bool)app_autoauth.IsChecked;
 
             Properties.Settings.Default.actionKeyPhrase1 = action_key_phrase_1.Text;
             Properties.Settings.Default.actionKeyPhrase2 = action_key_phrase_2.Text;
@@ -856,6 +866,11 @@ namespace EasyCaster_Alarm
         private void action_key_exception_4_LostFocus(object sender, RoutedEventArgs e)
         {
             if (action_key_exception_4.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void app_autoauth_Click(object sender, RoutedEventArgs e)
+        {
+            activeAnimationButton(settings_save, "saveButtonAnimation");
         }
     }
 }

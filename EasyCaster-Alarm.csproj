@@ -11,8 +11,8 @@
     <Version>1.0.12</Version>
     <Company>live-tv (Powered by legdev)</Company>
     <Copyright>Copyright ©  2022</Copyright>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.01.1</FileVersion>
+    <AssemblyVersion>1.0.1.3</AssemblyVersion>
+    <FileVersion>1.0.1.3</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>

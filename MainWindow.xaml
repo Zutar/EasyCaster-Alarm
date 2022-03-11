@@ -151,11 +151,11 @@
                     </MenuItem>
                 </Menu>
 
-                <StackPanel x:Name="alarm_block" Margin="25,15,25,0" Visibility="Collapsed">
+                <StackPanel x:Name="alarm_block" Margin="25,15,25,0" Visibility="Visible" Height="40">
                     <Border CornerRadius="5" BorderBrush="#FFC9CFD6" BorderThickness="1" Background="#FFC9CFD6" MinHeight="55" >
                         <Grid>
-                            <Label x:Name="alarm_text" Margin="0,0,162,0" Foreground="#FF464646" FontWeight="Bold" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource alarmMessage}" />
-                            <Image Source="/Resources/alarm.png" Margin="506,10,40,15"/>
+                            <Label x:Name="alarm_text" Margin="0,0,162,78" Foreground="#FF464646" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource alarmMessage}" Height="39" VerticalAlignment="Bottom" />
+                            <Image Source="/Resources/alarm.png" Margin="526,8,85,0" Height="20" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
                 </StackPanel>
@@ -222,7 +222,7 @@
                                 <Button x:Name="app_logout" Width="200" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="53,9,153,15" Canvas.Left="307" Canvas.Top="200" Click="app_logout_Click" Padding="1,1,1,1">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="{DynamicResource settingsAppLogout}" FontSize="14" Margin="-1,0,-1,0" Foreground="#FF464646" Padding="0,0,0,0" Height="24"/>
                                 </Button>
-                                <StackPanel Height="270" Width="560" Canvas.Top="245" Orientation="Vertical">
+                                <StackPanel Height="270" Width="560" Canvas.Top="263" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsKeyTitle}" Padding="5,5,5,-2"/>
                                     <Grid Height="45" Margin="0,5,0,0">
                                         <Grid.ColumnDefinitions>
@@ -337,6 +337,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>
+                                <CheckBox x:Name="app_autoauth" Canvas.Top="236" Content="{DynamicResource settingsAutoauth}" IsEnabled="False" Click="app_autoauth_Click" />
                             </Canvas>
                         </DockPanel>
                     </Border>

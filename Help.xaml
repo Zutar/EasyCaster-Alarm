@@ -9,6 +9,9 @@
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25,50,10" FontSize="14">
+                        <Run Text="Easycaster Alert" FontWeight="Bold" FontSize="24"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h1_header}" FontWeight="Bold" FontSize="14"/>
                         <LineBreak></LineBreak>
                         <LineBreak></LineBreak>
@@ -30,6 +33,14 @@
                         <LineBreak></LineBreak>
                         <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h2_t1}"/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t7}" FontWeight="Bold"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t8}"></Run>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t9}"></Run>
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t2}"></Run>

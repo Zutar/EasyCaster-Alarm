@@ -17,6 +17,7 @@
     <system:String x:Key="authWindowTitle">Авторизация Telegram</system:String>
     <system:String x:Key="authError">Что-то пошло не так... Попробуйте снова</system:String>
     <system:String x:Key="authSuccess">Вход выполнен</system:String>
+    <system:String x:Key="settingsAutoauth">Автоматический вход в telegram</system:String>
 
     <!-- Settings -->
     <system:String x:Key="settingsTitle">Настройки</system:String>
@@ -78,18 +79,20 @@
     <system:String x:Key="h_h1_t1">Программа Easycaster Alert предназначена для автоматизации вывода в эфир телеканала или радиостанции тревожных сообщений гражданской обороны из официальных телеграмм каналов и групп в вашем регионе.</system:String>
     <system:String x:Key="h_h1_t2">Принцип действия – программа читает сообщения в выбранном телеграмм канале и при наличии ключевых фраз эмулирует нажатие горячих клавиш, которые запускают необходимые действия в видеомикшере или в плейауте.</system:String>
     <system:String x:Key="h_h1_t3">*  Программа устанавливается на сервере с видеомикшером или плейаутом.</system:String>
-    <system:String x:Key="h_h1_t4">**  ПО совместимо с Windows 7 и новее, но тестировалось только на Windows 10.</system:String>
+    <system:String x:Key="h_h1_t4">**  ПО совместимо с Windows 7 и новее, но тестировалось только на Windows 10 x64.</system:String>
     <system:String x:Key="h_h1_t5">Для начала работы в Easycaster Alert необходимо авторизоваться под своей учетной записью в Телеграмме.</system:String>
     <system:String x:Key="h_h2_header">Настройки программы</system:String>
     <system:String x:Key="h_h2_t1">Основной канал – телеграмм канал, из которого программа будет получать нужные уведомления. Введите название канала (группы) и ссылку на него в формате https://t.me/....</system:String>
     <system:String x:Key="h_h2_t2">Тестовый канал – дополнительный канал или группа, где вы сами можете отправить необходимые сообщения для проверки системы.</system:String>
-    <system:String x:Key="h_h2_t3">Ключевая фраза - Приложение - Горячая клавиша  – настройка логики работы программы. Введите ключевое слово или фразу, выберите необходимую горячую клавишу и приложение, для которого будет эмулироваться нажатие клавиши.</system:String>
+    <system:String x:Key="h_h2_t3">Ключевая фраза - Горячая клавиша - Приложение – настройка логики работы программы. Введите ключевое слово или фразу, выберите необходимую горячую клавишу и приложение, для которого будет эмулироваться нажатие клавиши.</system:String>
     <system:String x:Key="h_h2_t4">Тестовая кнопка – кнопка для проверки вывода сообщений по каждому ключевому слову при запуске и отладке программы.</system:String>
     <system:String x:Key="h_h2_t5">Исключения – в вашем телеграмм канале могут быть сообщения, которые содержат ключевые фразы, но не являются уведомлениями о событии. Для предотвращения ложных срабатываний добавьте текст таких сообщений в исключения.</system:String>
     <system:String x:Key="h_h2_t6">История – информация о последних  15 срабатываниях программы по ключевым словам.</system:String>
+    <system:String x:Key="h_h2_t7">Внимание!</system:String>
+    <system:String x:Key="h_h2_t8">1. Ссылка на канал (группу) должна быть постоянной, а не динамической</system:String>
+    <system:String x:Key="h_h2_t9">2. Вы должны быть подписаны на этот канал (группу)</system:String>
     
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>
-    <system:String x:Key="alarmMessage">Найдено совпадение!</system:String>
-    <system:String x:Key="noAlarmMessage">Отбой тревоги!</system:String>
+    <system:String x:Key="alarmMessage">Увага! Нове повідомлення</system:String>
 </ResourceDictionary>
