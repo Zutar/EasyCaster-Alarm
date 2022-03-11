@@ -1,0 +1,12 @@
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\EasyCaster-Alarm.csproj.AssemblyReference.cache
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\EasyCaster-Alarm.csproj.ResolveComReference.cache
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\Resources\RUS.baml
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\Resources\UKR.baml
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\About.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\AuthWindow.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\Feedback.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\Help.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\MainWindow.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\App.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\EasyCaster-Alarm_MarkupCompile.cache
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\netcoreapp3.1\EasyCaster-Alarm_MarkupCompile.lref

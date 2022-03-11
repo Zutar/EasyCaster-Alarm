@@ -8,6 +8,17 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <StartupObject>EasyCaster_Alarm.App</StartupObject>
     <ApplicationIcon>Resources\Icona.ico</ApplicationIcon>
+    <Version>1.0.12</Version>
+    <Company>live-tv (Powered by legdev)</Company>
+    <Copyright>Copyright ©  2022</Copyright>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.01.1</FileVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

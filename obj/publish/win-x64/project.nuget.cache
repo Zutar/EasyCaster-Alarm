@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "WD4DBqkXlC/ot2CII0t5PC8y5CJ3NOsAjGBnsNeLt8oLSIhS8eC+SiRmBLLtRz27Mc21obaD07q+bZeLKdA/bw==",
+  "success": true,
+  "projectFilePath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Леонид\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\wtelegramclient\\2.1.2\\wtelegramclient.2.1.2.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.12\\microsoft.netcore.app.runtime.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.12\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.12\\microsoft.aspnetcore.app.runtime.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FontAwesome.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}

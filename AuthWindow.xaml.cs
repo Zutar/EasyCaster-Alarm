@@ -20,32 +20,38 @@ namespace EasyCaster_Alarm
     /// </summary>
     public partial class AuthWindow : Window
     {
+        public static AuthWindow authWindow = new AuthWindow();
+        bool isActivate = false;
+        bool close = true;
+
         public AuthWindow()
         {
             InitializeComponent();
+            setSavedSettings();
 
-            if(auth_phone.Text != "")
+            if (auth_phone.Text != "")
             {
-                auth_phone.IsEnabled = false;
-                auth_password.IsEnabled = false;
+                auth_phone.IsEnabled = true;
+                auth_password.IsEnabled = true;
                 auth_verification_block.Visibility = Visibility.Hidden;
+                error_msg.Visibility = Visibility.Hidden;
+                success_msg.Visibility = Visibility.Hidden;
+            }
 
-                auth_spinner.Visibility = Visibility.Visible;
+            isActivate = false;
+            close = true;
+        }
 
-                DispatcherTimer waitAuthTimer = new DispatcherTimer();
-                waitAuthTimer.Interval = TimeSpan.FromSeconds(2);
-                waitAuthTimer.Tick += waitAuth_Timer;
-                waitAuthTimer.Start();
+        private void setSavedSettings()
+        {
+            try
+            {
+                auth_phone.Text = Properties.Settings.Default.mobilePhone;
+                auth_password.Text = Properties.Settings.Default.password;
+            }
+            catch (Exception error)
+            {
 
-                async void waitAuth_Timer(object sender, EventArgs e)
-                {
-                    auth_phone.IsEnabled = true;
-                    auth_password.IsEnabled = true;
-
-                    auth_spinner.Visibility = Visibility.Hidden;
-
-                    waitAuthTimer.Stop();
-                }
             }
         }
 
@@ -55,58 +61,118 @@ namespace EasyCaster_Alarm
 
             this.Dispatcher.Invoke(() =>
             {
-                string phoneNumber = auth_phone.Text;
-                string code = auth_verification.Text;
-                string password = auth_password.Text;
-
-                if (stepName == "verification_code")
+                try
                 {
-                    DispatcherTimer waitAuthCodeTimer = new DispatcherTimer();
-                    waitAuthCodeTimer.Interval = TimeSpan.FromSeconds(2);
-                    waitAuthCodeTimer.Tick += waitAuthCode_Timer;
-                    waitAuthCodeTimer.Start();
+                    string phoneNumber = auth_phone.Text;
+                    string code = auth_verification.Text;
+                    string password = auth_password.Text;
 
-                    async void waitAuthCode_Timer(object sender, EventArgs e)
+                    if (stepName == "verification_code")
                     {
-                        auth_spinner.Visibility = Visibility.Hidden;
-                        auth_verification_block.Visibility = Visibility.Visible;
+                        DispatcherTimer waitAuthCodeTimer = new DispatcherTimer();
+                        waitAuthCodeTimer.Interval = TimeSpan.FromSeconds(2);
+                        waitAuthCodeTimer.Tick += waitAuthCode_Timer;
+                        waitAuthCodeTimer.Start();
 
-                        auth_submit.Visibility = Visibility.Hidden;
+                        async void waitAuthCode_Timer(object sender, EventArgs e)
+                        {
+                            auth_spinner.Visibility = Visibility.Hidden;
+                            auth_verification_block.Visibility = Visibility.Visible;
+                            auth_submit.Visibility = Visibility.Hidden;
 
-                        waitAuthCodeTimer.Stop();
+                            waitAuthCodeTimer.Stop();
+                        }
                     }
-                }
 
-                switch (stepName)
+                    switch (stepName)
+                    {
+                        case "api_id": data = "740980"; break;
+                        case "api_hash": data = "e5ec72f9394ae1d144b0c4b18abafc90"; break;
+                        case "phone_number": data = phoneNumber; break;
+                        case "verification_code": data = code; break;
+                        case "first_name": data = ""; break;      // if sign-up is required
+                        case "last_name": data = ""; break;       // if sign-up is required
+                        case "password": data = password; break;
+                        default: data = null; break;
+                    }
+                }catch(Exception error)
                 {
-                    case "api_id": data = "740980"; break;
-                    case "api_hash": data = "e5ec72f9394ae1d144b0c4b18abafc90"; break;
-                    case "phone_number": data = phoneNumber; break;
-                    case "verification_code": data = code; break;
-                    case "first_name": data = ""; break;      // if sign-up is required
-                    case "last_name": data = ""; break;       // if sign-up is required
-                    case "password": data = password; break;
-                    default: data = null; break;
+                    isActivate = false;
                 }
             });
 
             return data;
         }
 
-        private void auth_submit_Click(object sender, RoutedEventArgs e)
+        public static void SetLanguageDictionary()
         {
+            ResourceDictionary dict = new ResourceDictionary();
+            switch (Properties.Settings.Default.lang)
+            {
+                case "UKR":
+                    dict.Source = new Uri("..\\Resources\\UKR.xaml", UriKind.Relative);
+                    break;
+                case "ENG":
+                    dict.Source = new Uri("..\\Resources\\ENG.xaml", UriKind.Relative);
+                    break;
+                default:
+                    dict.Source = new Uri("..\\Resources\\RUS.xaml", UriKind.Relative);
+                    break;
+            }
 
+            Application.Current.Resources.MergedDictionaries.Add(dict);
+        }
+        private async Task login()
+        {
             auth_spinner.Visibility = Visibility.Visible;
 
-            App.createTGClient(Config);
+            isActivate = await App.createTGClient(Config);
+
+            if (isActivate)
+            {
+                success_msg.Visibility = Visibility.Visible;
+
+                MainWindow mainWindow = new MainWindow();
+                DispatcherTimer waitTimer = new DispatcherTimer();
+
+                waitTimer.Interval = TimeSpan.FromSeconds(2);
+                waitTimer.Tick += wait_Timer;
+                waitTimer.Start();
+
+                void wait_Timer(object sender, EventArgs e)
+                {
+                    close = false;
+                    this.Hide();
+                    mainWindow.IsEnabled = true;
+                    mainWindow.Show();
+                    success_msg.Visibility = Visibility.Hidden;
+                    waitTimer.Stop();
+                    close = true;
+                }
+            }
+            else
+            {
+                error_msg.Visibility = Visibility.Visible;
+                auth_phone.IsEnabled = true;
+                auth_password.IsEnabled = true;
+                auth_verification_block.Visibility = Visibility.Hidden;
+                auth_spinner.Visibility = Visibility.Hidden;
+                auth_submit.Visibility = Visibility.Visible;
+            }
 
             Properties.Settings.Default.mobilePhone = auth_phone.Text;
             Properties.Settings.Default.password = auth_password.Text;
+
+            Properties.Settings.Default.Save();
+        }
+        private async void auth_submit_Click(object sender, RoutedEventArgs e)
+        {
+            login();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Environment.Exit(1);
+            if(close) Environment.Exit(1);
         }
 
         private void auth_phone_LostFocus(object sender, RoutedEventArgs e)
@@ -115,6 +181,14 @@ namespace EasyCaster_Alarm
 
             if(mobilePhone == "") {
                 auth_verification_block.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void auth_win_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                login();
             }
         }
     }

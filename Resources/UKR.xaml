@@ -15,6 +15,8 @@
     <system:String x:Key="authSubmit">Відправити</system:String>
     <system:String x:Key="authVerification">Верифікаційний код</system:String>
     <system:String x:Key="authWindowTitle">Авторизація Telegram</system:String>
+    <system:String x:Key="authError">Щось пішло не так... Спробуйте знову</system:String>
+    <system:String x:Key="authSuccess">Вхід виконано</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">Історія</system:String>
@@ -51,7 +53,8 @@
     <system:String x:Key="settingsExceptionTitle2">Виняток #2</system:String>
     <system:String x:Key="settingsExceptionTitle3">Виняток #3</system:String>
     <system:String x:Key="settingsExceptionTitle4">Виняток #4</system:String>
-    <system:String x:Key="settingsAppLogout">Вихід</system:String>
+    <system:String x:Key="settingsAppLogout">Вийти з облікового запису</system:String>
+    <system:String x:Key="settingsSaveAlert">Для застосування нового конфіга перезапустіть програму!</system:String>
 
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
@@ -87,6 +90,6 @@
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>
-    <system:String x:Key="alarmMessage">Увага, тривога!</system:String>
+    <system:String x:Key="alarmMessage">Знайдено збіг!</system:String>
     <system:String x:Key="noAlarmMessage">Відбій тривоги!</system:String>
 </ResourceDictionary>

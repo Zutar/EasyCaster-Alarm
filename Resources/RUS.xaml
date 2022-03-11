@@ -15,6 +15,8 @@
     <system:String x:Key="authSubmit">Отправить</system:String>
     <system:String x:Key="authVerification">Верификационный код</system:String>
     <system:String x:Key="authWindowTitle">Авторизация Telegram</system:String>
+    <system:String x:Key="authError">Что-то пошло не так... Попробуйте снова</system:String>
+    <system:String x:Key="authSuccess">Вход выполнен</system:String>
 
     <!-- Settings -->
     <system:String x:Key="settingsTitle">Настройки</system:String>
@@ -46,7 +48,8 @@
     <system:String x:Key="settingsExceptionTitle2">Исключение #2</system:String>
     <system:String x:Key="settingsExceptionTitle3">Исключение #3</system:String>
     <system:String x:Key="settingsExceptionTitle4">Исключение #4</system:String>
-    <system:String x:Key="settingsAppLogout">Выход</system:String>
+    <system:String x:Key="settingsAppLogout">Выйти из аккаунта</system:String>
+    <system:String x:Key="settingsSaveAlert">Для применения нового конфига перезапустите программу!</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">История</system:String>
@@ -87,6 +90,6 @@
     
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>
-    <system:String x:Key="alarmMessage">Внимание, тревога!</system:String>
+    <system:String x:Key="alarmMessage">Найдено совпадение!</system:String>
     <system:String x:Key="noAlarmMessage">Отбой тревоги!</system:String>
 </ResourceDictionary>

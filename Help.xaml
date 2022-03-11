@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:EasyCaster_Alarm"
         mc:Ignorable="d"
         Title="{DynamicResource h_header}" Height="600" Width="900" WindowStyle="ToolWindow" ResizeMode="NoResize" VerticalAlignment="Top">
-    <TabControl Margin="0,0,0.6,-0.8" VerticalContentAlignment="Top">
-        <TabItem Header="{DynamicResource h_h1_header}">
-            <ScrollViewer>
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25" Height="300" FontSize="14">
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25,50,10" FontSize="14">
+                        <Run Text="{DynamicResource h_h1_header}" FontWeight="Bold" FontSize="14"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h1_t1}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -23,14 +24,11 @@
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h1_t5}"></Run>
-                    </TextBlock>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-        <TabItem Header="{DynamicResource h_h2_header}">
-            <ScrollViewer>
-                <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25" Height="250" FontSize="14">
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,25" FontSize="14">
+                        <Run Text="{DynamicResource h_h2_header}" FontWeight="Bold" FontSize="14"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h2_t1}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -47,9 +45,7 @@
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t6}"></Run>
-                    </TextBlock>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-    </TabControl>
+            </TextBlock>
+        </StackPanel>
+    </ScrollViewer>
 </Window>

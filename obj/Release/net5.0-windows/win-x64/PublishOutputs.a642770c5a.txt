@@ -1,0 +1,11 @@
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.pdb
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\clrcompression.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\clrjit.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\coreclr.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\mscordaccore.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\D3DCompiler_47_cor3.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\PenImc_cor3.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\PresentationNative_cor3.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\vcruntime140_cor3.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\wpfgfx_cor3.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.exe

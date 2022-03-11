@@ -1,0 +1,7 @@
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.exe
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.deps.json
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.runtimeconfig.json
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\EasyCaster-Alarm.pdb
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\FontAwesome.WPF.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\publish\WTelegramClient.dll
