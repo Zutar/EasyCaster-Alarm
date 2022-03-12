@@ -10,7 +10,7 @@ namespace EasyCaster_Alarm
     /// </summary>
     public partial class App : Application
     {
-        public static Client client;
+        public static Client client = null;
         public static AuthWindow authWindow = new AuthWindow();
 
         public App()

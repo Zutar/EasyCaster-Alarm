@@ -56,6 +56,7 @@
     <system:String x:Key="settingsExceptionTitle4">Виняток #4</system:String>
     <system:String x:Key="settingsAppLogout">Вийти з облікового запису</system:String>
     <system:String x:Key="settingsSaveAlert">Для застосування нового конфіга перезапустіть програму!</system:String>
+    <system:String x:Key="startDelay">Затримка початку прийому повідомлень під час старту програми (мс)</system:String>
 
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
@@ -89,8 +90,9 @@
     <system:String x:Key="h_h2_t5">Винятки – у вашому телеграм каналі можуть бути повідомлення, які містять ключові фрази, але не є повідомленнями про подію. Для запобігання помилковим спрацьовуванням додайте текст таких повідомлень у виключення.</system:String>
     <system:String x:Key="h_h2_t6">Історія – інформація про останні 15 спрацьовування програми за ключовими словами</system:String>
     <system:String x:Key="h_h2_t7">Увага!</system:String>
-    <system:String x:Key="h_h2_t8">1. Посилання на канал (групу) має бути постійним, а не динамічним</system:String>
-    <system:String x:Key="h_h2_t0">2. Ви маєте бути підписані на цей канал (групу)</system:String>
+    <system:String x:Key="h_h2_t8">1. Посилання на канал (группу) повинно бути постійним, а не динамичним</system:String>
+    <system:String x:Key="h_h2_t9">2. Ви повинні бути підписані на цей канал</system:String>
+    <system:String x:Key="h_h2_t10">Необхідні програми на момент старту Easycaster Alert  вже повинні працювати</system:String>
     
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>

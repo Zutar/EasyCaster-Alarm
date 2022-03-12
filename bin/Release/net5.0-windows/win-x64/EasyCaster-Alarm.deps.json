@@ -7,9 +7,10 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {},
     ".NETCoreApp,Version=v5.0/win-x64": {
-      "EasyCaster-Alarm/1.0.16": {
+      "EasyCaster-Alarm/1.0.23": {
         "dependencies": {
           "FontAwesome.WPF": "4.7.0.9",
+          "InputSimulator": "1.0.4",
           "WTelegramClient": "2.1.2",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "5.0.12",
           "runtimepack.Microsoft.WindowsDesktop.App.Runtime.win-x64": "5.0.12"
@@ -1078,6 +1079,14 @@
           }
         }
       },
+      "InputSimulator/1.0.4": {
+        "runtime": {
+          "lib/net20/WindowsInput.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
       "WTelegramClient/2.1.2": {
         "runtime": {
           "lib/net5.0/WTelegramClient.dll": {
@@ -1089,7 +1098,7 @@
     }
   },
   "libraries": {
-    "EasyCaster-Alarm/1.0.16": {
+    "EasyCaster-Alarm/1.0.23": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1110,6 +1119,13 @@
       "sha512": "sha512-SXE080rnyWMm9Dt0BZzMxh89/o9teuSaqL1N+0O/XM/F/HU8JuZA4XaEKxjBigwZPHHU3/udTa0QMYCHkmH43Q==",
       "path": "fontawesome.wpf/4.7.0.9",
       "hashPath": "fontawesome.wpf.4.7.0.9.nupkg.sha512"
+    },
+    "InputSimulator/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0LvRCPQMX6/FJHBjng+RO+wRDuHTJrfo7IAc7rmkPvRqchdVGJWg3y70peOtDy3OLNK+HSOwVkH4GiuLnkKgA==",
+      "path": "inputsimulator/1.0.4",
+      "hashPath": "inputsimulator.1.0.4.nupkg.sha512"
     },
     "WTelegramClient/2.1.2": {
       "type": "package",

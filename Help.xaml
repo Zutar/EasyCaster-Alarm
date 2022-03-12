@@ -28,28 +28,32 @@
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h1_t5}"></Run>
             </TextBlock>
-            <TextBlock TextWrapping="Wrap" Padding="50,10,50,25" FontSize="14">
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,20" FontSize="14">
                         <Run Text="{DynamicResource h_h2_header}" FontWeight="Bold" FontSize="14"/>
                         <LineBreak></LineBreak>
                         <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h2_t1}"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="{DynamicResource h_h2_t7}" FontWeight="Bold"></Run>
-                        <LineBreak/>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="70,0,50,10" FontSize="14">
+                         <Run Text="{DynamicResource h_h2_t7}" FontWeight="Bold"></Run>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t8}"></Run>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t9}"></Run>
-                        <LineBreak/>
-                        <LineBreak/>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,20" FontSize="14">
                         <Run Text="{DynamicResource h_h2_t2}"></Run>
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t3}"></Run>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="70,0,50,10" FontSize="14">
+                        <Run Text="{DynamicResource h_h2_t7}" FontWeight="Bold"></Run>
                         <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="{DynamicResource h_h2_t4}"></Run>
+                        <Run Text="{DynamicResource h_h2_t10}"></Run>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,10" FontSize="14">
+            <Run Text="{DynamicResource h_h2_t4}"></Run>
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t5}"></Run>

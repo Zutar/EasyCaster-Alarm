@@ -37,3 +37,4 @@ F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\ref\
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\EasyCaster-Alarm.pdb
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\EasyCaster-Alarm.genruntimeconfig.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\EasyCaster-Alarm.csproj.AssemblyReference.cache
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\WindowsInput.dll

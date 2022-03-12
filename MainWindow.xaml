@@ -174,7 +174,7 @@
                                     </Button>
                                 </Canvas>
                             </DockPanel>
-                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="667" Visibility="Collapsed" Width="560">
+                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="667" Visibility="Visible" Width="560">
                                 <Button x:Name="settings_edit" Width="100" Height="30" Template="{DynamicResource ControlButton}" Cursor="Hand" Background="#FFF0F0F0" HorizontalContentAlignment="Center" Padding="1,1,1,1" Canvas.Top="25" Click="settings_edit_Click">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" Content="{DynamicResource settingsEdit}" FontSize="11" Margin="-1,-1,-1,-1"/>
                                 </Button>
@@ -222,7 +222,7 @@
                                 <Button x:Name="app_logout" Width="200" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="53,9,153,15" Canvas.Left="307" Canvas.Top="200" Click="app_logout_Click" Padding="1,1,1,1">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="{DynamicResource settingsAppLogout}" FontSize="14" Margin="-1,0,-1,0" Foreground="#FF464646" Padding="0,0,0,0" Height="24"/>
                                 </Button>
-                                <StackPanel Height="270" Width="560" Canvas.Top="263" Orientation="Vertical">
+                                <StackPanel Height="270" Width="560" Canvas.Top="316" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsKeyTitle}" Padding="5,5,5,-2"/>
                                     <Grid Height="45" Margin="0,5,0,0">
                                         <Grid.ColumnDefinitions>
@@ -338,6 +338,10 @@
                                     </Grid>
                                 </StackPanel>
                                 <CheckBox x:Name="app_autoauth" Canvas.Top="236" Content="{DynamicResource settingsAutoauth}" IsEnabled="False" Click="app_autoauth_Click" />
+                                <StackPanel Width="400" Margin="0,252,310,10">
+                                    <Label Content="{DynamicResource startDelay}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                    <TextBox x:Name="start_delay" Height="25" TextWrapping="Wrap" Width="210" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" LostFocus="tg_channel_test_name_LostFocus"/>
+                                </StackPanel>
                             </Canvas>
                         </DockPanel>
                     </Border>

@@ -51,6 +51,7 @@
     <system:String x:Key="settingsExceptionTitle4">Исключение #4</system:String>
     <system:String x:Key="settingsAppLogout">Выйти из аккаунта</system:String>
     <system:String x:Key="settingsSaveAlert">Для применения нового конфига перезапустите программу!</system:String>
+    <system:String x:Key="startDelay">Задержка начала приема сообщений при старте программы (мс)</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">История</system:String>
@@ -91,6 +92,7 @@
     <system:String x:Key="h_h2_t7">Внимание!</system:String>
     <system:String x:Key="h_h2_t8">1. Ссылка на канал (группу) должна быть постоянной, а не динамической</system:String>
     <system:String x:Key="h_h2_t9">2. Вы должны быть подписаны на этот канал (группу)</system:String>
+    <system:String x:Key="h_h2_t10">Необходимые программы на момент запуска Easycaster Alert  уже должны работать</system:String>
     
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>

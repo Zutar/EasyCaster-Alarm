@@ -16,6 +16,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using TL;
 using Brush = System.Windows.Media.Brush;
+using WindowsInput;
+using WindowsInput.Native;
+using System.Windows.Input;
 
 namespace EasyCaster_Alarm
 {
@@ -42,6 +45,16 @@ namespace EasyCaster_Alarm
         [DllImport("User32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        [DllImport("user32.dll")]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern void SwitchToThisWindow(IntPtr hWnd, bool turnOn);
+
+        static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        const UInt32 SWP_NOSIZE = 0x0001;
+        const UInt32 SWP_NOMOVE = 0x0002;
+        const UInt32 SWP_SHOWWINDOW = 0x0040;
+
 
         bool settingsOpen = false;
         bool logsOpen = true;
@@ -50,35 +63,45 @@ namespace EasyCaster_Alarm
         Storyboard sb;
 
         ObservableCollection<LogItem> logs = new ObservableCollection<LogItem>();
-        ObservableCollection<string> processNames = new ObservableCollection<string>();
         ObservableCollection<string> processAppNames = new ObservableCollection<string> { };
 
         DispatcherTimer updateProcessListTimer = new DispatcherTimer();
         DispatcherTimer waitTimer = new DispatcherTimer();
         DispatcherTimer timer = new DispatcherTimer();
 
+        Key keyWinCode1;
+        Key keyWinCode2;
+        Key keyWinCode3;
+        Key keyWinCode4;
+
         public MainWindow()
         {
             InitializeComponent();
 
             setSavedSettings();
-            start();
+
+            DispatcherTimer startTimer = new DispatcherTimer();
+            startTimer.Interval = TimeSpan.FromMilliseconds(Convert.ToInt64(start_delay.Text));
+            startTimer.Tick += start_Timer;
+            startTimer.Start();
+
+            void start_Timer(object sender, EventArgs e)
+            {
+                start();
+                startTimer.Stop();
+            }
         }
         
         private void start()
         {
             App.client.Update += Client_Update;
 
-            processNames = getActiveProcessNames();
+            getActiveProcessNames();
 
             settings_block.Visibility = Visibility.Collapsed;
             logs_block.Visibility = Visibility.Visible;
 
             logs_list.ItemsSource = logs;
-            action_app_list_1.ItemsSource = processNames;
-            action_app_list_2.ItemsSource = processNames;
-            action_app_list_3.ItemsSource = processNames;
-            action_app_list_4.ItemsSource = processNames;
 
             updateProcessListTimer.Interval = TimeSpan.FromSeconds(5);
             updateProcessListTimer.Tick += updateProcessList_Timer;
@@ -86,7 +109,7 @@ namespace EasyCaster_Alarm
 
             void updateProcessList_Timer(object sender, EventArgs e)
             {
-                processNames = getActiveProcessNames();
+                getActiveProcessNames();
             }
 
             timer.Interval = TimeSpan.FromSeconds(10);
@@ -96,19 +119,18 @@ namespace EasyCaster_Alarm
             async void timer_Tick(object sender, EventArgs e)
             {
                 BrushConverter bc = new BrushConverter();
-                //settings_title.Content = App.client.ConnectAsync();
+
                 bool connectionStatus = App.client.Disconnected;
                 if (connectionStatus)
                 {
-                    status.Background = (System.Windows.Media.Brush)bc.ConvertFrom("#FFFF0000");
+                    status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
                 }
                 else
                 {
-                    status.Background = (System.Windows.Media.Brush)bc.ConvertFrom("#FF2FC300");
+                    status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
                     await App.client.ConnectAsync();
                 }
 
-                //settings_title.Content = 
                 var dialogs = await App.client.Messages_GetAllDialogs();
                 dialogs.CollectUsersChats(_users, _chats);
             }
@@ -122,6 +144,7 @@ namespace EasyCaster_Alarm
 
             isAlarm = false;
             App.client.Auth_LogOut();
+            App.client = null;
 
             disableAll();
         }
@@ -131,53 +154,55 @@ namespace EasyCaster_Alarm
             try
             {
                 string applicationName = "";
-                string keyName = "";
+                Key keyFormCode = new Key();
+                int keyWinCode = 0;
 
                 if (index == 1)
                 {
                     applicationName = processAppNames[action_app_list_1.SelectedIndex];
-                    keyName = action_key_press_1.Text;
+                    keyFormCode = keyWinCode1;
                 }
                 else if (index == 2)
                 {
                     applicationName = processAppNames[action_app_list_2.SelectedIndex];
-                    keyName = action_key_press_2.Text;
+                    keyFormCode = keyWinCode2;
                 }
                 else if (index == 3)
                 {
                     applicationName = processAppNames[action_app_list_3.SelectedIndex];
-                    keyName = action_key_press_3.Text;
+                    keyFormCode = keyWinCode3;
                 }
                 else if (index == 4)
                 {
                     applicationName = processAppNames[action_app_list_4.SelectedIndex];
-                    keyName = action_key_press_4.Text;
+                    keyFormCode = keyWinCode4;
                 }
+
+                keyWinCode = (int)KeyInterop.VirtualKeyFromKey(keyFormCode);
 
                 Process p = Process.GetProcessesByName(applicationName).FirstOrDefault();
                 Process currentProcess = Process.GetCurrentProcess();
 
                 if (currentProcess != null && p != null)
                 {
-                    IntPtr currentH = currentProcess.MainWindowHandle;
                     IntPtr h = p.MainWindowHandle;
 
-                    ShowWindow(currentH, 9);
-                    ShowWindow(currentH, 9);
-                    SetForegroundWindow(currentH);
 
                     DispatcherTimer appTimer = new DispatcherTimer();
-                    appTimer.Interval = TimeSpan.FromSeconds(1);
+                    appTimer.Interval = TimeSpan.FromMilliseconds(500);
                     appTimer.Tick += app_Timer;
                     appTimer.Start();
 
                     void app_Timer(object sender, EventArgs e)
                     {
                         ShowWindow(h, 9);
-                        ShowWindow(h, 9);
                         SetForegroundWindow(h);
+                        SetWindowPos(h, HWND_TOPMOST, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
+                        SwitchToThisWindow(h, true);
 
-                        System.Windows.Forms.SendKeys.SendWait("{" + keyName + "}");
+  
+                        InputSimulator s = new InputSimulator();
+                        s.Keyboard.KeyPress((VirtualKeyCode)keyWinCode);
 
                         appTimer.Stop();
                     }
@@ -225,27 +250,37 @@ namespace EasyCaster_Alarm
             }
         }
 
-        private ObservableCollection<string> getActiveProcessNames()
+        private void getActiveProcessNames()
         {
-            ObservableCollection<string> processNames = new ObservableCollection<string> { };
             processAppNames.Clear();
 
             var processes = Process.GetProcesses();
+
+            action_app_list_1.Items.Clear();
+            action_app_list_2.Items.Clear();
+            action_app_list_3.Items.Clear();
+            action_app_list_4.Items.Clear();
 
             foreach (Process p in processes)
             {
                 if (!String.IsNullOrEmpty(p.MainWindowTitle))
                 {
                     string processName = p.ProcessName;
+                    string processTitle = p.MainWindowTitle;
 
-                    processNames.Add(p.MainWindowTitle);
                     processAppNames.Add(processName);
+
+                    action_app_list_1.Items.Add(processTitle);
+                    action_app_list_2.Items.Add(processTitle);
+                    action_app_list_3.Items.Add(processTitle);
+                    action_app_list_4.Items.Add(processTitle);
                 }
             }
 
-
-
-            return processNames;
+            action_app_list_1.Items.Refresh();
+            action_app_list_2.Items.Refresh();
+            action_app_list_3.Items.Refresh();
+            action_app_list_4.Items.Refresh();
         }
 
         private void setSavedSettings()
@@ -259,6 +294,7 @@ namespace EasyCaster_Alarm
 
                 app_autostart.IsChecked = Properties.Settings.Default.autostart;
                 app_autoauth.IsChecked = Properties.Settings.Default.autoauth;
+                start_delay.Text = Properties.Settings.Default.startDelay.ToString();
 
                 action_key_phrase_1.Text = Properties.Settings.Default.actionKeyPhrase1;
                 action_key_phrase_2.Text = Properties.Settings.Default.actionKeyPhrase2;
@@ -468,6 +504,7 @@ namespace EasyCaster_Alarm
 
             Properties.Settings.Default.autostart = (bool)app_autostart.IsChecked;
             Properties.Settings.Default.autoauth = (bool)app_autoauth.IsChecked;
+            Properties.Settings.Default.startDelay = Convert.ToInt64(start_delay.Text);
 
             Properties.Settings.Default.actionKeyPhrase1 = action_key_phrase_1.Text;
             Properties.Settings.Default.actionKeyPhrase2 = action_key_phrase_2.Text;
@@ -626,24 +663,28 @@ namespace EasyCaster_Alarm
         private void action_key_press_1_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
+            keyWinCode1 = e.Key;
             action_key_press_1.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_2_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
+            keyWinCode2 = e.Key;
             action_key_press_2.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_3_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
+            keyWinCode3 = e.Key;
             action_key_press_3.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_4_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
+            keyWinCode4 = e.Key;
             action_key_press_4.Text = getCurrectKeyName(keyName);
         }
 

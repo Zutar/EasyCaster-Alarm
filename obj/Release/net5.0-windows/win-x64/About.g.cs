@@ -62,7 +62,7 @@ namespace EasyCaster_Alarm {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EasyCaster-Alarm;V1.0.1.6;component/about.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster-Alarm;V1.0.2.3;component/about.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\About.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

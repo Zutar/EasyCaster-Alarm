@@ -8,11 +8,11 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <StartupObject>EasyCaster_Alarm.App</StartupObject>
     <ApplicationIcon>Resources\Icona.ico</ApplicationIcon>
-    <Version>1.0.16</Version>
+    <Version>1.0.23</Version>
     <Company>live-tv (Powered by legdev)</Company>
     <Copyright>Copyright ©  2022</Copyright>
-    <AssemblyVersion>1.0.1.6</AssemblyVersion>
-    <FileVersion>1.0.1.6</FileVersion>
+    <AssemblyVersion>1.0.2.3</AssemblyVersion>
+    <FileVersion>1.0.2.3</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
@@ -47,6 +47,7 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="WTelegramClient" Version="2.1.2" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@
   },
   "projects": {
     "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj": {
-      "version": "1.0.16",
+      "version": "1.0.23",
       "restore": {
         "projectUniqueName": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
         "projectName": "EasyCaster-Alarm",
@@ -46,6 +46,10 @@
             "FontAwesome.WPF": {
               "target": "Package",
               "version": "[4.7.0.9, )"
+            },
+            "InputSimulator": {
+              "target": "Package",
+              "version": "[1.0.4, )"
             },
             "WTelegramClient": {
               "target": "Package",

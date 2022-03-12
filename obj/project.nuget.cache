@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o21XuzvEOzDQ70/Io3vCc1ca7+2arIpcf3p6aliyYxAKT/VHoKFXb1yQ2X2FgUJiSihgeYi8VdM0/agP3MSoYg==",
+  "dgSpecHash": "reQfFlwa3MLRdhZe2WAV3T8e42GHDhuAKO9M58j4caqctvqcN56VU5C/86+nHDmxVX9ZxmHZHadwGN6ShlHOGw==",
   "success": true,
   "projectFilePath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Леонид\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\inputsimulator\\1.0.4\\inputsimulator.1.0.4.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\wtelegramclient\\2.1.2\\wtelegramclient.2.1.2.nupkg.sha512"
   ],
   "logs": [
@@ -14,6 +15,16 @@
       "warningLevel": 1,
       "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "FontAwesome.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'InputSimulator 1.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "InputSimulator",
       "targetGraphs": [
         "net5.0-windows7.0"
       ]
