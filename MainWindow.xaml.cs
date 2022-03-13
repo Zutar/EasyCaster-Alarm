@@ -69,16 +69,19 @@ namespace EasyCaster_Alarm
         DispatcherTimer waitTimer = new DispatcherTimer();
         DispatcherTimer timer = new DispatcherTimer();
 
-        Key keyWinCode1;
-        Key keyWinCode2;
-        Key keyWinCode3;
-        Key keyWinCode4;
+        int keyWinCode1;
+        int keyWinCode2;
+        int keyWinCode3;
+        int keyWinCode4;
 
         public MainWindow()
         {
             InitializeComponent();
 
             setSavedSettings();
+
+            bool autostart = (bool)app_autostart.IsChecked;
+            SetAutorunProgram(autostart);
 
             DispatcherTimer startTimer = new DispatcherTimer();
             startTimer.Interval = TimeSpan.FromMilliseconds(Convert.ToInt64(start_delay.Text));
@@ -87,6 +90,7 @@ namespace EasyCaster_Alarm
 
             void start_Timer(object sender, EventArgs e)
             {
+                app_logout.IsEnabled = true;
                 start();
                 startTimer.Stop();
             }
@@ -103,7 +107,7 @@ namespace EasyCaster_Alarm
 
             logs_list.ItemsSource = logs;
 
-            updateProcessListTimer.Interval = TimeSpan.FromSeconds(5);
+            updateProcessListTimer.Interval = TimeSpan.FromSeconds(30);
             updateProcessListTimer.Tick += updateProcessList_Timer;
             updateProcessListTimer.Start();
 
@@ -143,8 +147,7 @@ namespace EasyCaster_Alarm
             if (timer != null) timer.Stop();
 
             isAlarm = false;
-            App.client.Auth_LogOut();
-            App.client = null;
+            App.logout();
 
             disableAll();
         }
@@ -154,31 +157,30 @@ namespace EasyCaster_Alarm
             try
             {
                 string applicationName = "";
-                Key keyFormCode = new Key();
+
                 int keyWinCode = 0;
 
                 if (index == 1)
                 {
                     applicationName = processAppNames[action_app_list_1.SelectedIndex];
-                    keyFormCode = keyWinCode1;
+                    keyWinCode = keyWinCode1;
                 }
                 else if (index == 2)
                 {
                     applicationName = processAppNames[action_app_list_2.SelectedIndex];
-                    keyFormCode = keyWinCode2;
+                    keyWinCode = keyWinCode2;
                 }
                 else if (index == 3)
                 {
                     applicationName = processAppNames[action_app_list_3.SelectedIndex];
-                    keyFormCode = keyWinCode3;
+                    keyWinCode = keyWinCode3;
                 }
                 else if (index == 4)
                 {
                     applicationName = processAppNames[action_app_list_4.SelectedIndex];
-                    keyFormCode = keyWinCode4;
+                    keyWinCode = keyWinCode4;
                 }
 
-                keyWinCode = (int)KeyInterop.VirtualKeyFromKey(keyFormCode);
 
                 Process p = Process.GetProcessesByName(applicationName).FirstOrDefault();
                 Process currentProcess = Process.GetCurrentProcess();
@@ -186,7 +188,6 @@ namespace EasyCaster_Alarm
                 if (currentProcess != null && p != null)
                 {
                     IntPtr h = p.MainWindowHandle;
-
 
                     DispatcherTimer appTimer = new DispatcherTimer();
                     appTimer.Interval = TimeSpan.FromMilliseconds(500);
@@ -200,7 +201,6 @@ namespace EasyCaster_Alarm
                         SetWindowPos(h, HWND_TOPMOST, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
                         SwitchToThisWindow(h, true);
 
-  
                         InputSimulator s = new InputSimulator();
                         s.Keyboard.KeyPress((VirtualKeyCode)keyWinCode);
 
@@ -281,6 +281,15 @@ namespace EasyCaster_Alarm
             action_app_list_2.Items.Refresh();
             action_app_list_3.Items.Refresh();
             action_app_list_4.Items.Refresh();
+
+            try
+            {
+                action_app_list_1.SelectedItem = Properties.Settings.Default.actionAppList1;
+                action_app_list_2.SelectedItem = Properties.Settings.Default.actionAppList2;
+                action_app_list_3.SelectedItem = Properties.Settings.Default.actionAppList3;
+                action_app_list_4.SelectedItem = Properties.Settings.Default.actionAppList4;
+            }
+            catch (Exception e) { }
         }
 
         private void setSavedSettings()
@@ -319,7 +328,13 @@ namespace EasyCaster_Alarm
                     action_app_list_4.SelectedItem = Properties.Settings.Default.actionAppList4;
                 }
                 catch(Exception e) { }
-            }catch(Exception error)
+
+                keyWinCode1 = Properties.Settings.Default.keyWinCode1;
+                keyWinCode2 = Properties.Settings.Default.keyWinCode2;
+                keyWinCode3 = Properties.Settings.Default.keyWinCode3;
+                keyWinCode4 = Properties.Settings.Default.keyWinCode4;
+            }
+            catch(Exception error)
             {
 
             }
@@ -384,25 +399,11 @@ namespace EasyCaster_Alarm
             new Help().ShowDialog();
         }
 
-        private void app_autostart_Checked(object sender, RoutedEventArgs e)
-        {
-            bool autostart = (bool)app_autostart.IsChecked;
-
-            if (autostart)
-            {
-                SetAutorunProgram(true);
-            }
-            else
-            {
-                SetAutorunProgram(false);
-            }
-        }
-
         private void SetAutorunProgram(bool autorun)
         {
             try
             {
-                const string name = "EasyCaster Transcoder";
+                const string name = "EasyCaster Alarm";
 
                 RegistryKey registryKey = Registry.CurrentUser.OpenSubKey
                         (@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
@@ -436,6 +437,7 @@ namespace EasyCaster_Alarm
 
             app_autostart.IsEnabled = true;
             app_autoauth.IsEnabled = true;
+            start_delay.IsEnabled = true;
 
             action_key_phrase_1.IsEnabled = true;
             action_key_phrase_2.IsEnabled = true;
@@ -466,6 +468,7 @@ namespace EasyCaster_Alarm
 
             app_autostart.IsEnabled = false;
             app_autoauth.IsEnabled = false;
+            start_delay.IsEnabled = false;
 
             action_key_phrase_1.IsEnabled = false;
             action_key_phrase_2.IsEnabled = false;
@@ -525,6 +528,11 @@ namespace EasyCaster_Alarm
             Properties.Settings.Default.actionKeyException2 = action_key_exception_2.Text;
             Properties.Settings.Default.actionKeyException3 = action_key_exception_3.Text;
             Properties.Settings.Default.actionKeyException4 = action_key_exception_4.Text;
+
+            Properties.Settings.Default.keyWinCode1 = keyWinCode1;
+            Properties.Settings.Default.keyWinCode2 = keyWinCode2;
+            Properties.Settings.Default.keyWinCode3 = keyWinCode3;
+            Properties.Settings.Default.keyWinCode4 = keyWinCode4;
 
             Properties.Settings.Default.Save();
         }
@@ -663,37 +671,38 @@ namespace EasyCaster_Alarm
         private void action_key_press_1_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
-            keyWinCode1 = e.Key;
+            keyWinCode1 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
             action_key_press_1.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_2_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
-            keyWinCode2 = e.Key;
+            keyWinCode2 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
             action_key_press_2.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_3_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
-            keyWinCode3 = e.Key;
+            keyWinCode3 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
             action_key_press_3.Text = getCurrectKeyName(keyName);
         }
 
         private void action_key_press_4_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string keyName = e.Key.ToString().ToUpper();
-            keyWinCode4 = e.Key;
+            keyWinCode4 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
             action_key_press_4.Text = getCurrectKeyName(keyName);
         }
 
         private void app_logout_Click(object sender, RoutedEventArgs e)
         {
             stopAll();
-
+            AuthWindow.isAutoauthAccept = false;
             App.authWindow.Show();
             app.IsEnabled = false;
+            app.Hide();
         }
 
 
@@ -846,6 +855,9 @@ namespace EasyCaster_Alarm
 
         private void app_autostart_Click(object sender, RoutedEventArgs e)
         {
+            bool autostart = (bool)app_autostart.IsChecked;
+            SetAutorunProgram(autostart);
+
             activeAnimationButton(settings_save, "saveButtonAnimation");
         }
 

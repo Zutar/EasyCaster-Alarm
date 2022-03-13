@@ -18,6 +18,7 @@
     <system:String x:Key="authError">Что-то пошло не так... Попробуйте снова</system:String>
     <system:String x:Key="authSuccess">Вход выполнен</system:String>
     <system:String x:Key="settingsAutoauth">Автоматический вход в telegram</system:String>
+    <system:String x:Key="authReset">Сброс</system:String>
 
     <!-- Settings -->
     <system:String x:Key="settingsTitle">Настройки</system:String>

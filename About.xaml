@@ -10,7 +10,7 @@
         <Image HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="494" Source="/Resources/Easycaster_logo.png"/>
         <Label Content="Easycaster Alarm" HorizontalAlignment="Left" Margin="0,291,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="34" Width="492" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="445" Height="171" FontSize="16" Text="{DynamicResource a_t_1}"/>
-        <Label x:Name="v_lb" Content="{DynamicResource a_v}" HorizontalAlignment="Left" Margin="0,537,0,0" VerticalAlignment="Top" Width="491" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="28" FontSize="14"/>
+        <Label x:Name="v_lb" Content="{DynamicResource a_v}" HorizontalAlignment="Left" Margin="0,537,0,0" VerticalAlignment="Top" Width="491" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="28" FontSize="14" MouseLeftButtonDown="v_lb_MouseLeftButtonDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="196,516,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontSize="18" Background="White" Foreground="#FF8080FF" Cursor="Hand">
             <Hyperlink NavigateUri="https://live-tv.net.ua" RequestNavigate="Hyperlink_RequestNavigate" BaselineAlignment="Center">
                 live-tv.net.ua

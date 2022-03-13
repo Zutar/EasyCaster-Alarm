@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+using TL;
 using WTelegram;
 
 namespace EasyCaster_Alarm
@@ -18,7 +19,6 @@ namespace EasyCaster_Alarm
             AuthWindow.SetLanguageDictionary();
 
             this.Dispatcher.UnhandledException += OnDispatcherUnhandledException;
-            //authWindow.ShowDialog();
         }
 
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
@@ -43,7 +43,6 @@ namespace EasyCaster_Alarm
             {
                 var my = await client.LoginUserIfNeeded();
                 App.client.MaxAutoReconnects = 10;
-                //MessageBox.Show($"We are logged-in as {my.username ?? my.first_name + " " + my.last_name} (id {my.id})");
 
                 return true;
             }catch(Exception error)
@@ -51,6 +50,19 @@ namespace EasyCaster_Alarm
                 MessageBox.Show(error.ToString());
                 return false;
             }
+        }
+
+        public static void logout()
+        {
+            try
+            {
+                if (client != null)
+                {
+                    client.Auth_LogOut();
+                    client.Dispose();
+                    client = null;
+                }
+            }catch(Exception error) { }
         }
     }
 }

@@ -14,26 +14,11 @@ namespace EasyCaster_Alarm
         public static AuthWindow authWindow = new AuthWindow();
         bool isActivate = false;
         bool close = true;
+        public static bool isAutoauthAccept = true;
 
         public AuthWindow()
         {
             InitializeComponent();
-            setSavedSettings();
-
-            if (auth_phone.Text != "")
-            {
-                auth_phone.IsEnabled = true;
-                auth_password.IsEnabled = true;
-                auth_verification_block.Visibility = Visibility.Hidden;
-                error_msg.Visibility = Visibility.Hidden;
-                success_msg.Visibility = Visibility.Hidden;
-
-                bool autoauth = Properties.Settings.Default.autoauth;
-                if(App.client == null && autoauth) login();
-            }
-
-            isActivate = false;
-            close = true;
         }
 
         private void setSavedSettings()
@@ -118,8 +103,6 @@ namespace EasyCaster_Alarm
         }
         private async Task login()
         {
-            auth_spinner.Visibility = Visibility.Visible;
-
             isActivate = await App.createTGClient(Config);
 
             if (isActivate)
@@ -136,7 +119,7 @@ namespace EasyCaster_Alarm
                 void wait_Timer(object sender, EventArgs e)
                 {
                     close = false;
-                    this.Hide();
+                    auth_win.Hide();
                     mainWindow.IsEnabled = true;
                     mainWindow.Show();
                     success_msg.Visibility = Visibility.Hidden;
@@ -153,6 +136,8 @@ namespace EasyCaster_Alarm
 
                 auth_phone.IsEnabled = true;
                 auth_password.IsEnabled = true;
+
+                App.logout();
             }
 
             Properties.Settings.Default.mobilePhone = auth_phone.Text;
@@ -179,12 +164,58 @@ namespace EasyCaster_Alarm
             }
         }
 
-        private void auth_win_KeyUp(object sender, KeyEventArgs e)
+        private async void auth_win_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
-                login();
+                await login();
             }
+        }
+
+        private void auth_win_Loaded(object sender, RoutedEventArgs e)
+        {
+            setSavedSettings();
+
+            isActivate = false;
+            close = true;
+
+            if (auth_phone.Text != "")
+            {
+                auth_phone.IsEnabled = true;
+                auth_password.IsEnabled = true;
+                auth_verification_block.Visibility = Visibility.Hidden;
+                error_msg.Visibility = Visibility.Hidden;
+                success_msg.Visibility = Visibility.Hidden;
+
+                bool autoauth = Properties.Settings.Default.autoauth;
+                if (App.client == null && autoauth && isAutoauthAccept)
+                {
+                    auth_spinner.Visibility = Visibility.Visible;
+
+                    DispatcherTimer startTimer = new DispatcherTimer();
+                    startTimer.Interval = TimeSpan.FromSeconds(1);
+                    startTimer.Tick += start_Timer;
+                    startTimer.Start();
+
+                    async void start_Timer(object sender, EventArgs e)
+                    {
+                        startTimer.Stop();
+                        await login();
+                    }
+                }
+            }
+        }
+
+        private void auth_reset_Click(object sender, RoutedEventArgs e)
+        {
+            App.logout();
+
+            auth_spinner.Visibility = Visibility.Hidden;
+            auth_verification_block.Visibility = Visibility.Hidden;
+            auth_submit.Visibility = Visibility.Visible;
+
+            auth_phone.Text = "";
+            auth_password.Text = "";
         }
     }
 }

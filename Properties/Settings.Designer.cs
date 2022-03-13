@@ -334,5 +334,53 @@ namespace EasyCaster_Alarm.Properties {
                 this["startDelay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode1 {
+            get {
+                return ((int)(this["keyWinCode1"]));
+            }
+            set {
+                this["keyWinCode1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode2 {
+            get {
+                return ((int)(this["keyWinCode2"]));
+            }
+            set {
+                this["keyWinCode2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode3 {
+            get {
+                return ((int)(this["keyWinCode3"]));
+            }
+            set {
+                this["keyWinCode3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode4 {
+            get {
+                return ((int)(this["keyWinCode4"]));
+            }
+            set {
+                this["keyWinCode4"] = value;
+            }
+        }
     }
 }
