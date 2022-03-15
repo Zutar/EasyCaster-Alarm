@@ -48,6 +48,8 @@ namespace EasyCaster_Alarm
 
                     if (stepName == "verification_code")
                     {
+                        auth_spinner.Visibility = Visibility.Visible;
+
                         DispatcherTimer waitAuthCodeTimer = new DispatcherTimer();
                         waitAuthCodeTimer.Interval = TimeSpan.FromSeconds(2);
                         waitAuthCodeTimer.Tick += waitAuthCode_Timer;

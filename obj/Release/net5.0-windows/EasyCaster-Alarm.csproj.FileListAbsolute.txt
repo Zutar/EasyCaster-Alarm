@@ -38,3 +38,8 @@ F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\Easy
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\EasyCaster-Alarm.genruntimeconfig.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\EasyCaster-Alarm.csproj.AssemblyReference.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\WindowsInput.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\System.CodeDom.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\System.Management.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\runtimes\win\lib\netcoreapp3.1\System.Management.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\ExceptionWindow.g.cs
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\ExceptionWindow.baml

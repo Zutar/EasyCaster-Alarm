@@ -94,7 +94,12 @@
     <system:String x:Key="h_h2_t8">1. Посилання на канал (группу) повинно бути постійним, а не динамичним</system:String>
     <system:String x:Key="h_h2_t9">2. Ви повинні бути підписані на цей канал</system:String>
     <system:String x:Key="h_h2_t10">Необхідні програми на момент старту Easycaster Alert  вже повинні працювати</system:String>
-    
+
+    <!-- EXCEPTION WINDOW -->
+    <system:String x:Key="ex_title">Необроблений виняток</system:String>
+    <system:String x:Key="ex_send">Надіслати діагностичні дані для технічної підтримки Live-TV Service</system:String>
+    <system:String x:Key="ex_close">Закрити</system:String>
+
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>
     <system:String x:Key="alarmMessage">Знайдено збіг!</system:String>

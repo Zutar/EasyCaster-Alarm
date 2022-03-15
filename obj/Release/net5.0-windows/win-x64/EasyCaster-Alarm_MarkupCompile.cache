@@ -1,5 +1,5 @@
 ﻿EasyCaster-Alarm
-1.0.3.0
+1.0.3.3
 
 winexe
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\App.xaml
-71056642882
+8933350515
 
-9-869146332
-205-2077894083
-About.xaml;AuthWindow.xaml;Feedback.xaml;Help.xaml;MainWindow.xaml;Resources\RUS.xaml;Resources\UKR.xaml;
+101774717392
+2061805821860
+About.xaml;AuthWindow.xaml;ExceptionWindow.xaml;Feedback.xaml;Help.xaml;MainWindow.xaml;Resources\RUS.xaml;Resources\UKR.xaml;
 
 False
 
