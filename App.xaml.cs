@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using TL;
@@ -25,9 +27,35 @@ namespace EasyCaster_Alarm
 
         public App()
         {
+            bool isOnlyOneSameProgram = checkForSameApp();
+            if (isOnlyOneSameProgram)
+            {
+                MessageBox.Show("Програма вже запущена. Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше", "Увага", MessageBoxButton.OK);
+                Environment.Exit(0);
+            }
+
             AuthWindow.SetLanguageDictionary();
 
             this.Dispatcher.UnhandledException += OnDispatcherUnhandledException;
+        }
+
+        private bool checkForSameApp()
+        {
+            bool onlyInstance;
+            new Mutex(true, "EasyCaster Alarm", out onlyInstance);
+            var exists = false;
+            Process[] processes = Process.GetProcessesByName("EasyCaster Alarm");
+            if (processes.Length > 1)
+            {
+                exists = true;
+            }
+
+            if (!onlyInstance || exists)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
@@ -35,8 +63,16 @@ namespace EasyCaster_Alarm
             try
             {
                 errorMessage = e.Exception.ToString();
-                ExceptionWindow exceptionWindow = new ExceptionWindow();
-                exceptionWindow.ShowDialog();
+
+                if (errorMessage.IndexOf("USER_DEACTIVATED_BAN") != -1)
+                {
+                    MessageBox.Show("Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram");
+                }
+                else
+                {
+                    ExceptionWindow exceptionWindow = new ExceptionWindow();
+                    exceptionWindow.ShowDialog();
+                }
                 e.Handled = true;
             }
             catch (Exception error)
@@ -57,7 +93,42 @@ namespace EasyCaster_Alarm
                 return true;
             }catch(Exception error)
             {
-                MessageBox.Show(error.ToString());
+                string errorMessage = error.ToString();
+                if (errorMessage.IndexOf("PHONE_NUMBER_INVALID") != -1)
+                {
+                    MessageBox.Show("Неправильний або недійсний номер телефону");
+                }
+                else if (errorMessage.IndexOf("PHONE_NUMBER_BANNED") != -1)
+                {
+                    MessageBox.Show("Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram");
+                }
+                else if (errorMessage.IndexOf("PHONE_CODE_EXPIRED") != -1)
+                {
+                    MessageBox.Show("Термін дії наданого вами телефонного коду закінчився");
+                }
+                else if (errorMessage.IndexOf("PHONE_CODE_INVALID") != -1)
+                {
+                    MessageBox.Show("Наданий телефонний код недійсний");
+                }
+                else if (errorMessage.IndexOf("PHONE_NUMBER_UNOCCUPIED") != -1)
+                {
+                    MessageBox.Show("Номер телефону ще не використовується. Спочатку потрібно зареєструвати обліковий запис Telegram");
+                }
+                else if (errorMessage.IndexOf("API_ID_INVALID") != -1)
+                {
+                    MessageBox.Show("Комбінація api_id/api_hash недійсна. Зв'яжіться з техпідтримкою live-tv service (livetv-help@ukr.net)");
+                }
+                else if (errorMessage.IndexOf("FLOOD_WAIT") != -1)
+                {
+                    MessageBox.Show("Перевищено обмеження Telegram API. Спробуйте трохи пізніше");
+                }
+                else if (errorMessage.IndexOf("PASSWORD_HASH_INVALID") != -1)
+                {
+                    MessageBox.Show("Наданий хеш пароля недійсний");
+                }
+                else {
+                    MessageBox.Show(error.ToString());
+                }
                 return false;
             }
         }

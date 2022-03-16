@@ -19,6 +19,9 @@ using Brush = System.Windows.Media.Brush;
 using WindowsInput;
 using WindowsInput.Native;
 using System.Windows.Input;
+using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace EasyCaster_Alarm
 {
@@ -68,11 +71,20 @@ namespace EasyCaster_Alarm
         DispatcherTimer updateProcessListTimer = new DispatcherTimer();
         DispatcherTimer waitTimer = new DispatcherTimer();
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer ticker_timer = new DispatcherTimer();
+        DispatcherTimer config_timer = new DispatcherTimer();
 
         int keyWinCode1;
         int keyWinCode2;
         int keyWinCode3;
         int keyWinCode4;
+        int link_id = 0;
+        int link_count = 0;
+
+        string[] config_url = { "http://live-tv.od.ua/easycaster/alarm.json", "http://easycaster.tv/conf/alarm.json", "http://easycaster.net/conf/alarm.json" };
+        JObject program_config;
+
+        private static readonly HttpClient _httpClient = new HttpClient();
 
         public MainWindow()
         {
@@ -98,8 +110,9 @@ namespace EasyCaster_Alarm
         
         private void start()
         {
-            App.client.Update += Client_Update;
+            //App.client.Update += Client_Update;
 
+            GetProgramConfig();
             getActiveProcessNames();
 
             settings_block.Visibility = Visibility.Collapsed;
@@ -111,12 +124,19 @@ namespace EasyCaster_Alarm
             updateProcessListTimer.Tick += updateProcessList_Timer;
             updateProcessListTimer.Start();
 
+            ticker_timer.Tick += new EventHandler(LinkTimer_Tick);
+            ticker_timer.IsEnabled = false;
+
+            config_timer.Tick += new EventHandler(Config_update_timer_Tick);
+            config_timer.Interval = new TimeSpan(1, 0, 0);
+            config_timer.IsEnabled = true;
+
             void updateProcessList_Timer(object sender, EventArgs e)
             {
                 getActiveProcessNames();
             }
 
-            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Interval = TimeSpan.FromSeconds(30);
             timer.Tick += timer_Tick;
             timer.Start();
 
@@ -135,8 +155,8 @@ namespace EasyCaster_Alarm
                     await App.client.ConnectAsync();
                 }
 
-                var dialogs = await App.client.Messages_GetAllDialogs();
-                dialogs.CollectUsersChats(_users, _chats);
+                //var dialogs = await App.client.Messages_GetAllDialogs();
+                //dialogs.CollectUsersChats(_users, _chats);
             }
         }
 
@@ -145,11 +165,23 @@ namespace EasyCaster_Alarm
             if(updateProcessListTimer != null) updateProcessListTimer.Stop();
             if (waitTimer != null) waitTimer.Stop();
             if (timer != null) timer.Stop();
+            if (ticker_timer != null) ticker_timer.Stop();
+            if (config_timer != null) config_timer.Stop();
 
             isAlarm = false;
             App.logout();
 
             disableAll();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+                e.Handled = true;
+            }
+            catch (Exception) { }
         }
 
         private void pressKey(byte index)
@@ -208,6 +240,113 @@ namespace EasyCaster_Alarm
                     }
                 }
             }catch(Exception error) { }
+        }
+
+        public static async Task<string> Get(string url)
+        {
+            using (var result = await _httpClient.GetAsync(url))
+            {
+                string content = await result.Content.ReadAsStringAsync();
+                return content;
+            }
+        }
+
+        private void LinkTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (link_id >= link_count)
+                {
+                    link_id = 0;
+                }
+                string background, color;
+
+                background = program_config["ticker"][link_id]["background"].ToString();
+                color = program_config["ticker"][link_id]["textcolor"].ToString();
+
+                background = background != "" ? background : "#FFC9CFD6";
+                color = color != "" ? color : "#000000";
+
+                string text = program_config["ticker"][link_id]["text"].ToString();
+                int interval = (int)program_config["ticker"][link_id]["timer"];
+
+                BrushConverter bc = new BrushConverter();
+                ticker.Content = text;
+                try
+                {
+                    ticker_link.NavigateUri = new Uri(program_config["ticker"][link_id]["href"].ToString());
+                }
+                catch (Exception) { }
+                ticker.Background = (Brush)bc.ConvertFrom(background);
+                ticker.Foreground = (Brush)bc.ConvertFrom(color);
+                ticker_timer.Interval = new TimeSpan(0, 0, 0, 0, interval);
+                link_id++;
+            }
+            catch (Exception error)
+            {
+
+            }
+        }
+
+        public async void GetProgramConfig()
+        {
+            for (int i = 0; i < config_url.Length; i++)
+            {
+                JObject old_program_config = program_config;
+                JObject json = JObject.Parse("{}");
+                try
+                {
+                    program_config = JObject.Parse(await Get(config_url[i]));
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+
+                if (program_config.Count > 0)
+                {
+                    link_id = 0;
+                    link_count = program_config["ticker"].Count();
+
+
+                    if (link_count > 0)
+                    {
+                        try
+                        {
+                            string bgcolor = program_config["ticker"][link_id]["background"].ToString();
+                            string textcolor = program_config["ticker"][link_id]["textcolor"].ToString();
+                            string text = program_config["ticker"][link_id]["text"].ToString();
+
+                            ticker_timer.IsEnabled = true;
+                            ticker_timer.Interval = new TimeSpan(0, 0, 0, 0, (int)program_config["ticker"][link_id]["timer"]);
+
+                            ticker.Visibility = Visibility.Visible;
+                            ticker.Content = text;
+                            try
+                            {
+                                ticker_link.NavigateUri = new Uri(program_config["ticker"][link_id]["href"].ToString());
+                            }
+                            catch (Exception) { }
+                            BrushConverter bc = new BrushConverter();
+                            ticker.Background = (Brush)bc.ConvertFrom(bgcolor);
+                            ticker.Foreground = (Brush)bc.ConvertFrom(textcolor);
+                        }catch(Exception e) { }
+                        link_id++;
+                    }
+                    else
+                    {
+                        ticker_timer.IsEnabled = false;
+                        ticker.Visibility = Visibility.Hidden;
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        private void Config_update_timer_Tick(object sender, EventArgs e)
+        {
+            GetProgramConfig();
         }
 
         private void addAlarmLog(string message)

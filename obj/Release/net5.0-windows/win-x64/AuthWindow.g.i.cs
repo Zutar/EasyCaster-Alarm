@@ -144,7 +144,7 @@ namespace EasyCaster_Alarm {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EasyCaster-Alarm;V1.0.3.3;component/authwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.3.9;component/authwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\AuthWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

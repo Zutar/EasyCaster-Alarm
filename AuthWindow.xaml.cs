@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -93,11 +94,11 @@ namespace EasyCaster_Alarm
                 case "UKR":
                     dict.Source = new Uri("..\\Resources\\UKR.xaml", UriKind.Relative);
                     break;
-                case "ENG":
-                    dict.Source = new Uri("..\\Resources\\ENG.xaml", UriKind.Relative);
+                case "RUS":
+                    dict.Source = new Uri("..\\Resources\\RUS.xaml", UriKind.Relative);
                     break;
                 default:
-                    dict.Source = new Uri("..\\Resources\\RUS.xaml", UriKind.Relative);
+                    dict.Source = new Uri("..\\Resources\\UKR.xaml", UriKind.Relative);
                     break;
             }
 
@@ -138,6 +139,8 @@ namespace EasyCaster_Alarm
 
                 auth_phone.IsEnabled = true;
                 auth_password.IsEnabled = true;
+
+                auth_verification.Text = "";
 
                 App.logout();
             }

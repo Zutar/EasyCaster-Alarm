@@ -151,7 +151,15 @@
                     </MenuItem>
                 </Menu>
 
-                <StackPanel x:Name="alarm_block" Margin="25,5,25,0" Visibility="Hidden" Height="40">
+                <TextBlock FontWeight="Bold" FontSize="18" Cursor="Hand" Margin="25,5,25,5">
+                    <Hyperlink Name="ticker_link" NavigateUri="http://live-tv.net.ua/soft/easycaster" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White">
+                        <InlineUIContainer FontWeight="Normal" Foreground="Black">
+                            <Label x:Name="ticker" VerticalAlignment="Center" Background="#FFC9CFD6" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Width="633"/>
+                        </InlineUIContainer>
+                </Hyperlink>
+                </TextBlock>
+
+                <StackPanel x:Name="alarm_block" Margin="25,0,25,0" Visibility="Hidden" Height="40">
                     <Border CornerRadius="5" BorderBrush="#FFC9CFD6" BorderThickness="1" Background="#FFC9CFD6" MinHeight="55" >
                         <Grid>
                             <Label x:Name="alarm_text" Foreground="#FF464646" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{DynamicResource alarmMessage}" Height="39" VerticalAlignment="Top" />

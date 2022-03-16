@@ -1,10 +1,3 @@
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.exe
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.deps.json
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.runtimeconfig.json
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.runtimeconfig.dev.json
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.dll
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\ref\EasyCaster-Alarm.dll
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster-Alarm.pdb
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\FontAwesome.WPF.dll
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\WTelegramClient.dll
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\Microsoft.CSharp.dll
@@ -512,15 +505,12 @@ F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\Help.g.cs
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\MainWindow.g.cs
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\App.g.cs
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm_MarkupCompile.cache
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm_MarkupCompile.lref
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\App.baml
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\About.baml
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\AuthWindow.baml
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\Feedback.baml
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\Help.baml
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\MainWindow.baml
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.g.resources
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster_Alarm.Properties.Resources.resources
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.csproj.GenerateResource.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.GeneratedMSBuildEditorConfig.editorconfig
@@ -528,12 +518,22 @@ F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.AssemblyInfo.cs
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.csproj.CoreCompileInputs.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.csproj.CopyComplete
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.dll
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\ref\EasyCaster-Alarm.dll
-F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.pdb
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.genruntimeconfig.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster-Alarm.csproj.AssemblyReference.cache
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\WindowsInput.dll
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\System.Management.dll
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\ExceptionWindow.g.cs
 F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\ExceptionWindow.baml
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.exe
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.deps.json
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.runtimeconfig.json
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.runtimeconfig.dev.json
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\ref\EasyCaster Alarm.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\bin\Release\net5.0-windows\win-x64\EasyCaster Alarm.pdb
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster Alarm_MarkupCompile.cache
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster Alarm_MarkupCompile.lref
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster Alarm.g.resources
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster Alarm.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\ref\EasyCaster Alarm.dll
+F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\obj\Release\net5.0-windows\win-x64\EasyCaster Alarm.pdb

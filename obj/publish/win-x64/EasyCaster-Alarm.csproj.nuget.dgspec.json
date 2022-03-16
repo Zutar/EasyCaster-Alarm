@@ -5,10 +5,10 @@
   },
   "projects": {
     "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj": {
-      "version": "1.0.33",
+      "version": "1.0.39",
       "restore": {
         "projectUniqueName": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
-        "projectName": "EasyCaster-Alarm",
+        "projectName": "EasyCaster Alarm",
         "projectPath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
         "packagesPath": "C:\\Users\\Леонид\\.nuget\\packages\\",
         "outputPath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\obj\\publish\\win-x64\\",
