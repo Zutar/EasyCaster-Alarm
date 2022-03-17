@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "EasyCaster Alarm/1.0.39": {
+      "EasyCaster Alarm/1.0.42": {
         "dependencies": {
           "FontAwesome.WPF": "4.7.0.9",
           "InputSimulator": "1.0.4",
@@ -95,7 +95,7 @@
     }
   },
   "libraries": {
-    "EasyCaster Alarm/1.0.39": {
+    "EasyCaster Alarm/1.0.42": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

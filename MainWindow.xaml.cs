@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -28,7 +27,7 @@ namespace EasyCaster_Alarm
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public class LogItem
     {
         public string timestamp { get; set; }
@@ -108,9 +107,9 @@ namespace EasyCaster_Alarm
             }
         }
         
-        private void start()
+        private async void start()
         {
-            //App.client.Update += Client_Update;
+            App.client.Update += Client_Update;
 
             GetProgramConfig();
             getActiveProcessNames();

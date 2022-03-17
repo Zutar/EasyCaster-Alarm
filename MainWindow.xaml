@@ -249,7 +249,11 @@
                                         </Button>
                                         <StackPanel Margin="64,0,167,0" Grid.Column="1" HorizontalAlignment="Left">
                                             <Label Content="{DynamicResource settingsKeyLabel1}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
-                                            <TextBox x:Name="action_key_press_1" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyUp="action_key_press_1_KeyUp" IsEnabled="False" LostFocus="action_key_press_1_LostFocus"/>
+                                            <TextBox x:Name="action_key_press_1" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyUp="action_key_press_1_KeyUp" IsEnabled="False" LostFocus="action_key_press_1_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
                                         </StackPanel>
                                     </Grid>
                                     <Grid Height="45">
@@ -270,7 +274,11 @@
                                         </Button>
                                         <StackPanel Margin="64,0,191,5" Grid.Column="1">
                                             <Label Content="{DynamicResource settingsKeyLabel2}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
-                                            <TextBox x:Name="action_key_press_2" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_2_KeyUp" LostFocus="action_key_press_2_LostFocus" HorizontalAlignment="Left"/>
+                                            <TextBox x:Name="action_key_press_2" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_2_KeyUp" LostFocus="action_key_press_2_LostFocus" HorizontalAlignment="Left">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
                                         </StackPanel>
                                     </Grid>
                                     <Grid Height="45">
@@ -291,7 +299,11 @@
                                         </Button>
                                         <StackPanel Margin="64,0,167,5" Grid.Column="1">
                                             <Label Content="{DynamicResource settingsKeyLabel3}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
-                                            <TextBox x:Name="action_key_press_3" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_3_KeyUp" LostFocus="action_key_press_3_LostFocus" HorizontalAlignment="Left"/>
+                                            <TextBox x:Name="action_key_press_3" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_3_KeyUp" LostFocus="action_key_press_3_LostFocus" HorizontalAlignment="Left">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
                                         </StackPanel>
                                     </Grid>
                                     <Grid Height="45">
@@ -312,7 +324,11 @@
                                         </Button>
                                         <StackPanel Margin="64,0,167,5" Grid.Column="1" HorizontalAlignment="Left">
                                             <Label Content="{DynamicResource settingsKeyLabel4}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
-                                            <TextBox x:Name="action_key_press_4" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_4_KeyUp" LostFocus="action_key_press_4_LostFocus"/>
+                                            <TextBox x:Name="action_key_press_4" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_4_KeyUp" LostFocus="action_key_press_4_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>

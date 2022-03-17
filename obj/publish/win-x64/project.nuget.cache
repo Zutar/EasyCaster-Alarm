@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UK0ny1yTwaVDwihpXIgP8XLHqtU3HZJ3XHQS59Kvpqy0WxxqlVCQZ/yc3bZv/54Q92JSykLJcvwziyOS8+UShw==",
+  "dgSpecHash": "x9A6xBxNYpyIvPa5dtfJ1We3KHANkBviOdZWkwc6VQDjIS1XwfuEKQrmUjlhcdp+ossPn4PCn4SBoGufLk0aZg==",
   "success": true,
   "projectFilePath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Леонид\\.nuget\\packages\\inputsimulator\\1.0.4\\inputsimulator.1.0.4.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Леонид\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512",
     "C:\\Users\\Леонид\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",

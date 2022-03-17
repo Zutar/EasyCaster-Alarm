@@ -67,6 +67,9 @@ namespace EasyCaster_Alarm
                 if (errorMessage.IndexOf("USER_DEACTIVATED_BAN") != -1)
                 {
                     MessageBox.Show("Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram");
+                }else if (errorMessage.IndexOf("because it is being used by another process") != -1)
+                {
+                    MessageBox.Show("Програма вже запущена.Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше");
                 }
                 else
                 {
@@ -88,7 +91,7 @@ namespace EasyCaster_Alarm
             try
             {
                 var my = await client.LoginUserIfNeeded();
-                App.client.MaxAutoReconnects = 10;
+                client.MaxAutoReconnects = 10;
 
                 return true;
             }catch(Exception error)

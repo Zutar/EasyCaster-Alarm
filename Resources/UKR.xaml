@@ -58,6 +58,7 @@
     <system:String x:Key="settingsAppLogout">Вийти з облікового запису</system:String>
     <system:String x:Key="settingsSaveAlert">Для застосування нового конфіга перезапустіть програму!</system:String>
     <system:String x:Key="startDelay">Затримка початку прийому повідомлень під час старту програми (мс)</system:String>
+    <system:String x:Key="settingsKeyTip">Виберіть поле та натисніть на потрібну клавішу (у цій версії комбінації клавіш не підтримуються)</system:String>
 
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
