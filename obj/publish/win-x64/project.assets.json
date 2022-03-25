@@ -561,7 +561,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.42",
+    "version": "1.0.44",
     "restore": {
       "projectUniqueName": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
       "projectName": "EasyCaster Alarm",

@@ -8,11 +8,11 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <StartupObject>EasyCaster_Alarm.App</StartupObject>
     <ApplicationIcon>Resources\Icona.ico</ApplicationIcon>
-    <Version>1.0.42</Version>
+    <Version>1.0.44</Version>
     <Company>live-tv</Company>
     <Copyright>Copyright ©  2022</Copyright>
-    <AssemblyVersion>1.0.4.2</AssemblyVersion>
-    <FileVersion>1.0.4.2</FileVersion>
+    <AssemblyVersion>1.0.4.4</AssemblyVersion>
+    <FileVersion>1.0.4.4</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <SignAssembly>false</SignAssembly>
     <AssemblyName>EasyCaster Alarm</AssemblyName>

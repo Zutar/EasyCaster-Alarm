@@ -78,7 +78,7 @@ namespace EasyCaster_Alarm {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.4.2;component/exceptionwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.4.4;component/exceptionwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ExceptionWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

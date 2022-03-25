@@ -53,6 +53,7 @@ namespace EasyCaster_Alarm
         static extern void SwitchToThisWindow(IntPtr hWnd, bool turnOn);
 
         static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        static readonly IntPtr HWND_TOP = new IntPtr(0);
         const UInt32 SWP_NOSIZE = 0x0001;
         const UInt32 SWP_NOMOVE = 0x0002;
         const UInt32 SWP_SHOWWINDOW = 0x0040;
@@ -228,9 +229,10 @@ namespace EasyCaster_Alarm
                     void app_Timer(object sender, EventArgs e)
                     {
                         ShowWindow(h, 9);
-                        SetForegroundWindow(h);
-                        SetWindowPos(h, HWND_TOPMOST, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
+                        //SetForegroundWindow(h);
+                        SetWindowPos(h, HWND_TOP, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
                         SwitchToThisWindow(h, true);
+                        //ShowWindow(h, 0);
 
                         InputSimulator s = new InputSimulator();
                         s.Keyboard.KeyPress((VirtualKeyCode)keyWinCode);
