@@ -1,5 +1,5 @@
 ﻿EasyCaster Alarm
-1.0.4.4
+1.0.4.5
 
 winexe
 C#
@@ -16,5 +16,5 @@ F:\Git\live-tv\EasyCaster-Alarm\EasyCaster-Alarm\App.xaml
 2071022797384
 About.xaml;AuthWindow.xaml;ExceptionWindow.xaml;Feedback.xaml;Help.xaml;MainWindow.xaml;Resources\RUS.xaml;Resources\UKR.xaml;
 
-True
+False
 

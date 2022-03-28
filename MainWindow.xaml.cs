@@ -229,10 +229,8 @@ namespace EasyCaster_Alarm
                     void app_Timer(object sender, EventArgs e)
                     {
                         ShowWindow(h, 9);
-                        //SetForegroundWindow(h);
                         SetWindowPos(h, HWND_TOP, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
                         SwitchToThisWindow(h, true);
-                        //ShowWindow(h, 0);
 
                         InputSimulator s = new InputSimulator();
                         s.Keyboard.KeyPress((VirtualKeyCode)keyWinCode);
@@ -515,12 +513,16 @@ namespace EasyCaster_Alarm
         private void lang_rus_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.lang = "RUS";
+            Properties.Settings.Default.Save();
+
             AuthWindow.SetLanguageDictionary();
         }
 
         private void lang_ukr_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.lang = "UKR";
+            Properties.Settings.Default.Save();
+
             AuthWindow.SetLanguageDictionary();
         }
 

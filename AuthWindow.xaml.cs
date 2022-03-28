@@ -20,6 +20,7 @@ namespace EasyCaster_Alarm
         public AuthWindow()
         {
             InitializeComponent();
+            SetLanguageDictionary();
         }
 
         private void setSavedSettings()
