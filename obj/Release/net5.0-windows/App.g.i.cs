@@ -60,7 +60,7 @@ namespace EasyCaster_Alarm {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.4.5;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.4.7;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

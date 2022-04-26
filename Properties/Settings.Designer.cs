@@ -382,5 +382,221 @@ namespace EasyCaster_Alarm.Properties {
                 this["keyWinCode4"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPress5 {
+            get {
+                return ((string)(this["actionKeyPress5"]));
+            }
+            set {
+                this["actionKeyPress5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPress6 {
+            get {
+                return ((string)(this["actionKeyPress6"]));
+            }
+            set {
+                this["actionKeyPress6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPress7 {
+            get {
+                return ((string)(this["actionKeyPress7"]));
+            }
+            set {
+                this["actionKeyPress7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPress8 {
+            get {
+                return ((string)(this["actionKeyPress8"]));
+            }
+            set {
+                this["actionKeyPress8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode5 {
+            get {
+                return ((int)(this["keyWinCode5"]));
+            }
+            set {
+                this["keyWinCode5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode6 {
+            get {
+                return ((int)(this["keyWinCode6"]));
+            }
+            set {
+                this["keyWinCode6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode7 {
+            get {
+                return ((int)(this["keyWinCode7"]));
+            }
+            set {
+                this["keyWinCode7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int keyWinCode8 {
+            get {
+                return ((int)(this["keyWinCode8"]));
+            }
+            set {
+                this["keyWinCode8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyException5 {
+            get {
+                return ((string)(this["actionKeyException5"]));
+            }
+            set {
+                this["actionKeyException5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPhrase5 {
+            get {
+                return ((string)(this["actionKeyPhrase5"]));
+            }
+            set {
+                this["actionKeyPhrase5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPhrase6 {
+            get {
+                return ((string)(this["actionKeyPhrase6"]));
+            }
+            set {
+                this["actionKeyPhrase6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPhrase7 {
+            get {
+                return ((string)(this["actionKeyPhrase7"]));
+            }
+            set {
+                this["actionKeyPhrase7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyPhrase8 {
+            get {
+                return ((string)(this["actionKeyPhrase8"]));
+            }
+            set {
+                this["actionKeyPhrase8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionAppList5 {
+            get {
+                return ((string)(this["actionAppList5"]));
+            }
+            set {
+                this["actionAppList5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionAppList6 {
+            get {
+                return ((string)(this["actionAppList6"]));
+            }
+            set {
+                this["actionAppList6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionAppList7 {
+            get {
+                return ((string)(this["actionAppList7"]));
+            }
+            set {
+                this["actionAppList7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionAppList8 {
+            get {
+                return ((string)(this["actionAppList8"]));
+            }
+            set {
+                this["actionAppList8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string messageFolder {
+            get {
+                return ((string)(this["messageFolder"]));
+            }
+            set {
+                this["messageFolder"] = value;
+            }
+        }
     }
 }

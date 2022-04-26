@@ -37,23 +37,37 @@
     <system:String x:Key="settingsKeyTitle2">Ключевая фраза #2</system:String>
     <system:String x:Key="settingsKeyTitle3">Ключевая фраза #3</system:String>
     <system:String x:Key="settingsKeyTitle4">Ключевая фраза #4</system:String>
+    <system:String x:Key="settingsKeyTitle5">Ключевая фраза #5</system:String>
+    <system:String x:Key="settingsKeyTitle6">Ключевая фраза #6</system:String>
+    <system:String x:Key="settingsKeyTitle7">Ключевая фраза #7</system:String>
+    <system:String x:Key="settingsKeyTitle8">Ключевая фраза #8</system:String>
     <system:String x:Key="settingsKeyApp1">Приложение #1</system:String>
     <system:String x:Key="settingsKeyApp2">Приложение #2</system:String>
     <system:String x:Key="settingsKeyApp3">Приложение #3</system:String>
     <system:String x:Key="settingsKeyApp4">Приложение #4</system:String>
+    <system:String x:Key="settingsKeyApp5">Приложение #5</system:String>
+    <system:String x:Key="settingsKeyApp6">Приложение #6</system:String>
+    <system:String x:Key="settingsKeyApp7">Приложение #7</system:String>
+    <system:String x:Key="settingsKeyApp8">Приложение #8</system:String>
     <system:String x:Key="settingsKeyLabel1">Кнопка для нажатия #1</system:String>
     <system:String x:Key="settingsKeyLabel2">Кнопка для нажатия #2</system:String>
     <system:String x:Key="settingsKeyLabel3">Кнопка для нажатия #3</system:String>
     <system:String x:Key="settingsKeyLabel4">Кнопка для нажатия #4</system:String>
+    <system:String x:Key="settingsKeyLabel5">Кнопка для нажатия #5</system:String>
+    <system:String x:Key="settingsKeyLabel6">Кнопка для нажатия #6</system:String>
+    <system:String x:Key="settingsKeyLabel7">Кнопка для нажатия #7</system:String>
+    <system:String x:Key="settingsKeyLabel8">Кнопка для нажатия #8</system:String>
     <system:String x:Key="settingsExceptionTitle">Исключения</system:String>
     <system:String x:Key="settingsExceptionTitle1">Исключение #1</system:String>
     <system:String x:Key="settingsExceptionTitle2">Исключение #2</system:String>
     <system:String x:Key="settingsExceptionTitle3">Исключение #3</system:String>
     <system:String x:Key="settingsExceptionTitle4">Исключение #4</system:String>
+    <system:String x:Key="settingsExceptionTitle5">Исключение #5</system:String>
     <system:String x:Key="settingsAppLogout">Выйти из аккаунта</system:String>
     <system:String x:Key="settingsSaveAlert">Для применения нового конфига перезапустите программу!</system:String>
     <system:String x:Key="startDelay">Задержка начала приема сообщений при старте программы (мс)</system:String>
     <system:String x:Key="settingsKeyTip">Выберите поле и нажмите на необходимую клавишу (в данной версии комбинации клавиш не поддерживаются)</system:String>
+    <system:String x:Key="messageFolder">Запись сообщений</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">История</system:String>

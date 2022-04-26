@@ -78,6 +78,10 @@ namespace EasyCaster_Alarm
         int keyWinCode2;
         int keyWinCode3;
         int keyWinCode4;
+        int keyWinCode5;
+        int keyWinCode6;
+        int keyWinCode7;
+        int keyWinCode8;
         int link_id = 0;
         int link_count = 0;
 
@@ -136,7 +140,7 @@ namespace EasyCaster_Alarm
                 getActiveProcessNames();
             }
 
-            timer.Interval = TimeSpan.FromSeconds(30);
+            timer.Interval = TimeSpan.FromSeconds(5);
             timer.Tick += timer_Tick;
             timer.Start();
 
@@ -154,9 +158,6 @@ namespace EasyCaster_Alarm
                     status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
                     await App.client.ConnectAsync();
                 }
-
-                //var dialogs = await App.client.Messages_GetAllDialogs();
-                //dialogs.CollectUsersChats(_users, _chats);
             }
         }
 
@@ -211,6 +212,26 @@ namespace EasyCaster_Alarm
                 {
                     applicationName = processAppNames[action_app_list_4.SelectedIndex];
                     keyWinCode = keyWinCode4;
+                }
+                else if (index == 5)
+                {
+                    applicationName = processAppNames[action_app_list_5.SelectedIndex];
+                    keyWinCode = keyWinCode5;
+                }
+                else if (index == 6)
+                {
+                    applicationName = processAppNames[action_app_list_6.SelectedIndex];
+                    keyWinCode = keyWinCode6;
+                }
+                else if (index == 7)
+                {
+                    applicationName = processAppNames[action_app_list_7.SelectedIndex];
+                    keyWinCode = keyWinCode7;
+                }
+                else if (index == 8)
+                {
+                    applicationName = processAppNames[action_app_list_8.SelectedIndex];
+                    keyWinCode = keyWinCode8;
                 }
 
 
@@ -362,7 +383,7 @@ namespace EasyCaster_Alarm
             }
         }
 
-        private void doAlarm(string message, byte index)
+        private void doAlarm(string message, byte index, string targetMessage)
         {
             alarm_block.Visibility = Visibility.Visible;
             isAlarm = true;
@@ -374,6 +395,7 @@ namespace EasyCaster_Alarm
             }
 
             addAlarmLog(message);
+            writeToFile(targetMessage, index);
             pressKey(index);
 
             waitTimer.Interval = TimeSpan.FromSeconds(10);
@@ -388,6 +410,13 @@ namespace EasyCaster_Alarm
             }
         }
 
+        private void writeToFile(string message, byte index)
+        {
+            string path = messageFolder.Text;
+            if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+            File.WriteAllText(path + "\\" + index + ".txt", message);
+        }
+
         private void getActiveProcessNames()
         {
             processAppNames.Clear();
@@ -398,6 +427,10 @@ namespace EasyCaster_Alarm
             action_app_list_2.Items.Clear();
             action_app_list_3.Items.Clear();
             action_app_list_4.Items.Clear();
+            action_app_list_5.Items.Clear();
+            action_app_list_6.Items.Clear();
+            action_app_list_7.Items.Clear();
+            action_app_list_8.Items.Clear();
 
             foreach (Process p in processes)
             {
@@ -412,6 +445,10 @@ namespace EasyCaster_Alarm
                     action_app_list_2.Items.Add(processTitle);
                     action_app_list_3.Items.Add(processTitle);
                     action_app_list_4.Items.Add(processTitle);
+                    action_app_list_5.Items.Add(processTitle);
+                    action_app_list_6.Items.Add(processTitle);
+                    action_app_list_7.Items.Add(processTitle);
+                    action_app_list_8.Items.Add(processTitle);
                 }
             }
 
@@ -419,6 +456,10 @@ namespace EasyCaster_Alarm
             action_app_list_2.Items.Refresh();
             action_app_list_3.Items.Refresh();
             action_app_list_4.Items.Refresh();
+            action_app_list_5.Items.Refresh();
+            action_app_list_6.Items.Refresh();
+            action_app_list_7.Items.Refresh();
+            action_app_list_8.Items.Refresh();
 
             try
             {
@@ -426,6 +467,10 @@ namespace EasyCaster_Alarm
                 action_app_list_2.SelectedItem = Properties.Settings.Default.actionAppList2;
                 action_app_list_3.SelectedItem = Properties.Settings.Default.actionAppList3;
                 action_app_list_4.SelectedItem = Properties.Settings.Default.actionAppList4;
+                action_app_list_5.SelectedItem = Properties.Settings.Default.actionAppList5;
+                action_app_list_6.SelectedItem = Properties.Settings.Default.actionAppList6;
+                action_app_list_7.SelectedItem = Properties.Settings.Default.actionAppList7;
+                action_app_list_8.SelectedItem = Properties.Settings.Default.actionAppList8;
             }
             catch (Exception e) { }
         }
@@ -447,16 +492,25 @@ namespace EasyCaster_Alarm
                 action_key_phrase_2.Text = Properties.Settings.Default.actionKeyPhrase2;
                 action_key_phrase_3.Text = Properties.Settings.Default.actionKeyPhrase3;
                 action_key_phrase_4.Text = Properties.Settings.Default.actionKeyPhrase4;
+                action_key_phrase_5.Text = Properties.Settings.Default.actionKeyPhrase5;
+                action_key_phrase_6.Text = Properties.Settings.Default.actionKeyPhrase6;
+                action_key_phrase_7.Text = Properties.Settings.Default.actionKeyPhrase7;
+                action_key_phrase_8.Text = Properties.Settings.Default.actionKeyPhrase8;
 
                 action_key_press_1.Text = Properties.Settings.Default.actionKeyPress1;
                 action_key_press_2.Text = Properties.Settings.Default.actionKeyPress2;
                 action_key_press_3.Text = Properties.Settings.Default.actionKeyPress3;
                 action_key_press_4.Text = Properties.Settings.Default.actionKeyPress4;
+                action_key_press_5.Text = Properties.Settings.Default.actionKeyPress5;
+                action_key_press_6.Text = Properties.Settings.Default.actionKeyPress6;
+                action_key_press_7.Text = Properties.Settings.Default.actionKeyPress7;
+                action_key_press_8.Text = Properties.Settings.Default.actionKeyPress8;
 
                 action_key_exception_1.Text = Properties.Settings.Default.actionKeyException1;
                 action_key_exception_2.Text = Properties.Settings.Default.actionKeyException2;
                 action_key_exception_3.Text = Properties.Settings.Default.actionKeyException3;
                 action_key_exception_4.Text = Properties.Settings.Default.actionKeyException4;
+                action_key_exception_5.Text = Properties.Settings.Default.actionKeyException5;
 
                 try
                 {
@@ -464,6 +518,10 @@ namespace EasyCaster_Alarm
                     action_app_list_2.SelectedItem = Properties.Settings.Default.actionAppList2;
                     action_app_list_3.SelectedItem = Properties.Settings.Default.actionAppList3;
                     action_app_list_4.SelectedItem = Properties.Settings.Default.actionAppList4;
+                    action_app_list_5.SelectedItem = Properties.Settings.Default.actionAppList5;
+                    action_app_list_6.SelectedItem = Properties.Settings.Default.actionAppList6;
+                    action_app_list_7.SelectedItem = Properties.Settings.Default.actionAppList7;
+                    action_app_list_8.SelectedItem = Properties.Settings.Default.actionAppList8;
                 }
                 catch(Exception e) { }
 
@@ -471,6 +529,13 @@ namespace EasyCaster_Alarm
                 keyWinCode2 = Properties.Settings.Default.keyWinCode2;
                 keyWinCode3 = Properties.Settings.Default.keyWinCode3;
                 keyWinCode4 = Properties.Settings.Default.keyWinCode4;
+                keyWinCode5 = Properties.Settings.Default.keyWinCode5;
+                keyWinCode6 = Properties.Settings.Default.keyWinCode6;
+                keyWinCode7 = Properties.Settings.Default.keyWinCode7;
+                keyWinCode8 = Properties.Settings.Default.keyWinCode8;
+
+                string messageFolderPath = Properties.Settings.Default.messageFolder;
+                messageFolder.Text = messageFolderPath == "" ? Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\alarm" : messageFolderPath;
             }
             catch(Exception error)
             {
@@ -585,21 +650,36 @@ namespace EasyCaster_Alarm
             action_key_phrase_2.IsEnabled = true;
             action_key_phrase_3.IsEnabled = true;
             action_key_phrase_4.IsEnabled = true;
+            action_key_phrase_5.IsEnabled = true;
+            action_key_phrase_6.IsEnabled = true;
+            action_key_phrase_7.IsEnabled = true;
+            action_key_phrase_8.IsEnabled = true;
 
             action_app_list_1.IsEnabled = true;
             action_app_list_2.IsEnabled = true;
             action_app_list_3.IsEnabled = true;
             action_app_list_4.IsEnabled = true;
+            action_app_list_5.IsEnabled = true;
+            action_app_list_6.IsEnabled = true;
+            action_app_list_7.IsEnabled = true;
+            action_app_list_8.IsEnabled = true;
 
             action_key_press_1.IsEnabled = true;
             action_key_press_2.IsEnabled = true;
             action_key_press_3.IsEnabled = true;
             action_key_press_4.IsEnabled = true;
+            action_key_press_5.IsEnabled = true;
+            action_key_press_6.IsEnabled = true;
+            action_key_press_7.IsEnabled = true;
+            action_key_press_8.IsEnabled = true;
 
             action_key_exception_1.IsEnabled = true;
             action_key_exception_2.IsEnabled = true;
             action_key_exception_3.IsEnabled = true;
             action_key_exception_4.IsEnabled = true;
+            action_key_exception_5.IsEnabled = true;
+
+            messageFolder.IsEnabled = true;
         }
         private void disableAll()
         {
@@ -616,21 +696,36 @@ namespace EasyCaster_Alarm
             action_key_phrase_2.IsEnabled = false;
             action_key_phrase_3.IsEnabled = false;
             action_key_phrase_4.IsEnabled = false;
+            action_key_phrase_5.IsEnabled = false;
+            action_key_phrase_6.IsEnabled = false;
+            action_key_phrase_7.IsEnabled = false;
+            action_key_phrase_8.IsEnabled = false;
 
             action_app_list_1.IsEnabled = false;
             action_app_list_2.IsEnabled = false;
             action_app_list_3.IsEnabled = false;
             action_app_list_4.IsEnabled = false;
+            action_app_list_5.IsEnabled = false;
+            action_app_list_6.IsEnabled = false;
+            action_app_list_7.IsEnabled = false;
+            action_app_list_8.IsEnabled = false;
 
             action_key_press_1.IsEnabled = false;
             action_key_press_2.IsEnabled = false;
             action_key_press_3.IsEnabled = false;
             action_key_press_4.IsEnabled = false;
+            action_key_press_5.IsEnabled = false;
+            action_key_press_6.IsEnabled = false;
+            action_key_press_7.IsEnabled = false;
+            action_key_press_8.IsEnabled = false;
 
             action_key_exception_1.IsEnabled = false;
             action_key_exception_2.IsEnabled = false;
             action_key_exception_3.IsEnabled = false;
             action_key_exception_4.IsEnabled = false;
+            action_key_exception_5.IsEnabled = false;
+
+            messageFolder.IsEnabled = false;
         }
         private void settings_save_Click(object sender, RoutedEventArgs e)
         {
@@ -655,26 +750,45 @@ namespace EasyCaster_Alarm
             Properties.Settings.Default.actionKeyPhrase2 = action_key_phrase_2.Text;
             Properties.Settings.Default.actionKeyPhrase3 = action_key_phrase_3.Text;
             Properties.Settings.Default.actionKeyPhrase4 = action_key_phrase_4.Text;
+            Properties.Settings.Default.actionKeyPhrase5 = action_key_phrase_5.Text;
+            Properties.Settings.Default.actionKeyPhrase6 = action_key_phrase_6.Text;
+            Properties.Settings.Default.actionKeyPhrase7 = action_key_phrase_7.Text;
+            Properties.Settings.Default.actionKeyPhrase8 = action_key_phrase_8.Text;
 
             Properties.Settings.Default.actionAppList1 = action_app_list_1.Text;
             Properties.Settings.Default.actionAppList2 = action_app_list_2.Text;
             Properties.Settings.Default.actionAppList3 = action_app_list_3.Text;
             Properties.Settings.Default.actionAppList4 = action_app_list_4.Text;
+            Properties.Settings.Default.actionAppList5 = action_app_list_5.Text;
+            Properties.Settings.Default.actionAppList6 = action_app_list_6.Text;
+            Properties.Settings.Default.actionAppList7 = action_app_list_7.Text;
+            Properties.Settings.Default.actionAppList8 = action_app_list_8.Text;
 
             Properties.Settings.Default.actionKeyPress1 = action_key_press_1.Text;
             Properties.Settings.Default.actionKeyPress2 = action_key_press_2.Text;
             Properties.Settings.Default.actionKeyPress3 = action_key_press_3.Text;
             Properties.Settings.Default.actionKeyPress4 = action_key_press_4.Text;
+            Properties.Settings.Default.actionKeyPress5 = action_key_press_5.Text;
+            Properties.Settings.Default.actionKeyPress6 = action_key_press_6.Text;
+            Properties.Settings.Default.actionKeyPress7 = action_key_press_7.Text;
+            Properties.Settings.Default.actionKeyPress8 = action_key_press_8.Text;
 
             Properties.Settings.Default.actionKeyException1 = action_key_exception_1.Text;
             Properties.Settings.Default.actionKeyException2 = action_key_exception_2.Text;
             Properties.Settings.Default.actionKeyException3 = action_key_exception_3.Text;
             Properties.Settings.Default.actionKeyException4 = action_key_exception_4.Text;
+            Properties.Settings.Default.actionKeyException5 = action_key_exception_5.Text;
 
             Properties.Settings.Default.keyWinCode1 = keyWinCode1;
             Properties.Settings.Default.keyWinCode2 = keyWinCode2;
             Properties.Settings.Default.keyWinCode3 = keyWinCode3;
             Properties.Settings.Default.keyWinCode4 = keyWinCode4;
+            Properties.Settings.Default.keyWinCode5 = keyWinCode5;
+            Properties.Settings.Default.keyWinCode6 = keyWinCode6;
+            Properties.Settings.Default.keyWinCode7 = keyWinCode7;
+            Properties.Settings.Default.keyWinCode8 = keyWinCode8;
+
+            Properties.Settings.Default.messageFolder = messageFolder.Text;
 
             Properties.Settings.Default.Save();
         }
@@ -881,8 +995,9 @@ namespace EasyCaster_Alarm
             string exception2 = action_key_exception_2.Text.ToLower().Trim();
             string exception3 = action_key_exception_3.Text.ToLower().Trim();
             string exception4 = action_key_exception_4.Text.ToLower().Trim();
+            string exception5 = action_key_exception_5.Text.ToLower().Trim();
 
-            List<string> exceptions = new List<string> { exception1, exception2, exception3, exception4 };
+            List<string> exceptions = new List<string> { exception1, exception2, exception3, exception4, exception5 };
 
             for(int i = 0; i < exceptions.Count; i++)
             {
@@ -905,6 +1020,10 @@ namespace EasyCaster_Alarm
             string keyPhrase2 = action_key_phrase_2.Text.ToLower().Trim();
             string keyPhrase3 = action_key_phrase_3.Text.ToLower().Trim();
             string keyPhrase4 = action_key_phrase_4.Text.ToLower().Trim();
+            string keyPhrase5 = action_key_phrase_5.Text.ToLower().Trim();
+            string keyPhrase6 = action_key_phrase_6.Text.ToLower().Trim();
+            string keyPhrase7 = action_key_phrase_7.Text.ToLower().Trim();
+            string keyPhrase8 = action_key_phrase_8.Text.ToLower().Trim();
 
             string[] mainChannelLinkArray = mainChannelLink.Split('/');
             string[] testChannelLinkArray = testChannelLink.Split('/');
@@ -921,19 +1040,35 @@ namespace EasyCaster_Alarm
             {
                 if (keyPhrase1 != "" && message.IndexOf(keyPhrase1) != -1)
                 {
-                    doAlarm(keyPhrase1, 1);
+                    doAlarm(keyPhrase1, 1, message);
                 }
                 else if (keyPhrase2 != "" &&  message.IndexOf(keyPhrase2) != -1)
                 {
-                    doAlarm(keyPhrase2, 2);
+                    doAlarm(keyPhrase2, 2, message);
                 }
                 else if (keyPhrase3 != "" &&  message.IndexOf(keyPhrase3) != -1)
                 {
-                    doAlarm(keyPhrase3, 3);
+                    doAlarm(keyPhrase3, 3, message);
                 }
                 else if (keyPhrase4 != "" &&  message.IndexOf(keyPhrase4) != -1)
                 {
-                    doAlarm(keyPhrase4, 4);
+                    doAlarm(keyPhrase4, 4, message);
+                }
+                else if (keyPhrase5 != "" && message.IndexOf(keyPhrase5) != -1)
+                {
+                    doAlarm(keyPhrase5, 5, message);
+                }
+                else if (keyPhrase6 != "" && message.IndexOf(keyPhrase6) != -1)
+                {
+                    doAlarm(keyPhrase6, 6, message);
+                }
+                else if (keyPhrase7 != "" && message.IndexOf(keyPhrase7) != -1)
+                {
+                    doAlarm(keyPhrase7, 7, message);
+                }
+                else if (keyPhrase8 != "" && message.IndexOf(keyPhrase8) != -1)
+                {
+                    doAlarm(keyPhrase8, 8, message);
                 }
             }
         }
@@ -1086,6 +1221,144 @@ namespace EasyCaster_Alarm
         private void app_autoauth_Click(object sender, RoutedEventArgs e)
         {
             activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_exception_5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_exception_5.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_test_5_Click(object sender, RoutedEventArgs e)
+        {
+            pressKey(5);
+        }
+
+        private void action_key_test_6_Click(object sender, RoutedEventArgs e)
+        {
+            pressKey(6);
+        }
+
+        private void action_key_test_7_Click(object sender, RoutedEventArgs e)
+        {
+            pressKey(7);
+        }
+
+        private void action_key_test_8_Click(object sender, RoutedEventArgs e)
+        {
+            pressKey(8);
+        }
+
+        private void action_app_list_5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_app_list_5.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_app_list_6_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_app_list_6.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_app_list_7_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_app_list_7.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_app_list_8_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_app_list_8.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_press_5_KeyUp(object sender, KeyEventArgs e)
+        {
+            string keyName = e.Key.ToString().ToUpper();
+            keyWinCode5 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
+            action_key_press_5.Text = getCurrectKeyName(keyName);
+        }
+
+        private void action_key_press_6_KeyUp(object sender, KeyEventArgs e)
+        {
+            string keyName = e.Key.ToString().ToUpper();
+            keyWinCode6 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
+            action_key_press_6.Text = getCurrectKeyName(keyName);
+        }
+
+        private void action_key_press_7_KeyUp(object sender, KeyEventArgs e)
+        {
+            string keyName = e.Key.ToString().ToUpper();
+            keyWinCode7 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
+            action_key_press_7.Text = getCurrectKeyName(keyName);
+        }
+
+        private void action_key_press_8_KeyUp(object sender, KeyEventArgs e)
+        {
+            string keyName = e.Key.ToString().ToUpper();
+            keyWinCode8 = (int)KeyInterop.VirtualKeyFromKey(e.Key);
+            action_key_press_8.Text = getCurrectKeyName(keyName);
+        }
+
+        private void action_key_press_5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_press_5.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_press_6_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_press_6.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_press_7_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_press_7.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_press_8_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_press_8.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_phrase_5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_phrase_5.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_phrase_6_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_phrase_6.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_phrase_7_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_phrase_7.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_phrase_8_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (action_key_phrase_8.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void messageFolder_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (messageFolder.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void messageFolderOpen_Click(object sender, RoutedEventArgs e)
+        {
+            var folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            folderBrowserDialog1.ShowDialog();
+            messageFolder.Text = folderBrowserDialog1.SelectedPath;
+            activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void messageFolder_GotFocus(object sender, RoutedEventArgs e)
+        {
+            string path = messageFolder.Text;
+            if (path == Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\alarm") messageFolder.Text = "";
+        }
+
+        private void messageFolder_LostFocus_1(object sender, RoutedEventArgs e)
+        {
+            string path = messageFolder.Text;
+            if (path == "") messageFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\alarm";
         }
     }
 }

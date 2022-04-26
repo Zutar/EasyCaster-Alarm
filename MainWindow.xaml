@@ -78,7 +78,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBox">
                         <Grid>
-                            <ToggleButton Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="Center" >
+                            <ToggleButton Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" >
                                 <ToggleButton.Template>
                                     <ControlTemplate>
                                         <Grid>
@@ -94,11 +94,11 @@
                                 </ToggleButton.Template>
                             </ToggleButton>
                             <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="3"  />
-                            <TextBox x:Name="PART_EditableTextBox" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="PART_EditableTextBox" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}"/>
                             <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True"  Focusable="False" PopupAnimation="Slide">
                                 <Grid  Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border x:Name="DropDownBorder" Background="White" CornerRadius="0, 0, 5, 5" />
-                                    <ScrollViewer SnapsToDevicePixels="True" HorizontalContentAlignment="Center">
+                                    <ScrollViewer SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" />
                                     </ScrollViewer>
                                 </Grid>
@@ -181,7 +181,7 @@
                                     </Button>
                                 </Canvas>
                             </DockPanel>
-                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="667" Visibility="Collapsed" Width="560">
+                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="1000" Visibility="Collapsed" Width="560">
                                 <Button x:Name="settings_edit" Width="100" Height="30" Template="{DynamicResource ControlButton}" Cursor="Hand" Background="#FFF0F0F0" HorizontalContentAlignment="Center" Padding="1,1,1,1" Canvas.Top="25" Click="settings_edit_Click">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" Content="{DynamicResource settingsEdit}" FontSize="11" Margin="-1,-1,-1,-1"/>
                                 </Button>
@@ -205,13 +205,13 @@
                                             <Label Content="{DynamicResource settingsChannelName}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
                                             <TextBox x:Name="tg_channel_main_name" Height="25" TextWrapping="Wrap" Width="210" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" LostFocus="tg_channel_main_name_LostFocus"/>
                                         </StackPanel>
-                                        <StackPanel Margin="265,0,0,10">
+                                        <StackPanel Margin="270,0,0,10">
                                             <Label Content="{DynamicResource settingsChannelLink}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
                                             <TextBox x:Name="tg_channel_main_link" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="290" LostFocus="tg_channel_main_link_LostFocus"/>
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>
-                                <StackPanel Height="90" Width="560" Canvas.Top="138" Orientation="Vertical">
+                                <StackPanel Height="71" Width="560" Canvas.Top="138" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsTestChannelTitle}" Padding="5,5,5,-1"/>
                                     <Grid Height="65">
                                         <StackPanel Width="250" Margin="0,0,310,10">
@@ -229,7 +229,7 @@
                                 <Button x:Name="app_logout" Width="200" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="53,9,153,15" Canvas.Left="307" Canvas.Top="200" Click="app_logout_Click" Padding="1,1,1,1" IsEnabled="False">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="{DynamicResource settingsAppLogout}" FontSize="14" Margin="-1,0,-1,0" Foreground="#FF464646" Padding="0,0,0,0" Height="24"/>
                                 </Button>
-                                <StackPanel Height="270" Width="560" Canvas.Top="316" Orientation="Vertical">
+                                <StackPanel Height="378" Width="560" Canvas.Top="360" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsKeyTitle}" Padding="5,5,5,-2"/>
                                     <Grid Height="45" Margin="0,5,0,0">
                                         <Grid.ColumnDefinitions>
@@ -292,7 +292,7 @@
                                         </StackPanel>
                                         <StackPanel Margin="258,0,0,5" Grid.Column="1">
                                             <Label Content="{DynamicResource settingsKeyApp3}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
-                                            <ComboBox x:Name="action_app_list_3" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_3_LostFocus" />
+                                            <ComboBox x:Name="action_app_list_3" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_3_LostFocus" />
                                         </StackPanel>
                                         <Button x:Name="action_key_test_3" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="406,15,0,6" Click="action_key_test_3_Click">
                                             <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="T" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
@@ -331,9 +331,109 @@
                                             </TextBox>
                                         </StackPanel>
                                     </Grid>
+                                    <Grid Height="45">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="129*"/>
+                                            <ColumnDefinition Width="431*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Width="175" Margin="0,0,385,5" Grid.ColumnSpan="2">
+                                            <Label Content="{DynamicResource settingsKeyTitle5}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_phrase_5" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="action_key_phrase_5_LostFocus"/>
+                                        </StackPanel>
+                                        <StackPanel Margin="258,0,0,5" Grid.Column="1">
+                                            <Label Content="{DynamicResource settingsKeyApp5}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <ComboBox x:Name="action_app_list_5" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_5_LostFocus" />
+                                        </StackPanel>
+                                        <Button x:Name="action_key_test_5" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="406,15,0,6" Click="action_key_test_5_Click">
+                                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="T" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                        </Button>
+                                        <StackPanel Margin="64,0,167,5" Grid.Column="1" HorizontalAlignment="Left">
+                                            <Label Content="{DynamicResource settingsKeyLabel5}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_press_5" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_5_KeyUp" LostFocus="action_key_press_5_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Grid Height="45">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="129*"/>
+                                            <ColumnDefinition Width="431*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Width="175" Margin="0,0,385,5" Grid.ColumnSpan="2">
+                                            <Label Content="{DynamicResource settingsKeyTitle6}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_phrase_6" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="action_key_phrase_6_LostFocus"/>
+                                        </StackPanel>
+                                        <StackPanel Margin="258,0,0,5" Grid.Column="1">
+                                            <Label Content="{DynamicResource settingsKeyApp6}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <ComboBox x:Name="action_app_list_6" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_6_LostFocus" />
+                                        </StackPanel>
+                                        <Button x:Name="action_key_test_6" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="406,15,0,6" Click="action_key_test_6_Click">
+                                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="T" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                        </Button>
+                                        <StackPanel Margin="64,0,167,5" Grid.Column="1" HorizontalAlignment="Left">
+                                            <Label Content="{DynamicResource settingsKeyLabel6}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_press_6" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_6_KeyUp" LostFocus="action_key_press_6_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Grid Height="45">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="129*"/>
+                                            <ColumnDefinition Width="431*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Width="175" Margin="0,0,385,5" Grid.ColumnSpan="2">
+                                            <Label Content="{DynamicResource settingsKeyTitle7}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_phrase_7" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="action_key_phrase_7_LostFocus"/>
+                                        </StackPanel>
+                                        <StackPanel Margin="258,0,0,5" Grid.Column="1">
+                                            <Label Content="{DynamicResource settingsKeyApp7}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <ComboBox x:Name="action_app_list_7" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_7_LostFocus" />
+                                        </StackPanel>
+                                        <Button x:Name="action_key_test_7" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="406,15,0,6" Click="action_key_test_7_Click">
+                                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="T" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                        </Button>
+                                        <StackPanel Margin="64,0,167,5" Grid.Column="1" HorizontalAlignment="Left">
+                                            <Label Content="{DynamicResource settingsKeyLabel7}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_press_7" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_7_KeyUp" LostFocus="action_key_press_7_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Grid Height="45">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="129*"/>
+                                            <ColumnDefinition Width="431*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Width="175" Margin="0,0,385,5" Grid.ColumnSpan="2">
+                                            <Label Content="{DynamicResource settingsKeyTitle8}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_phrase_8" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="action_key_phrase_8_LostFocus"/>
+                                        </StackPanel>
+                                        <StackPanel Margin="258,0,0,5" Grid.Column="1">
+                                            <Label Content="{DynamicResource settingsKeyApp8}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <ComboBox x:Name="action_app_list_8" Width="140" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" IsEnabled="False" LostFocus="action_app_list_8_LostFocus" />
+                                        </StackPanel>
+                                        <Button x:Name="action_key_test_8" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Grid.Column="1" Margin="406,15,0,6" Click="action_key_test_8_Click">
+                                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="T" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                        </Button>
+                                        <StackPanel Margin="64,0,167,5" Grid.Column="1" HorizontalAlignment="Left">
+                                            <Label Content="{DynamicResource settingsKeyLabel8}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                            <TextBox x:Name="action_key_press_8" Height="25" TextWrapping="Wrap" Width="175" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" KeyUp="action_key_press_8_KeyUp" LostFocus="action_key_press_8_LostFocus">
+                                                <TextBox.ToolTip>
+                                                    <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                </TextBox.ToolTip>
+                                            </TextBox>
+                                        </StackPanel>
+                                    </Grid>
                                 </StackPanel>
 
-                                <StackPanel Height="214" Width="560" Canvas.Top="520" Orientation="Vertical">
+                                <StackPanel Height="245" Width="560" Canvas.Top="740" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsExceptionTitle}" Padding="5,5,5,-1"/>
                                     <Grid>
                                         <StackPanel>
@@ -359,12 +459,27 @@
                                             <TextBox x:Name="action_key_exception_4" Height="25" TextWrapping="Wrap" Width="559" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="action_key_exception_4_LostFocus"/>
                                         </StackPanel>
                                     </Grid>
+                                    <Grid>
+                                        <StackPanel>
+                                            <Label Content="{DynamicResource settingsExceptionTitle5}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                            <TextBox x:Name="action_key_exception_5" Height="25" TextWrapping="Wrap" Width="559" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="action_key_exception_5_LostFocus"/>
+                                        </StackPanel>
+                                    </Grid>
                                 </StackPanel>
                                 <CheckBox x:Name="app_autoauth" Canvas.Top="236" Content="{DynamicResource settingsAutoauth}" IsEnabled="False" Click="app_autoauth_Click" />
                                 <StackPanel Width="400" Margin="0,252,310,10">
                                     <Label Content="{DynamicResource startDelay}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
                                     <TextBox x:Name="start_delay" Height="25" TextWrapping="Wrap" Width="210" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" LostFocus="tg_channel_test_name_LostFocus"/>
                                 </StackPanel>
+                                <Grid Width="400" Margin="0,262,310,10" Canvas.Top="35" Height="60">
+                                    <Label Content="{DynamicResource messageFolder}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" Margin="0,0,0,39" />
+                                    <TextBox x:Name="messageFolder" Height="25" TextWrapping="Wrap" Width="210" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="0,22,0,13" GotFocus="messageFolder_GotFocus" LostFocus="messageFolder_LostFocus_1"/>
+                                    <Button x:Name="messageFolderOpen" Margin="187,26,195,17" BorderThickness="1,1,1,1" BorderBrush="{x:Null}" Padding="1,1,1,1" Click="messageFolderOpen_Click">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Resources/arrowDown.png" Stretch="Uniform" TileMode="None" Opacity="0.75"/>
+                                        </Button.Background>
+                                    </Button>
+                                </Grid>
                             </Canvas>
                         </DockPanel>
                     </Border>

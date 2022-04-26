@@ -42,23 +42,37 @@
     <system:String x:Key="settingsKeyTitle2">Ключова фраза #2</system:String>
     <system:String x:Key="settingsKeyTitle3">Ключова фраза #3</system:String>
     <system:String x:Key="settingsKeyTitle4">Ключова фраза #4</system:String>
+    <system:String x:Key="settingsKeyTitle5">Ключова фраза #5</system:String>
+    <system:String x:Key="settingsKeyTitle6">Ключова фраза #6</system:String>
+    <system:String x:Key="settingsKeyTitle7">Ключова фраза #7</system:String>
+    <system:String x:Key="settingsKeyTitle8">Ключова фраза #8</system:String>
     <system:String x:Key="settingsKeyApp1">Додаток #1</system:String>
     <system:String x:Key="settingsKeyApp2">Додаток #2</system:String>
     <system:String x:Key="settingsKeyApp3">Додаток #3</system:String>
     <system:String x:Key="settingsKeyApp4">Додаток #4</system:String>
+    <system:String x:Key="settingsKeyApp5">Додаток #5</system:String>
+    <system:String x:Key="settingsKeyApp6">Додаток #6</system:String>
+    <system:String x:Key="settingsKeyApp7">Додаток #7</system:String>
+    <system:String x:Key="settingsKeyApp8">Додаток #8</system:String>
     <system:String x:Key="settingsKeyLabel1">Кнопка для натискання #1</system:String>
     <system:String x:Key="settingsKeyLabel2">Кнопка для натискання #2</system:String>
     <system:String x:Key="settingsKeyLabel3">Кнопка для натискання #3</system:String>
     <system:String x:Key="settingsKeyLabel4">Кнопка для натискання #4</system:String>
+    <system:String x:Key="settingsKeyLabel5">Кнопка для натискання #5</system:String>
+    <system:String x:Key="settingsKeyLabel6">Кнопка для натискання #6</system:String>
+    <system:String x:Key="settingsKeyLabel7">Кнопка для натискання #7</system:String>
+    <system:String x:Key="settingsKeyLabel8">Кнопка для натискання #8</system:String>
     <system:String x:Key="settingsExceptionTitle">Винятки</system:String>
     <system:String x:Key="settingsExceptionTitle1">Виняток #1</system:String>
     <system:String x:Key="settingsExceptionTitle2">Виняток #2</system:String>
     <system:String x:Key="settingsExceptionTitle3">Виняток #3</system:String>
     <system:String x:Key="settingsExceptionTitle4">Виняток #4</system:String>
+    <system:String x:Key="settingsExceptionTitle5">Виняток #5</system:String>
     <system:String x:Key="settingsAppLogout">Вийти з облікового запису</system:String>
     <system:String x:Key="settingsSaveAlert">Для застосування нового конфіга перезапустіть програму!</system:String>
     <system:String x:Key="startDelay">Затримка початку прийому повідомлень під час старту програми (мс)</system:String>
     <system:String x:Key="settingsKeyTip">Виберіть поле та натисніть на потрібну клавішу (у цій версії комбінації клавіш не підтримуються)</system:String>
+    <system:String x:Key="messageFolder">Запис повідомлень</system:String>
 
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
