@@ -57,6 +57,14 @@
     <system:String x:Key="settingsKeyLabel6">Кнопка для нажатия #6</system:String>
     <system:String x:Key="settingsKeyLabel7">Кнопка для нажатия #7</system:String>
     <system:String x:Key="settingsKeyLabel8">Кнопка для нажатия #8</system:String>
+    <system:String x:Key="settingsAppLabel1">Приложение для запуска #1</system:String>
+    <system:String x:Key="settingsAppLabel2">Приложение для запуска #2</system:String>
+    <system:String x:Key="settingsAppLabel3">Приложение для запуска #3</system:String>
+    <system:String x:Key="settingsAppLabel4">Приложение для запуска #4</system:String>
+    <system:String x:Key="settingsAppLabel5">Приложение для запуска #5</system:String>
+    <system:String x:Key="settingsAppLabel6">Приложение для запуска #6</system:String>
+    <system:String x:Key="settingsAppLabel7">Приложение для запуска #7</system:String>
+    <system:String x:Key="settingsAppLabel8">Приложение для запуска #8</system:String>
     <system:String x:Key="settingsExceptionTitle">Исключения</system:String>
     <system:String x:Key="settingsExceptionTitle1">Исключение #1</system:String>
     <system:String x:Key="settingsExceptionTitle2">Исключение #2</system:String>
@@ -67,6 +75,7 @@
     <system:String x:Key="settingsSaveAlert">Для применения нового конфига перезапустите программу!</system:String>
     <system:String x:Key="startDelay">Задержка начала приема сообщений при старте программы (мс)</system:String>
     <system:String x:Key="settingsKeyTip">Выберите поле и нажмите на необходимую клавишу (в данной версии комбинации клавиш не поддерживаются)</system:String>
+    <system:String x:Key="settingsExtAppTip">Выберите поле и нажмите на необходимую клавишу (в данной версии комбинации клавиш не поддерживаются)</system:String>
     <system:String x:Key="messageFolder">Запись сообщений</system:String>
 
     <!-- Logs -->

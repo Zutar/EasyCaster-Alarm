@@ -5,19 +5,19 @@
   },
   "projects": {
     "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj": {
-      "version": "1.0.46",
+      "version": "1.0.48",
       "restore": {
         "projectUniqueName": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
         "projectName": "EasyCaster Alarm",
         "projectPath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
-        "packagesPath": "C:\\Users\\Леонид\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Leonid\\.nuget\\packages\\",
         "outputPath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Леонид\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

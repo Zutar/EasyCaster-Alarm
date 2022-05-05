@@ -62,6 +62,14 @@
     <system:String x:Key="settingsKeyLabel6">Кнопка для натискання #6</system:String>
     <system:String x:Key="settingsKeyLabel7">Кнопка для натискання #7</system:String>
     <system:String x:Key="settingsKeyLabel8">Кнопка для натискання #8</system:String>
+    <system:String x:Key="settingsAppLabel1">Додаток для запуску #1</system:String>
+    <system:String x:Key="settingsAppLabel2">Додаток для запуску #2</system:String>
+    <system:String x:Key="settingsAppLabel3">Додаток для запуску #3</system:String>
+    <system:String x:Key="settingsAppLabel4">Додаток для запуску #4</system:String>
+    <system:String x:Key="settingsAppLabel5">Додаток для запуску #5</system:String>
+    <system:String x:Key="settingsAppLabel6">Додаток для запуску #6</system:String>
+    <system:String x:Key="settingsAppLabel7">Додаток для запуску #7</system:String>
+    <system:String x:Key="settingsAppLabel8">Додаток для запуску #8</system:String>
     <system:String x:Key="settingsExceptionTitle">Винятки</system:String>
     <system:String x:Key="settingsExceptionTitle1">Виняток #1</system:String>
     <system:String x:Key="settingsExceptionTitle2">Виняток #2</system:String>

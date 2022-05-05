@@ -21,6 +21,7 @@ using System.Windows.Input;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Text;
 
 namespace EasyCaster_Alarm
 {
@@ -271,6 +272,12 @@ namespace EasyCaster_Alarm
             }
         }
 
+        public static async void Post(string url, JObject data)
+        {
+            var content = new StringContent(data.ToString(), Encoding.UTF8, "application/json");
+            await _httpClient.PostAsync(url, content);
+        }
+
         private void LinkTimer_Tick(object sender, EventArgs e)
         {
             try
@@ -397,6 +404,9 @@ namespace EasyCaster_Alarm
             addAlarmLog(message);
             writeToFile(targetMessage, index);
             pressKey(index);
+            startExtApp(index);
+
+            if (webhook_url_1.Text != "") sendWebhook(webhook_url_1.Text, message, index, targetMessage);
 
             waitTimer.Interval = TimeSpan.FromSeconds(10);
             waitTimer.Tick += wait_Timer;
@@ -407,6 +417,71 @@ namespace EasyCaster_Alarm
                 alarm_block.Visibility = Visibility.Hidden;
                 alarmBlinkAnimation.Stop();
                 waitTimer.Stop();
+            }
+        }
+
+        private void sendWebhook(string url = "", string message = "Test message", byte index = 0, string targetMessage = "Test")
+        {
+            try
+            {
+                JObject data = new JObject();
+                data.Add("id", index);
+                data.Add("message", message);
+                data.Add("targetMessage", targetMessage);
+                data.Add("dateTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                Post(webhook_url_1.Text, data);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+        }
+
+        private void startExtApp( byte index)
+        {
+            try
+            {
+                string applicationPath = "";
+
+                if (index == 1)
+                {
+                    applicationPath = action_key_ext_app_1.Text;
+                }
+                else if (index == 2)
+                {
+                    applicationPath = action_key_ext_app_2.Text;
+                }
+                else if (index == 3)
+                {
+                    applicationPath = action_key_ext_app_3.Text;
+                }
+                else if (index == 4)
+                {
+                    applicationPath = action_key_ext_app_4.Text;
+                }
+                else if (index == 5)
+                {
+                    applicationPath = action_key_ext_app_5.Text;
+                }
+                else if (index == 6)
+                {
+                    applicationPath = action_key_ext_app_6.Text;
+                }
+                else if (index == 7)
+                {
+                    applicationPath = action_key_ext_app_7.Text;
+                }
+                else if (index == 8)
+                {
+                    applicationPath = action_key_ext_app_8.Text;
+                }
+
+                Process.Start(applicationPath);
+            }
+            catch(Exception error)
+            {
+
             }
         }
 
@@ -506,6 +581,15 @@ namespace EasyCaster_Alarm
                 action_key_press_7.Text = Properties.Settings.Default.actionKeyPress7;
                 action_key_press_8.Text = Properties.Settings.Default.actionKeyPress8;
 
+                action_key_ext_app_1.Text = Properties.Settings.Default.actionKeyExtApp1;
+                action_key_ext_app_2.Text = Properties.Settings.Default.actionKeyExtApp2;
+                action_key_ext_app_3.Text = Properties.Settings.Default.actionKeyExtApp3;
+                action_key_ext_app_4.Text = Properties.Settings.Default.actionKeyExtApp4;
+                action_key_ext_app_5.Text = Properties.Settings.Default.actionKeyExtApp5;
+                action_key_ext_app_6.Text = Properties.Settings.Default.actionKeyExtApp6;
+                action_key_ext_app_7.Text = Properties.Settings.Default.actionKeyExtApp7;
+                action_key_ext_app_8.Text = Properties.Settings.Default.actionKeyExtApp8;
+
                 action_key_exception_1.Text = Properties.Settings.Default.actionKeyException1;
                 action_key_exception_2.Text = Properties.Settings.Default.actionKeyException2;
                 action_key_exception_3.Text = Properties.Settings.Default.actionKeyException3;
@@ -536,6 +620,7 @@ namespace EasyCaster_Alarm
 
                 string messageFolderPath = Properties.Settings.Default.messageFolder;
                 messageFolder.Text = messageFolderPath == "" ? Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\alarm" : messageFolderPath;
+                webhook_url_1.Text = Properties.Settings.Default.webhookUrl1;
             }
             catch(Exception error)
             {
@@ -673,12 +758,22 @@ namespace EasyCaster_Alarm
             action_key_press_7.IsEnabled = true;
             action_key_press_8.IsEnabled = true;
 
+            action_key_ext_app_1.IsEnabled = true;
+            action_key_ext_app_2.IsEnabled = true;
+            action_key_ext_app_3.IsEnabled = true;
+            action_key_ext_app_4.IsEnabled = true;
+            action_key_ext_app_5.IsEnabled = true;
+            action_key_ext_app_6.IsEnabled = true;
+            action_key_ext_app_7.IsEnabled = true;
+            action_key_ext_app_8.IsEnabled = true;
+
             action_key_exception_1.IsEnabled = true;
             action_key_exception_2.IsEnabled = true;
             action_key_exception_3.IsEnabled = true;
             action_key_exception_4.IsEnabled = true;
             action_key_exception_5.IsEnabled = true;
 
+            webhook_url_1.IsEnabled = true;
             messageFolder.IsEnabled = true;
         }
         private void disableAll()
@@ -719,12 +814,22 @@ namespace EasyCaster_Alarm
             action_key_press_7.IsEnabled = false;
             action_key_press_8.IsEnabled = false;
 
+            action_key_ext_app_1.IsEnabled = false;
+            action_key_ext_app_2.IsEnabled = false;
+            action_key_ext_app_3.IsEnabled = false;
+            action_key_ext_app_4.IsEnabled = false;
+            action_key_ext_app_5.IsEnabled = false;
+            action_key_ext_app_6.IsEnabled = false;
+            action_key_ext_app_7.IsEnabled = false;
+            action_key_ext_app_8.IsEnabled = false;
+
             action_key_exception_1.IsEnabled = false;
             action_key_exception_2.IsEnabled = false;
             action_key_exception_3.IsEnabled = false;
             action_key_exception_4.IsEnabled = false;
             action_key_exception_5.IsEnabled = false;
 
+            webhook_url_1.IsEnabled = false;
             messageFolder.IsEnabled = false;
         }
         private void settings_save_Click(object sender, RoutedEventArgs e)
@@ -773,6 +878,15 @@ namespace EasyCaster_Alarm
             Properties.Settings.Default.actionKeyPress7 = action_key_press_7.Text;
             Properties.Settings.Default.actionKeyPress8 = action_key_press_8.Text;
 
+            Properties.Settings.Default.actionKeyExtApp1 = action_key_ext_app_1.Text;
+            Properties.Settings.Default.actionKeyExtApp2 = action_key_ext_app_2.Text;
+            Properties.Settings.Default.actionKeyExtApp3 = action_key_ext_app_3.Text;
+            Properties.Settings.Default.actionKeyExtApp4 = action_key_ext_app_4.Text;
+            Properties.Settings.Default.actionKeyExtApp5 = action_key_ext_app_5.Text;
+            Properties.Settings.Default.actionKeyExtApp6 = action_key_ext_app_6.Text;
+            Properties.Settings.Default.actionKeyExtApp7 = action_key_ext_app_7.Text;
+            Properties.Settings.Default.actionKeyExtApp8 = action_key_ext_app_8.Text;
+
             Properties.Settings.Default.actionKeyException1 = action_key_exception_1.Text;
             Properties.Settings.Default.actionKeyException2 = action_key_exception_2.Text;
             Properties.Settings.Default.actionKeyException3 = action_key_exception_3.Text;
@@ -788,6 +902,7 @@ namespace EasyCaster_Alarm
             Properties.Settings.Default.keyWinCode7 = keyWinCode7;
             Properties.Settings.Default.keyWinCode8 = keyWinCode8;
 
+            Properties.Settings.Default.webhookUrl1 = webhook_url_1.Text;
             Properties.Settings.Default.messageFolder = messageFolder.Text;
 
             Properties.Settings.Default.Save();
@@ -875,21 +990,25 @@ namespace EasyCaster_Alarm
         private void action_key_test_1_Click(object sender, RoutedEventArgs e)
         {
             pressKey(1);
+            startExtApp(1);
         }
 
         private void action_key_test_2_Click(object sender, RoutedEventArgs e)
         {
             pressKey(2);
+            startExtApp(2);
         }
 
         private void action_key_test_3_Click(object sender, RoutedEventArgs e)
         {
             pressKey(3);
+            startExtApp(3);
         }
 
         private void action_key_test_4_Click(object sender, RoutedEventArgs e)
         {
             pressKey(4);
+            startExtApp(4);
         }
 
         private string getCurrectKeyName(string keyName)
@@ -1231,21 +1350,25 @@ namespace EasyCaster_Alarm
         private void action_key_test_5_Click(object sender, RoutedEventArgs e)
         {
             pressKey(5);
+            startExtApp(5);
         }
 
         private void action_key_test_6_Click(object sender, RoutedEventArgs e)
         {
             pressKey(6);
+            startExtApp(6);
         }
 
         private void action_key_test_7_Click(object sender, RoutedEventArgs e)
         {
             pressKey(7);
+            startExtApp(7);
         }
 
         private void action_key_test_8_Click(object sender, RoutedEventArgs e)
         {
             pressKey(8);
+            startExtApp(8);
         }
 
         private void action_app_list_5_LostFocus(object sender, RoutedEventArgs e)
@@ -1359,6 +1482,69 @@ namespace EasyCaster_Alarm
         {
             string path = messageFolder.Text;
             if (path == "") messageFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\alarm";
+        }
+
+        private void webhook_test_1_Click(object sender, RoutedEventArgs e)
+        {
+            if (webhook_url_1.Text != "") sendWebhook(webhook_url_1.Text);
+        }
+
+        private void action_key_ext_app_1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_1);
+        }
+
+        private void selectExtApp(TextBox el)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                el.Text = openFileDialog.FileName;
+            activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void action_key_ext_app_1_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_1);
+        }
+
+        private void action_key_ext_app_2_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_2);
+        }
+
+        private void action_key_ext_app_3_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_3);
+        }
+
+        private void action_key_ext_app_4_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_4);
+        }
+
+        private void action_key_ext_app_5_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_5);
+        }
+
+        private void action_key_ext_app_6_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_6);
+        }
+
+        private void action_key_ext_app_7_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_7);
+        }
+
+        private void action_key_ext_app_8_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(action_key_ext_app_8);
+        }
+
+        private void webhook_url_1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(webhook_url_1.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
         }
     }
 }

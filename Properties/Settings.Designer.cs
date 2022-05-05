@@ -598,5 +598,113 @@ namespace EasyCaster_Alarm.Properties {
                 this["messageFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string webhookUrl1 {
+            get {
+                return ((string)(this["webhookUrl1"]));
+            }
+            set {
+                this["webhookUrl1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp1 {
+            get {
+                return ((string)(this["actionKeyExtApp1"]));
+            }
+            set {
+                this["actionKeyExtApp1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp2 {
+            get {
+                return ((string)(this["actionKeyExtApp2"]));
+            }
+            set {
+                this["actionKeyExtApp2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp3 {
+            get {
+                return ((string)(this["actionKeyExtApp3"]));
+            }
+            set {
+                this["actionKeyExtApp3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp4 {
+            get {
+                return ((string)(this["actionKeyExtApp4"]));
+            }
+            set {
+                this["actionKeyExtApp4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp5 {
+            get {
+                return ((string)(this["actionKeyExtApp5"]));
+            }
+            set {
+                this["actionKeyExtApp5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp6 {
+            get {
+                return ((string)(this["actionKeyExtApp6"]));
+            }
+            set {
+                this["actionKeyExtApp6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp7 {
+            get {
+                return ((string)(this["actionKeyExtApp7"]));
+            }
+            set {
+                this["actionKeyExtApp7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string actionKeyExtApp8 {
+            get {
+                return ((string)(this["actionKeyExtApp8"]));
+            }
+            set {
+                this["actionKeyExtApp8"] = value;
+            }
+        }
     }
 }
