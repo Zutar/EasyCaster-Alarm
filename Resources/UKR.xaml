@@ -81,6 +81,7 @@
     <system:String x:Key="startDelay">Затримка початку прийому повідомлень під час старту програми (мс)</system:String>
     <system:String x:Key="settingsKeyTip">Виберіть поле та натисніть на потрібну клавішу (у цій версії комбінації клавіш не підтримуються)</system:String>
     <system:String x:Key="messageFolder">Запис повідомлень</system:String>
+    <system:String x:Key="webhookURL">URL-адреса запиту</system:String>
 
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
@@ -117,11 +118,35 @@
     <system:String x:Key="h_h2_t8">1. Посилання на канал (группу) повинно бути постійним, а не динамичним</system:String>
     <system:String x:Key="h_h2_t9">2. Ви повинні бути підписані на цей канал</system:String>
     <system:String x:Key="h_h2_t10">Необхідні програми на момент старту Easycaster Alert  вже повинні працювати</system:String>
+    <system:String x:Key="h_h2_t11">Автостарт програми – програма EasyCaster Alarm автоматично запускатиметься при завантаженні операційної системи.</system:String>
+    <system:String x:Key="h_h2_t12">Автоматичний вхід у Telegram – при установці програма автоматично авторизуватиметься в Telegram, за вказаними раніше даними у формі входу.</system:String>
+    <system:String x:Key="h_h2_t13">Затримка початку прийому повідомлень під час старту програми – час очікування, перед початком прийому нових повідомлень з авторизованого Telegram облікового запису, вказується в мілісекундах.</system:String>
+    <system:String x:Key="h_h2_t14">Запуск програми – вказує програму, яка запуститься при спрацюванні події. Запуск програми може мати розширення .bat .cmd .exe</system:String>
+    <system:String x:Key="h_h2_t15">Запис повідомлень – Вказує папку для запису останніх повідомлень, знайдених за умовою. Записується в N.txt, де N - індекс ключової фрази.</system:String>
+    <system:String x:Key="h_h2_t16">Статус – відображає стан підключення програми до вашого Telegram облікового запису. Зелений – підключення стабільне, червоний – підключення відсутнє/перервалося.</system:String>
+    <system:String x:Key="h_h2_t17">Редагувати/зберегти - зміна параметрів програми доступна лише після натискання на кнопку "Редагувати". Щоб зберегти настройки, натисніть кнопку "Зберегти".</system:String>
+    <system:String x:Key="h_h2_t18">Webhook – надсилання HTTP POST повідомлень на вказану адресу при кожному спрацюванні за подією Дані надсилаються у форматі JSON.</system:String>
+    <system:String x:Key="h_h3_header">Вікно програми</system:String>
+    <system:String x:Key="h_h2_t19">Файл налаштувань завантажити/зберегти – завантаження/збереження конфіга програми з поточними налаштуваннями.</system:String>
+    <system:String x:Key="h_h2_t20">Приклад повідомлення:</system:String>
 
     <!-- EXCEPTION WINDOW -->
     <system:String x:Key="ex_title">Необроблений виняток</system:String>
     <system:String x:Key="ex_send">Надіслати діагностичні дані для технічної підтримки Live-TV Service</system:String>
     <system:String x:Key="ex_close">Закрити</system:String>
+    
+    <!-- Errors -->
+    <system:String x:Key="tg_error_1">Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram</system:String>
+    <system:String x:Key="tg_error_2">Неправильний або недійсний номер телефону</system:String>
+    <system:String x:Key="tg_error_3">Термін дії наданого вами телефонного коду закінчився</system:String>
+    <system:String x:Key="tg_error_4">Наданий телефонний код недійсний</system:String>
+    <system:String x:Key="tg_error_5">Номер телефону ще не використовується. Спочатку потрібно зареєструвати обліковий запис Telegram</system:String>
+    <system:String x:Key="tg_error_6">Комбінація api_id/api_hash недійсна. Зв'яжіться з техпідтримкою live-tv service (livetv-help@ukr.net)</system:String>
+    <system:String x:Key="tg_error_7">Перевищено обмеження Telegram API. Спробуйте трохи пізніше</system:String>
+    <system:String x:Key="tg_error_8">Наданий хеш пароля недійсний</system:String>
+    <system:String x:Key="tg_error_9">Ви намагалися увійти забагато разів. Спробуйте пізніше</system:String>
+    <system:String x:Key="alarm_error_1">Програма вже запущена. Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше</system:String>
+    <system:String x:Key="alarm_error_1_1">Увага</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>

@@ -121,11 +121,11 @@
           }
         }
       },
-      "WTelegramClient/2.1.2": {
+      "WTelegramClient/2.6.2": {
         "runtime": {
           "lib/net5.0/WTelegramClient.dll": {
-            "assemblyVersion": "2.1.2.0",
-            "fileVersion": "2.1.2.0"
+            "assemblyVersion": "2.6.2.0",
+            "fileVersion": "2.6.2.0"
           }
         }
       }
@@ -195,12 +195,12 @@
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
     },
-    "WTelegramClient/2.1.2": {
+    "WTelegramClient/2.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8ggvHIYi2jYmM34rb/AyJ2Mt+B10pjo7KKza4ymG/hOU8Z7EN3Asezu57sAgVG2nNtBNYAUQcqn5L2QXwDXQ/g==",
-      "path": "wtelegramclient/2.1.2",
-      "hashPath": "wtelegramclient.2.1.2.nupkg.sha512"
+      "sha512": "sha512-8fVsIfJHfD4fHm3gvMSgnRkDokvALr5bwO8uMawPiij37LhXhCwkmlabGR0m02qB0dCtGCF6lL/iafQbcwNqxA==",
+      "path": "wtelegramclient/2.6.2",
+      "hashPath": "wtelegramclient.2.6.2.nupkg.sha512"
     }
   }
 }

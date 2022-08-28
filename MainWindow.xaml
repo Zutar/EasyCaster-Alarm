@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyCaster_Alarm"
         mc:Ignorable="d"
-        Title="EasyCaster Alarm" Height="750" Width="800" Closing="Window_Closing" Icon="/Resources/Icona.ico" MaxWidth="800">
+        Title="EasyCaster Alarm" Height="7500" Width="800" Closing="Window_Closing" Icon="/Resources/Icona.ico" MaxWidth="800">
     <Window.Resources>
         <Thickness x:Key="ControlMargin">0 5 0 0</Thickness>
         <!-- Edit button animation -->
@@ -181,7 +181,7 @@
                                     </Button>
                                 </Canvas>
                             </DockPanel>
-                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="1100" Visibility="Collapsed" Width="660">
+                            <Canvas x:Name="settings_block" DockPanel.Dock="Bottom" Margin="38,0,43.4,10" MinHeight="50" Height="1465" Visibility="Visible" Width="660">
                                 <Button x:Name="settings_edit" Width="100" Height="30" Template="{DynamicResource ControlButton}" Cursor="Hand" Background="#FFF0F0F0" HorizontalContentAlignment="Center" Padding="1,1,1,1" Canvas.Top="25" Click="settings_edit_Click">
                                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" Content="{DynamicResource settingsEdit}" FontSize="11" Margin="-1,-1,-1,-1"/>
                                 </Button>
@@ -202,18 +202,18 @@
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsMainChannelTitle}" Padding="5,5,5,-1"/>
                                     <Grid Height="65" Width="661">
                                         <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="205"/>
+                                            <ColumnDefinition Width="10"/>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="250"/>
                                         </Grid.ColumnDefinitions>
                                         <StackPanel Grid.Column="0">
-                                            <Label Content="{DynamicResource settingsChannelName}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
-                                            <TextBox x:Name="tg_channel_main_name" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_main_name_LostFocus"/>
+                                            <Label Content="{DynamicResource settingsChannelLink}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                            <TextBox x:Name="tg_channel_main_link" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_main_link_LostFocus"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="1"></StackPanel>
                                         <StackPanel Grid.Column="2">
-                                            <Label Content="{DynamicResource settingsChannelLink}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
-                                            <TextBox x:Name="tg_channel_main_link" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_main_link_LostFocus"/>
+                                            <Label Content="{DynamicResource settingsChannelName}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                            <TextBox x:Name="tg_channel_main_name" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_main_name_LostFocus"/>
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>
@@ -221,18 +221,18 @@
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource settingsTestChannelTitle}" Padding="5,5,5,-1"/>
                                     <Grid Height="65">
                                         <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="205"/>
+                                            <ColumnDefinition Width="10"/>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="250"/>
                                         </Grid.ColumnDefinitions>
-                                        <StackPanel  Grid.Column="0">
-                                            <Label Content="{DynamicResource settingsChannelName}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
-                                            <TextBox x:Name="tg_channel_test_name" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_test_name_LostFocus"/>
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="1"></StackPanel>
-                                        <StackPanel Grid.Column="2">
+                                        <StackPanel Grid.Column="0">
                                             <Label Content="{DynamicResource settingsChannelLink}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
                                             <TextBox x:Name="tg_channel_test_link" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_test_link_LostFocus"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1"></StackPanel>
+                                        <StackPanel  Grid.Column="2">
+                                            <Label Content="{DynamicResource settingsChannelName}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                            <TextBox x:Name="tg_channel_test_name" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Stretch" LostFocus="tg_channel_test_name_LostFocus"/>
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>
@@ -566,11 +566,134 @@
                                         </StackPanel>
                                     </Grid>
                                 </StackPanel>
-                                <StackPanel Height="65" Width="660" Canvas.Top="1025" Orientation="Vertical">
+                                <StackPanel Height="350" Width="660" Canvas.Top="1030" Orientation="Vertical">
+                                    <Label Foreground="#FF464646" FontWeight="Bold" Content="{DynamicResource scheduler_title}" Padding="5,5,5,-1"/>
+                                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="scheduler_wrapper" IsEnabled="False">
+                                        <Grid Margin="0,5,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="175"/>
+                                                <ColumnDefinition Width="175"/>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="160"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="45"/>
+                                                <RowDefinition Height="45"/>
+                                                <RowDefinition Height="45"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_start_word}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <ComboBox x:Name="scheduler_select_start" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                    <ComboBoxItem>1</ComboBoxItem>
+                                                    <ComboBoxItem>2</ComboBoxItem>
+                                                    <ComboBoxItem>3</ComboBoxItem>
+                                                    <ComboBoxItem>4</ComboBoxItem>
+                                                    <ComboBoxItem>5</ComboBoxItem>
+                                                    <ComboBoxItem>6</ComboBoxItem>
+                                                    <ComboBoxItem>7</ComboBoxItem>
+                                                    <ComboBoxItem>8</ComboBoxItem>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Margin="5,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_end_word}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <ComboBox x:Name="scheduler_select_stop" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                    <ComboBoxItem>1</ComboBoxItem>
+                                                    <ComboBoxItem>2</ComboBoxItem>
+                                                    <ComboBoxItem>3</ComboBoxItem>
+                                                    <ComboBoxItem>4</ComboBoxItem>
+                                                    <ComboBoxItem>5</ComboBoxItem>
+                                                    <ComboBoxItem>6</ComboBoxItem>
+                                                    <ComboBoxItem>7</ComboBoxItem>
+                                                    <ComboBoxItem>8</ComboBoxItem>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="2" Margin="5,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_app}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <ComboBox x:Name="scheduler_action_app_list" Style="{DynamicResource NewComboBox}" Canvas.Top="27" Canvas.Left="26" Height="25" Foreground="#FF282828" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" LostFocus="scheduler_action_app_list_LostFocus" />
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="3" Margin="5,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_key_press}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <TextBox x:Name="scheduler_action_key_press" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyUp="scheduler_action_key_press_KeyUp" LostFocus="scheduler_action_key_press_LostFocus">
+                                                    <TextBox.ToolTip>
+                                                        <ToolTip Content="{DynamicResource settingsKeyTip}"></ToolTip>
+                                                    </TextBox.ToolTip>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_ext_app}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <TextBox x:Name="scheduler_action_key_ext_app" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" GotFocus="scheduler_action_key_ext_app_GotFocus">
+                                                    <TextBox.ToolTip>
+                                                        <ToolTip Content="{DynamicResource settingsExtAppTip}"></ToolTip>
+                                                    </TextBox.ToolTip>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Grid.Row="1" Margin="5,0,5,0">
+                                                <Label Content="{DynamicResource scheduler_frequency}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,0,5,2" />
+                                                <TextBox x:Name="scheduler_action_frequency" Height="25" TextWrapping="Wrap" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    <TextBox.ToolTip>
+                                                        <ToolTip Content="{DynamicResource settingsExtAppTip}"></ToolTip>
+                                                    </TextBox.ToolTip>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <Button Grid.Column="2" Grid.Row="1" x:Name="scheduler_add_new" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Click="scheduler_add_new_Click" Margin="5,15,5,6">
+                                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="{DynamicResource scheduler_add}" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                            </Button>
+                                            <Button Grid.Column="3" Grid.Row="1" x:Name="scheduler_test" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Margin="68,15,67,6" Click="scheduler_test_Click">
+                                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="Т" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                            </Button>
+                                            <Button Grid.Column="0" Grid.Row="2" x:Name="scheduler_clear_all" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Margin="5,15,5,6" Click="scheduler_clear_all_Click">
+                                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Content="{DynamicResource scheduler_clear_all}" FontSize="14" Margin="-1,-1,-1,-1" Foreground="#FF464646" Padding="0,0,1,0"/>
+                                            </Button>
+                                        </Grid>
+                                    </StackPanel>
+                                    <ScrollViewer x:Name="scheduler_block" DockPanel.Dock="Bottom" MinHeight="50" Height="220" Visibility="Visible" Background="White" Margin="0,9,0,0">
+                                        <ListBox x:Name="scheduler_list" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="{x:Null}">
+                                            <ListBox.Template>
+                                                <ControlTemplate>
+                                                    <DockPanel LastChildFill="True">
+                                                        <Grid DockPanel.Dock="Top" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                                                <ColumnDefinition Width="60"></ColumnDefinition>
+                                                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Content="{DynamicResource scheduler_table_header_start}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_end}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_app}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_key_press}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_ext_app}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_frequency}" Padding="5,2,5,2"/>
+                                                            <Label Grid.Column="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="10" Foreground="#FF464646" Content="{DynamicResource scheduler_table_header_action}" Padding="5,2,5,2"/>
+                                                        </Grid>
+                                                        <ItemsPresenter></ItemsPresenter>
+                                                    </DockPanel>
+                                                </ControlTemplate>
+                                            </ListBox.Template>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <UniformGrid  Columns="7" Background="White">
+                                                        <Label Content="{Binding select_start}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="70" />
+                                                        <Label Content="{Binding select_end}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="70" />
+                                                        <Label Content="{Binding app_list_item}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="100" />
+                                                        <Label Content="{Binding key_press}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="120" />
+                                                        <Label Content="{Binding ext_app}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="150" />
+                                                        <Label Content="{Binding frequency}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Width="60" />
+                                                        <Image x:Name="scheduler_item_remove" Source="/Resources/remove.png" MouseLeftButtonUp="scheduler_item_remove_MouseLeftButtonUp" Width="20" Height="20"/>
+                                                    </UniformGrid>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </ScrollViewer>
+                                </StackPanel>
+                                <StackPanel Height="65" Width="660" Canvas.Top="1395" Orientation="Vertical">
                                     <Label Foreground="#FF464646" FontWeight="Bold" Content="Webhook" Padding="5,5,5,-1"/>
                                     <Grid>
                                         <StackPanel>
-                                            <Label Content="{DynamicResource settingsChannelLink}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
+                                            <Label Content="{DynamicResource webhookURL}" Foreground="#FF464646" FontWeight="Bold" FontSize="10" Padding="5,5,5,2" />
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBox x:Name="webhook_url_1" Height="25" TextWrapping="Wrap" Width="622" Background="#FFBEC6DB" BorderBrush="#FFBEC6DB" Foreground="#FF787878" FontSize="14" FontFamily="Global Sans Serif" Padding="0,2,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="webhook_url_1_LostFocus"/>
                                                 <Button x:Name="webhook_test_1" Width="25" Height="24" Template="{DynamicResource ControlButton}" Cursor="Hand" Click="webhook_test_1_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="12,0,0,0">

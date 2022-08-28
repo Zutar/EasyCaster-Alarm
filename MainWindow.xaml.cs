@@ -22,6 +22,7 @@ using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Text;
+using EasyCaster_Alarm.classes;
 
 namespace EasyCaster_Alarm
 {
@@ -59,7 +60,6 @@ namespace EasyCaster_Alarm
         const UInt32 SWP_NOMOVE = 0x0002;
         const UInt32 SWP_SHOWWINDOW = 0x0040;
 
-
         bool settingsOpen = false;
         bool logsOpen = true;
         bool isAlarm = false;
@@ -67,7 +67,8 @@ namespace EasyCaster_Alarm
         Storyboard sb;
 
         ObservableCollection<LogItem> logs = new ObservableCollection<LogItem>();
-        ObservableCollection<string> processAppNames = new ObservableCollection<string> { };
+        ObservableCollection<string> processAppNames = new ObservableCollection<string>{ };
+        ObservableCollection<ScheduleItem> scheduleItems = new ObservableCollection<ScheduleItem>();
 
         DispatcherTimer updateProcessListTimer = new DispatcherTimer();
         DispatcherTimer waitTimer = new DispatcherTimer();
@@ -83,6 +84,7 @@ namespace EasyCaster_Alarm
         int keyWinCode6;
         int keyWinCode7;
         int keyWinCode8;
+        int schedulerKeyWinCode;
         int link_id = 0;
         int link_count = 0;
 
@@ -115,7 +117,7 @@ namespace EasyCaster_Alarm
         
         private async void start()
         {
-            App.client.Update += Client_Update;
+            App.client.OnUpdate += Client_Update;
 
             GetProgramConfig();
             getActiveProcessNames();
@@ -124,6 +126,7 @@ namespace EasyCaster_Alarm
             logs_block.Visibility = Visibility.Visible;
 
             logs_list.ItemsSource = logs;
+            scheduler_list.ItemsSource = scheduleItems;
 
             updateProcessListTimer.Interval = TimeSpan.FromSeconds(30);
             updateProcessListTimer.Tick += updateProcessList_Timer;
@@ -319,8 +322,6 @@ namespace EasyCaster_Alarm
         {
             for (int i = 0; i < config_url.Length; i++)
             {
-                JObject old_program_config = program_config;
-                JObject json = JObject.Parse("{}");
                 try
                 {
                     program_config = JObject.Parse(await Get(config_url[i]));
@@ -507,6 +508,8 @@ namespace EasyCaster_Alarm
             action_app_list_7.Items.Clear();
             action_app_list_8.Items.Clear();
 
+            scheduler_action_app_list.Items.Clear();
+
             foreach (Process p in processes)
             {
                 if (!String.IsNullOrEmpty(p.MainWindowTitle))
@@ -524,6 +527,8 @@ namespace EasyCaster_Alarm
                     action_app_list_6.Items.Add(processTitle);
                     action_app_list_7.Items.Add(processTitle);
                     action_app_list_8.Items.Add(processTitle);
+
+                    scheduler_action_app_list.Items.Add(processTitle);
                 }
             }
 
@@ -535,6 +540,8 @@ namespace EasyCaster_Alarm
             action_app_list_6.Items.Refresh();
             action_app_list_7.Items.Refresh();
             action_app_list_8.Items.Refresh();
+
+            scheduler_action_app_list.Items.Refresh();
 
             try
             {
@@ -596,6 +603,9 @@ namespace EasyCaster_Alarm
                 action_key_exception_4.Text = Properties.Settings.Default.actionKeyException4;
                 action_key_exception_5.Text = Properties.Settings.Default.actionKeyException5;
 
+                var scheduler = Properties.Settings.Default.scheduler;
+                if (scheduler.Count > 0) scheduleItems = scheduler;
+
                 try
                 {
                     action_app_list_1.SelectedItem = Properties.Settings.Default.actionAppList1;
@@ -624,7 +634,7 @@ namespace EasyCaster_Alarm
             }
             catch(Exception error)
             {
-
+                MessageBox.Show(error.ToString());
             }
         }
 
@@ -749,6 +759,8 @@ namespace EasyCaster_Alarm
             action_app_list_7.IsEnabled = true;
             action_app_list_8.IsEnabled = true;
 
+            scheduler_wrapper.IsEnabled = true;
+
             action_key_press_1.IsEnabled = true;
             action_key_press_2.IsEnabled = true;
             action_key_press_3.IsEnabled = true;
@@ -804,6 +816,8 @@ namespace EasyCaster_Alarm
             action_app_list_6.IsEnabled = false;
             action_app_list_7.IsEnabled = false;
             action_app_list_8.IsEnabled = false;
+
+            scheduler_wrapper.IsEnabled = false;
 
             action_key_press_1.IsEnabled = false;
             action_key_press_2.IsEnabled = false;
@@ -1088,7 +1102,7 @@ namespace EasyCaster_Alarm
         private static string Peer(Peer peer) => peer is null ? null : peer is PeerUser user ? User(user.user_id)
             : peer is PeerChat or PeerChannel ? Chat(peer.ID) : $"Peer {peer.ID}";
 
-        public void Client_Update(IObject arg)
+        public async Task Client_Update(IObject arg)
         {
             if (arg is not UpdatesBase updates) return;
             updates.CollectUsersChats(_users, _chats);
@@ -1545,6 +1559,104 @@ namespace EasyCaster_Alarm
         private void webhook_url_1_LostFocus(object sender, RoutedEventArgs e)
         {
             if(webhook_url_1.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void scheduler_action_app_list_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (scheduler_action_app_list.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void scheduler_action_key_press_KeyUp(object sender, KeyEventArgs e)
+        {
+            string keyName = e.Key.ToString().ToUpper();
+            schedulerKeyWinCode = (int)KeyInterop.VirtualKeyFromKey(e.Key);
+            scheduler_action_key_press.Text = getCurrectKeyName(keyName);
+        }
+
+        private void scheduler_action_key_press_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (scheduler_action_key_press.Text != "") activeAnimationButton(settings_save, "saveButtonAnimation");
+        }
+
+        private void scheduler_action_key_ext_app_GotFocus(object sender, RoutedEventArgs e)
+        {
+            selectExtApp(scheduler_action_key_ext_app);
+        }
+
+        private void scheduler_test_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string applicationName = processAppNames[scheduler_action_app_list.SelectedIndex];
+                string externalApp = scheduler_action_key_ext_app.Text;
+                int keyWinCode = schedulerKeyWinCode;
+
+                Process p = Process.GetProcessesByName(applicationName).FirstOrDefault();
+                Process currentProcess = Process.GetCurrentProcess();
+
+                if (currentProcess != null && p != null)
+                {
+                    IntPtr h = p.MainWindowHandle;
+
+                    DispatcherTimer appTimer = new DispatcherTimer();
+                    appTimer.Interval = TimeSpan.FromMilliseconds(500);
+                    appTimer.Tick += app_Timer;
+                    appTimer.Start();
+
+                    void app_Timer(object sender, EventArgs e)
+                    {
+                        ShowWindow(h, 9);
+                        SetWindowPos(h, HWND_TOP, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOMOVE);
+                        SwitchToThisWindow(h, true);
+
+                        InputSimulator s = new InputSimulator();
+                        s.Keyboard.KeyPress((VirtualKeyCode)keyWinCode);
+
+                        appTimer.Stop();
+                    }
+                }
+
+                if (externalApp != "") Process.Start(externalApp);
+            }
+            catch (Exception error) { }
+        }
+
+        private void scheduler_add_new_Click(object sender, RoutedEventArgs e)
+        {
+            int select_start = Convert.ToInt32(scheduler_select_start.Text);
+            int select_end = Convert.ToInt32(scheduler_select_stop.Text);
+            string app_list_item = scheduler_action_app_list.Text;
+            string ext_app = scheduler_action_key_ext_app.Text;
+            int frequency = Convert.ToInt32(scheduler_action_frequency.Text);
+
+            var scheduleItem = new ScheduleItem(select_start, select_end, app_list_item, schedulerKeyWinCode, ext_app, frequency);
+            scheduleItems.Insert(0, scheduleItem);
+
+
+            Properties.Settings.Default.scheduler = scheduleItems;
+            Properties.Settings.Default.Save();
+        }
+
+        private void scheduler_clear_all_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.scheduler = new ObservableCollection<ScheduleItem> { };
+            Properties.Settings.Default.Save();
+        }
+
+        private void scheduler_item_remove_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var buttonImage = sender as Image;
+
+            if (buttonImage != null)
+            {
+                var schedule_item = buttonImage.DataContext as ScheduleItem;
+
+                ((ObservableCollection<ScheduleItem>)scheduler_list.ItemsSource).Remove(schedule_item);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

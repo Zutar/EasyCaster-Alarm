@@ -28,8 +28,8 @@
     <system:String x:Key="settingsEdit">Редактировать</system:String>
     <system:String x:Key="settingsSave">Сохранить</system:String>
     <system:String x:Key="settingsMainChannelTitle">Основной канал</system:String>
-    <system:String x:Key="settingsChannelName">Название</system:String>
-    <system:String x:Key="settingsChannelLink">Ссылка</system:String>
+    <system:String x:Key="settingsChannelName">Описание канала и примечания</system:String>
+    <system:String x:Key="settingsChannelLink">Имя канала</system:String>
     <system:String x:Key="settingsTestChannelTitle">Тестовый канал</system:String>
     <system:String x:Key="settingsAutostart">Автостарт программы</system:String>
     <system:String x:Key="settingsKeyTitle">Ключевые фразы</system:String>
@@ -77,6 +77,25 @@
     <system:String x:Key="settingsKeyTip">Выберите поле и нажмите на необходимую клавишу (в данной версии комбинации клавиш не поддерживаются)</system:String>
     <system:String x:Key="settingsExtAppTip">Выберите поле и нажмите на необходимую клавишу (в данной версии комбинации клавиш не поддерживаются)</system:String>
     <system:String x:Key="messageFolder">Запись сообщений</system:String>
+    <system:String x:Key="webhookURL">URL адрес запроса</system:String>
+    
+    <!-- Scheduler -->
+    <system:String x:Key="scheduler_title">Планировщик</system:String>
+    <system:String x:Key="scheduler_start_word">Запуск по ключевой фразе</system:String>
+    <system:String x:Key="scheduler_end_word">Остановка по ключевой фразе</system:String>
+    <system:String x:Key="scheduler_app">Приложение</system:String>
+    <system:String x:Key="scheduler_key_press">Кнопка для нажатия</system:String>
+    <system:String x:Key="scheduler_ext_app">Приложение для запуска</system:String>
+    <system:String x:Key="scheduler_frequency">Частота запуска</system:String>
+    <system:String x:Key="scheduler_add">Добавить</system:String>
+    <system:String x:Key="scheduler_table_header_start">КФ старт</system:String>
+    <system:String x:Key="scheduler_table_header_end">КФ стоп</system:String>
+    <system:String x:Key="scheduler_table_header_app">Приложение</system:String>
+    <system:String x:Key="scheduler_table_header_key_press">Кнопка для нажатия</system:String>
+    <system:String x:Key="scheduler_table_header_ext_app">Приложение для запуска</system:String>
+    <system:String x:Key="scheduler_table_header_frequency">Частота</system:String>
+    <system:String x:Key="scheduler_table_header_action">Событие</system:String>
+    <system:String x:Key="scheduler_clear_all">Очистить все</system:String>
 
     <!-- Logs -->
     <system:String x:Key="logsTitle">История</system:String>
@@ -118,11 +137,35 @@
     <system:String x:Key="h_h2_t8">1. Ссылка на канал (группу) должна быть постоянной, а не динамической</system:String>
     <system:String x:Key="h_h2_t9">2. Вы должны быть подписаны на этот канал (группу)</system:String>
     <system:String x:Key="h_h2_t10">Необходимые программы на момент запуска Easycaster Alert  уже должны работать</system:String>
-
+    <system:String x:Key="h_h2_t11">Автостарт программы – программа EasyCaster Alarm будет автоматически запускаться при загрузке операционной системы.</system:String>
+    <system:String x:Key="h_h2_t12">Автоматический вход в Telegram – при установке, программа будет автоматически авторизовываться в Telegram, по указанным ранее данным в форме входа.</system:String>
+    <system:String x:Key="h_h2_t13">Задержка начала приема сообщений во время старта программы – время ожидания, перед началом приема новых сообщений с авторизированного Telegram аккаунта, указывается в миллисекундах.</system:String>
+    <system:String x:Key="h_h2_t14">Приложение для запуска – указывает приложение, которое запустится при срабатывании события. Запускаемое приложение может иметь расширения .bat  .cmd  .exe</system:String>
+    <system:String x:Key="h_h2_t15">Запись сообщений – указывает папку для записи последних сообщений, найденных по условию. Записывается в N.txt, где N – индекс ключевой фразы.</system:String>
+    <system:String x:Key="h_h2_t16">Статус - отражает состояние подключения программы к вашему Telegram аккаунту. Зелёный - подключение стабильно, красный - подключение отсутствует/прервалось.</system:String>
+    <system:String x:Key="h_h2_t17">Редактировать/сохранить - изменение настроек программы доступно только после нажатия на кнопку "Редактировать". Для сохранения настроек необходимо нажать кнопку "Сохранить".</system:String>
+    <system:String x:Key="h_h2_t18">Webhook – отправка HTTP POST уведомлений на указанный адрес при каждом срабатывании по событию  Данные отправляются в формате JSON.</system:String>
+    <system:String x:Key="h_h3_header">Окно программы</system:String>
+    <system:String x:Key="h_h2_t19">Файл настроек загрузить/сохранить - загрузка/сохранение конфига программы с текущими настройками.</system:String>
+    <system:String x:Key="h_h2_t20">Пример уведомления:</system:String>
+    
     <!-- EXCEPTION WINDOW -->
     <system:String x:Key="ex_title">Необработанное исключение</system:String>
     <system:String x:Key="ex_send">Отправить диагностические данные для технической поддержки Live-TV Service</system:String>
     <system:String x:Key="ex_close">Закрыть</system:String>
+
+    <!-- Errors -->
+    <system:String x:Key="tg_error_1">Номер телефона заблокирован в телеграмме. Для восстановления напишите тех. поддержке telegram (recover@telegram.org). В сообщении должен быть ваш номер телефона, привязанный к Telegram</system:String>
+    <system:String x:Key="tg_error_2">Неверный или недействительный номер телефона</system:String>
+    <system:String x:Key="tg_error_3">Срок действия предоставленного вами телефонного кода истек</system:String>
+    <system:String x:Key="tg_error_4">Предоставленный телефонный код недействителен</system:String>
+    <system:String x:Key="tg_error_5">Номер телефона еще не используется. Сначала нужно зарегистрировать аккаунт Telegram</system:String>
+    <system:String x:Key="tg_error_6">Комбинация api_id/api_hash недействительна. Свяжитесь с техподдержкой live-tv service (livetv-help@ukr.net)</system:String>
+    <system:String x:Key="tg_error_7">Превышено ограничение Telegram API. Попробуйте чуть позже</system:String>
+    <system:String x:Key="tg_error_8">Предоставленный хеш пароля недействителен</system:String>
+    <system:String x:Key="tg_error_9">Вы пытались войти слишком много раз. Попробуйте позже</system:String>
+    <system:String x:Key="alarm_error_1">Программа уже запущена. Пожалуйста проверьте диспетчер задач, возможно в фоновом режиме работает другой экземпляр программы, запущенный ранее</system:String>
+    <system:String x:Key="alarm_error_1_1">Внимание</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>

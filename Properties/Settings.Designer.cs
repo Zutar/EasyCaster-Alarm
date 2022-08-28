@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using EasyCaster_Alarm.classes;
+using System.Collections.ObjectModel;
+
 namespace EasyCaster_Alarm.Properties {
     
     
@@ -704,6 +707,21 @@ namespace EasyCaster_Alarm.Properties {
             }
             set {
                 this["actionKeyExtApp8"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsSerializeAs(global::System.Configuration.SettingsSerializeAs.Binary)]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public ObservableCollection<ScheduleItem> scheduler
+        {
+            get
+            {
+                return this["scheduler"] as ObservableCollection<ScheduleItem>;
+            }
+            set
+            {
+                this["scheduler"] = value;
             }
         }
     }

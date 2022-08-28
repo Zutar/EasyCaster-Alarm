@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasyCaster_Alarm"
         mc:Ignorable="d"
-        Title="{DynamicResource h_header}" Height="600" Width="900" WindowStyle="ToolWindow" ResizeMode="NoResize" VerticalAlignment="Top">
+        Title="{DynamicResource h_header}" Height="6000" Width="900" WindowStyle="ToolWindow" ResizeMode="NoResize" VerticalAlignment="Top">
     <ScrollViewer>
         <StackPanel>
             <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25,50,10" FontSize="14">
@@ -32,6 +32,12 @@
                         <Run Text="{DynamicResource h_h2_header}" FontWeight="Bold" FontSize="14"/>
                         <LineBreak></LineBreak>
                         <LineBreak></LineBreak>
+                        <Run Text="{DynamicResource h_h2_t16}"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
+                        <Run Text="{DynamicResource h_h2_t17}"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
                         <Run Text="{DynamicResource h_h2_t1}"/>
             </TextBlock>
             <TextBlock TextWrapping="Wrap" Padding="70,0,50,10" FontSize="14">
@@ -45,6 +51,23 @@
                         <Run Text="{DynamicResource h_h2_t2}"></Run>
                         <LineBreak/>
                         <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t11}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t12}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t13}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t15}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t19}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t3}"></Run>
             </TextBlock>
             <TextBlock TextWrapping="Wrap" Padding="70,0,50,10" FontSize="14">
@@ -53,13 +76,36 @@
                         <Run Text="{DynamicResource h_h2_t10}"></Run>
             </TextBlock>
             <TextBlock TextWrapping="Wrap" Padding="50,10,50,10" FontSize="14">
-            <Run Text="{DynamicResource h_h2_t4}"></Run>
+                        <Run Text="{DynamicResource h_h2_t14}"></Run>     
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t4}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
                         <LineBreak/>
                         <LineBreak/>
                         <Run Text="{DynamicResource h_h2_t5}"></Run>
                         <LineBreak/>
                         <LineBreak/>
-                        <Run Text="{DynamicResource h_h2_t6}"></Run>
+                        <Run Text="{DynamicResource h_h2_t18}"></Run>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="{DynamicResource h_h2_t20}" FontWeight="Bold"></Run>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,10" FontSize="14">
+                {
+                <LineBreak/>
+                  “id”: 0,<LineBreak/>
+                  “message”: “Test message”,<LineBreak/>
+                  “targetMessage”: “Test”,<LineBreak/>
+                  “dateTime”: “2022-05-05 12:52:29”<LineBreak/>
+                }
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Padding="50,10,50,20" FontSize="14">
+                        <Run Text="{DynamicResource h_h3_header}" FontWeight="Bold" FontSize="14"/>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
+                        <Run Text="{DynamicResource h_h2_t6}"/>
             </TextBlock>
         </StackPanel>
     </ScrollViewer>

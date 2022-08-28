@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Diagnostics;
-using System.Linq;
 using System.Management;
 using System.Net;
 using System.Net.Mail;
@@ -30,7 +26,7 @@ namespace EasyCaster_Alarm
             bool isOnlyOneSameProgram = checkForSameApp();
             if (isOnlyOneSameProgram)
             {
-                MessageBox.Show("Програма вже запущена. Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше", "Увага", MessageBoxButton.OK);
+                MessageBox.Show(Current.TryFindResource("alarm_error_1").ToString(), Current.TryFindResource("alarm_error_1_1").ToString(), MessageBoxButton.OK);
                 Environment.Exit(0);
             }
 
@@ -66,10 +62,10 @@ namespace EasyCaster_Alarm
 
                 if (errorMessage.IndexOf("USER_DEACTIVATED_BAN") != -1)
                 {
-                    MessageBox.Show("Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram");
+                    MessageBox.Show(Current.TryFindResource("tg_error_1").ToString());
                 }else if (errorMessage.IndexOf("because it is being used by another process") != -1)
                 {
-                    MessageBox.Show("Програма вже запущена.Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше");
+                    MessageBox.Show(Current.TryFindResource("alarm_error_1").ToString());
                 }
                 else
                 {
@@ -99,35 +95,39 @@ namespace EasyCaster_Alarm
                 string errorMessage = error.ToString();
                 if (errorMessage.IndexOf("PHONE_NUMBER_INVALID") != -1)
                 {
-                    MessageBox.Show("Неправильний або недійсний номер телефону");
+                    MessageBox.Show(Current.TryFindResource("tg_error_2").ToString());
                 }
                 else if (errorMessage.IndexOf("PHONE_NUMBER_BANNED") != -1)
                 {
-                    MessageBox.Show("Наданий номер телефону заблоковано в Telegram. Для відновлення напишіть тех. підтримці telegram (recover@telegram.org). У повідомленні має бути ваш номер телефону, який прив'язаний до Telegram");
+                    MessageBox.Show(Current.TryFindResource("tg_error_1").ToString());
                 }
                 else if (errorMessage.IndexOf("PHONE_CODE_EXPIRED") != -1)
                 {
-                    MessageBox.Show("Термін дії наданого вами телефонного коду закінчився");
+                    MessageBox.Show(Current.TryFindResource("tg_error_3").ToString());
                 }
                 else if (errorMessage.IndexOf("PHONE_CODE_INVALID") != -1)
                 {
-                    MessageBox.Show("Наданий телефонний код недійсний");
+                    MessageBox.Show(Current.TryFindResource("tg_error_4").ToString());
                 }
                 else if (errorMessage.IndexOf("PHONE_NUMBER_UNOCCUPIED") != -1)
                 {
-                    MessageBox.Show("Номер телефону ще не використовується. Спочатку потрібно зареєструвати обліковий запис Telegram");
+                    MessageBox.Show(Current.TryFindResource("tg_error_5").ToString());
                 }
                 else if (errorMessage.IndexOf("API_ID_INVALID") != -1)
                 {
-                    MessageBox.Show("Комбінація api_id/api_hash недійсна. Зв'яжіться з техпідтримкою live-tv service (livetv-help@ukr.net)");
+                    MessageBox.Show(Current.TryFindResource("tg_error_6").ToString());
                 }
                 else if (errorMessage.IndexOf("FLOOD_WAIT") != -1)
                 {
-                    MessageBox.Show("Перевищено обмеження Telegram API. Спробуйте трохи пізніше");
+                    MessageBox.Show(Current.TryFindResource("tg_error_7").ToString());
                 }
                 else if (errorMessage.IndexOf("PASSWORD_HASH_INVALID") != -1)
                 {
-                    MessageBox.Show("Наданий хеш пароля недійсний");
+                    MessageBox.Show(Current.TryFindResource("tg_error_8").ToString());
+                }
+                else if (errorMessage.IndexOf("PHONE_PASSWORD_FLOOD") != -1)
+                {
+                    MessageBox.Show(Current.TryFindResource("tg_error_9").ToString());
                 }
                 else {
                     MessageBox.Show(error.ToString());

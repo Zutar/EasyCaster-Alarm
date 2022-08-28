@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -45,26 +44,13 @@ namespace EasyCaster_Alarm
                 try
                 {
                     string phoneNumber = auth_phone.Text;
-                    string code = auth_verification.Text;
                     string password = auth_password.Text;
+                    string code = "";
 
                     if (stepName == "verification_code")
                     {
-                        auth_spinner.Visibility = Visibility.Visible;
-
-                        DispatcherTimer waitAuthCodeTimer = new DispatcherTimer();
-                        waitAuthCodeTimer.Interval = TimeSpan.FromSeconds(2);
-                        waitAuthCodeTimer.Tick += waitAuthCode_Timer;
-                        waitAuthCodeTimer.Start();
-
-                        async void waitAuthCode_Timer(object sender, EventArgs e)
-                        {
-                            auth_spinner.Visibility = Visibility.Hidden;
-                            auth_verification_block.Visibility = Visibility.Visible;
-                            auth_submit.Visibility = Visibility.Hidden;
-
-                            waitAuthCodeTimer.Stop();
-                        }
+                        code = Microsoft.VisualBasic.Interaction.InputBox(Application.Current.TryFindResource("authVerification").ToString(), Application.Current.TryFindResource("authVerification").ToString(), "");
+                        if(code == "") isActivate = false;
                     }
 
                     switch (stepName)
@@ -134,14 +120,11 @@ namespace EasyCaster_Alarm
             else
             {
                 error_msg.Visibility = Visibility.Visible;
-                auth_verification_block.Visibility = Visibility.Hidden;
                 auth_spinner.Visibility = Visibility.Hidden;
                 auth_submit.Visibility = Visibility.Visible;
 
                 auth_phone.IsEnabled = true;
                 auth_password.IsEnabled = true;
-
-                auth_verification.Text = "";
 
                 App.logout();
             }
@@ -164,10 +147,6 @@ namespace EasyCaster_Alarm
         private void auth_phone_LostFocus(object sender, RoutedEventArgs e)
         {
             string mobilePhone = auth_phone.Text;
-
-            if(mobilePhone == "") {
-                auth_verification_block.Visibility = Visibility.Hidden;
-            }
         }
 
         private async void auth_win_KeyUp(object sender, KeyEventArgs e)
@@ -189,7 +168,6 @@ namespace EasyCaster_Alarm
             {
                 auth_phone.IsEnabled = true;
                 auth_password.IsEnabled = true;
-                auth_verification_block.Visibility = Visibility.Hidden;
                 error_msg.Visibility = Visibility.Hidden;
                 success_msg.Visibility = Visibility.Hidden;
 
@@ -217,8 +195,9 @@ namespace EasyCaster_Alarm
             App.logout();
 
             auth_spinner.Visibility = Visibility.Hidden;
-            auth_verification_block.Visibility = Visibility.Hidden;
             auth_submit.Visibility = Visibility.Visible;
+            error_msg.Visibility = Visibility.Hidden;
+            success_msg.Visibility = Visibility.Hidden;
 
             auth_phone.Text = "";
             auth_password.Text = "";

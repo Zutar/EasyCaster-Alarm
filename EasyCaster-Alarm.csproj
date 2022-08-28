@@ -8,11 +8,11 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <StartupObject>EasyCaster_Alarm.App</StartupObject>
     <ApplicationIcon>Resources\Icona.ico</ApplicationIcon>
-    <Version>1.0.48</Version>
+    <Version>1.0.49</Version>
     <Company>live-tv</Company>
     <Copyright>Copyright ©  2022</Copyright>
-    <AssemblyVersion>1.0.4.8</AssemblyVersion>
-    <FileVersion>1.0.4.8</FileVersion>
+    <AssemblyVersion>1.0.4.9</AssemblyVersion>
+    <FileVersion>1.0.4.9</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <SignAssembly>false</SignAssembly>
     <AssemblyName>EasyCaster Alarm</AssemblyName>
@@ -30,6 +30,7 @@
     <None Remove="Resources\Easycaster_logo.png" />
     <None Remove="Resources\Icona.ico" />
     <None Remove="Resources\no_alarm.png" />
+    <None Remove="Resources\remove.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +53,7 @@
     <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Management" Version="6.0.0" />
-    <PackageReference Include="WTelegramClient" Version="2.1.2" />
+    <PackageReference Include="WTelegramClient" Version="2.6.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -62,6 +63,7 @@
     <Resource Include="Resources\Easycaster_logo.png" />
     <Resource Include="Resources\Icona.ico" />
     <Resource Include="Resources\no_alarm.png" />
+    <Resource Include="Resources\remove.png" />
   </ItemGroup>
 
   <ItemGroup>
