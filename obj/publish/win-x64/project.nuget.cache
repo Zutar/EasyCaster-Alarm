@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "H/Fd0Z70S8NFFphc3i135lElrFTZhctp+QLubaxjLrEoWYuinN5BmNbDwkcIFV0iQTkBzespJ0MSxtNuMoeEzA==",
+  "dgSpecHash": "LSfRkpuAb0kWMnTc/6ptgQ9mrOqyDVoCbn4lr8Hv4FiYQz6qTYF9kesSBCAuvwzlbXs/i9nTJkTibb/jekbDcA==",
   "success": true,
   "projectFilePath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
   "expectedPackageFiles": [
@@ -13,10 +13,10 @@
     "C:\\Users\\Leonid\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512",
     "C:\\Users\\Leonid\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Leonid\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Leonid\\.nuget\\packages\\wtelegramclient\\2.1.2\\wtelegramclient.2.1.2.nupkg.sha512",
-    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.12\\microsoft.netcore.app.runtime.win-x64.5.0.12.nupkg.sha512",
-    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.12\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.12.nupkg.sha512",
-    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.12\\microsoft.aspnetcore.app.runtime.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\Leonid\\.nuget\\packages\\wtelegramclient\\2.6.2\\wtelegramclient.2.6.2.nupkg.sha512",
+    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.17\\microsoft.netcore.app.runtime.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.17\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\Leonid\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.17\\microsoft.aspnetcore.app.runtime.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": [
     {

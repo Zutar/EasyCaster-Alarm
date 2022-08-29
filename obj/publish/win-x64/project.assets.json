@@ -129,7 +129,7 @@
           }
         }
       },
-      "WTelegramClient/2.1.2": {
+      "WTelegramClient/2.6.2": {
         "type": "package",
         "compile": {
           "lib/net5.0/WTelegramClient.dll": {}
@@ -239,7 +239,7 @@
           "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {}
         }
       },
-      "WTelegramClient/2.1.2": {
+      "WTelegramClient/2.6.2": {
         "type": "package",
         "compile": {
           "lib/net5.0/WTelegramClient.dll": {}
@@ -529,10 +529,10 @@
         "version.txt"
       ]
     },
-    "WTelegramClient/2.1.2": {
-      "sha512": "8ggvHIYi2jYmM34rb/AyJ2Mt+B10pjo7KKza4ymG/hOU8Z7EN3Asezu57sAgVG2nNtBNYAUQcqn5L2QXwDXQ/g==",
+    "WTelegramClient/2.6.2": {
+      "sha512": "8fVsIfJHfD4fHm3gvMSgnRkDokvALr5bwO8uMawPiij37LhXhCwkmlabGR0m02qB0dCtGCF6lL/iafQbcwNqxA==",
       "type": "package",
-      "path": "wtelegramclient/2.1.2",
+      "path": "wtelegramclient/2.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -542,7 +542,7 @@
         "lib/netstandard2.0/WTelegramClient.dll",
         "lib/netstandard2.0/WTelegramClient.xml",
         "logo.png",
-        "wtelegramclient.2.1.2.nupkg.sha512",
+        "wtelegramclient.2.6.2.nupkg.sha512",
         "wtelegramclient.nuspec"
       ]
     }
@@ -553,7 +553,7 @@
       "InputSimulator >= 1.0.4",
       "Newtonsoft.Json >= 13.0.1",
       "System.Management >= 6.0.0",
-      "WTelegramClient >= 2.1.2"
+      "WTelegramClient >= 2.6.2"
     ]
   },
   "packageFolders": {
@@ -561,7 +561,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.49",
+    "version": "1.0.51",
     "restore": {
       "projectUniqueName": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
       "projectName": "EasyCaster Alarm",
@@ -617,7 +617,7 @@
           },
           "WTelegramClient": {
             "target": "Package",
-            "version": "[2.1.2, )"
+            "version": "[2.6.2, )"
           }
         },
         "imports": [
@@ -633,15 +633,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[5.0.12, 5.0.12]"
+            "version": "[5.0.17, 5.0.17]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[5.0.12, 5.0.12]"
+            "version": "[5.0.17, 5.0.17]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[5.0.12, 5.0.12]"
+            "version": "[5.0.17, 5.0.17]"
           }
         ],
         "frameworkReferences": {
@@ -652,7 +652,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -83,6 +83,26 @@
     <system:String x:Key="messageFolder">Запис повідомлень</system:String>
     <system:String x:Key="webhookURL">URL-адреса запиту</system:String>
 
+    <!-- Scheduler -->
+    <system:String x:Key="scheduler_title">Події</system:String>
+    <system:String x:Key="scheduler_start_word">Запуск за ключовою фразою</system:String>
+    <system:String x:Key="scheduler_end_word">Зупинка за ключовою фразою</system:String>
+    <system:String x:Key="scheduler_app">Додаток</system:String>
+    <system:String x:Key="scheduler_key_press">Кнопка для натискання</system:String>
+    <system:String x:Key="scheduler_ext_app">Додаток для запуску</system:String>
+    <system:String x:Key="scheduler_frequency">Період (у секундах)</system:String>
+    <system:String x:Key="scheduler_add">Додати</system:String>
+    <system:String x:Key="scheduler_table_header_start">Старт</system:String>
+    <system:String x:Key="scheduler_table_header_end">Стоп</system:String>
+    <system:String x:Key="scheduler_table_header_app">Додаток</system:String>
+    <system:String x:Key="scheduler_table_header_key_press_1">Кнопка</system:String>
+    <system:String x:Key="scheduler_table_header_key_press_2">для натискання</system:String>
+    <system:String x:Key="scheduler_table_header_ext_app_1">Додаток</system:String>
+    <system:String x:Key="scheduler_table_header_ext_app_2">для запуску</system:String>
+    <system:String x:Key="scheduler_table_header_frequency">Період</system:String>
+    <system:String x:Key="scheduler_table_header_action">Дія</system:String>
+    <system:String x:Key="scheduler_clear_all">Очистити все</system:String>
+
     <!-- Close app -->
     <system:String x:Key="closeAppTitle">Вийти?</system:String>
     <system:String x:Key="closeAppAnswer">Ви впевнені, що хочете закрити програму?</system:String>
@@ -147,6 +167,9 @@
     <system:String x:Key="tg_error_9">Ви намагалися увійти забагато разів. Спробуйте пізніше</system:String>
     <system:String x:Key="alarm_error_1">Програма вже запущена. Будь ласка перевірте диспетчер завдань, можливо у фоновому режимі працює інший екземпляр програми, запущений раніше</system:String>
     <system:String x:Key="alarm_error_1_1">Увага</system:String>
+    <system:String x:Key="scheduler_error_1">Введіть номер ключової фрази для запуску!</system:String>
+    <system:String x:Key="scheduler_error_2">Вкажіть номер ключової фрази для зупинки!</system:String>
+    <system:String x:Key="scheduler_error_3">Вкажіть період!</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>

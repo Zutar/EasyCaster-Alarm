@@ -406,6 +406,7 @@ namespace EasyCaster_Alarm
             writeToFile(targetMessage, index);
             pressKey(index);
             startExtApp(index);
+            updateSchedulers(index);
 
             if (webhook_url_1.Text != "") sendWebhook(webhook_url_1.Text, message, index, targetMessage);
 
@@ -648,6 +649,14 @@ namespace EasyCaster_Alarm
             }
             else
             {
+                for (int i = 0; i < scheduleItems.Count; i++)
+                {
+                    scheduleItems[i].stop();
+                }
+
+                Properties.Settings.Default.scheduler = scheduleItems;
+                Properties.Settings.Default.Save();
+
                 Application.Current.Shutdown();
             }
         }
@@ -1623,23 +1632,55 @@ namespace EasyCaster_Alarm
 
         private void scheduler_add_new_Click(object sender, RoutedEventArgs e)
         {
+            if (scheduler_select_start.Text == "")
+            {
+                MessageBox.Show(FindResource("scheduler_error_1").ToString(), FindResource("scheduler_error_1").ToString(), MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (scheduler_select_stop.Text == "")
+            {
+                MessageBox.Show(FindResource("scheduler_error_2").ToString(), FindResource("scheduler_error_2").ToString(), MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (scheduler_action_frequency.Text == "")
+            {
+                MessageBox.Show(FindResource("scheduler_error_3").ToString(), FindResource("scheduler_error_3").ToString(), MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             int select_start = Convert.ToInt32(scheduler_select_start.Text);
             int select_end = Convert.ToInt32(scheduler_select_stop.Text);
-            string app_list_item = scheduler_action_app_list.Text;
+            string app_list_item = processAppNames[scheduler_action_app_list.SelectedIndex];
             string ext_app = scheduler_action_key_ext_app.Text;
             int frequency = Convert.ToInt32(scheduler_action_frequency.Text);
 
-            var scheduleItem = new ScheduleItem(select_start, select_end, app_list_item, schedulerKeyWinCode, ext_app, frequency);
+            var scheduleItem = new ScheduleItem(select_start, select_end, app_list_item, scheduler_action_key_press.Text, schedulerKeyWinCode, ext_app, frequency);
             scheduleItems.Insert(0, scheduleItem);
 
 
             Properties.Settings.Default.scheduler = scheduleItems;
             Properties.Settings.Default.Save();
+
+            scheduler_select_start.Text = "";
+            scheduler_select_stop.Text = "";
+            scheduler_action_app_list.Text = "";
+            scheduler_action_key_press.Text = "";
+            scheduler_action_key_ext_app.Text = "";
+            scheduler_action_frequency.Text = "";
+            schedulerKeyWinCode = 0;
         }
 
         private void scheduler_clear_all_Click(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < scheduleItems.Count; i++)
+            {
+                scheduleItems[i].stop();
+            }
+
             Properties.Settings.Default.scheduler = new ObservableCollection<ScheduleItem> { };
+            ((ObservableCollection<ScheduleItem>)scheduler_list.ItemsSource).Clear();
             Properties.Settings.Default.Save();
         }
 
@@ -1650,12 +1691,24 @@ namespace EasyCaster_Alarm
             if (buttonImage != null)
             {
                 var schedule_item = buttonImage.DataContext as ScheduleItem;
-
+                schedule_item.stop();
                 ((ObservableCollection<ScheduleItem>)scheduler_list.ItemsSource).Remove(schedule_item);
+                Properties.Settings.Default.scheduler = scheduleItems;
+                Properties.Settings.Default.Save();
             }
             else
             {
                 return;
+            }
+        }
+
+        private void updateSchedulers(byte activeIndex)
+        {
+            for(int i = 0; i < scheduleItems.Count; i++)
+            {
+                ScheduleItem scheduleItem = scheduleItems[i];
+                if (scheduleItem.select_start == activeIndex) scheduleItem.start();
+                if (scheduleItem.select_end == activeIndex) scheduleItem.stop();
             }
         }
     }

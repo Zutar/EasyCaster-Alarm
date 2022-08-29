@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EasyCaster_Alarm"
         mc:Ignorable="d"
         Title="{DynamicResource f_header}" Height="300" Width="300" WindowStyle="ToolWindow" ResizeMode="NoResize">
-    <Grid Margin="0,0,-0.4,0.4">
+    <Grid Margin="0,0,-0.4,0.4" Background="#FFF2F2F2">
         <Label Content="{DynamicResource f_t_1}" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="300" FontWeight="Bold" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Label Content="{DynamicResource f_t_2}" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="292" FontSize="14"/>
         <TextBlock Margin="118,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Cursor="Hand" Width="143" Height="26" Padding="4,0,0,0">           
@@ -21,7 +21,7 @@
             </Hyperlink>
         </TextBlock>
         <Label Content="{DynamicResource f_t_3}" HorizontalAlignment="Left" Margin="76,129,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBlock Margin="28,201,29,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="18" Background="White" Foreground="#FF0030D4" Cursor="Hand">
+        <TextBlock Margin="28,201,29,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="18" Background="#FFF2F2F2" Foreground="#FF0030D4" Cursor="Hand">
             <Hyperlink NavigateUri="https://live-tv.net.ua/contacts.html" RequestNavigate="Hyperlink_RequestNavigate">
                 <Label Foreground="#FF0030D4" Content="{DynamicResource f_t_4}" Width="236" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
             </Hyperlink>

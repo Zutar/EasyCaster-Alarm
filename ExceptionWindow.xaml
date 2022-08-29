@@ -9,7 +9,7 @@
     <Window.Resources>
         <!-- Button style -->
         <ControlTemplate x:Key="ControlButton" TargetType="Button">
-            <Border Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" CornerRadius="5" Background="{TemplateBinding Background}" VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Padding="{TemplateBinding Padding}">
+            <Border Name="border" BorderBrush="#D4D4D4" BorderThickness="1" CornerRadius="5" Background="{TemplateBinding Background}" VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Padding="{TemplateBinding Padding}">
                 <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
             </Border>
 
@@ -18,12 +18,12 @@
                     <Setter Property="BorderBrush" TargetName="border" Value="#787878"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#186497"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-    <Grid Background="#FFF1F1F1" Margin="0,0,-0.4,-0.2" Height="521" VerticalAlignment="Top">
+    <Grid Background="#FFF2F2F2" Margin="0,0,-0.4,-0.2" Height="521" VerticalAlignment="Top">
         <StackPanel Margin="0,0,-0.4,366">
             <Label Height="54" Margin="0,0,-0.4,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#FF5C5C5C" Content="{DynamicResource ex_title}"/>
         </StackPanel>
@@ -34,7 +34,7 @@
         </Border>
         <DockPanel Height="62" Margin="0,459,0,0">
             <CheckBox x:Name="send_data" Margin="15,19,200,24.4" IsChecked="True" Content="{DynamicResource ex_send}" HorizontalAlignment="Right" Width="584"/>
-            <Button x:Name="send_and_close" Width="109" Height="35" Template="{StaticResource ControlButton}" Cursor="Hand" FontWeight="Bold" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Padding="1,5,1,1" FontSize="14" Background="{x:Null}" Margin="-150,5,37,13" Click="send_and_close_Click">
+            <Button x:Name="send_and_close" Width="109" Height="35" Template="{StaticResource ControlButton}" Cursor="Hand" FontWeight="Bold" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Padding="1,5,1,1" FontSize="14" Background="White" Margin="-150,5,37,13" Click="send_and_close_Click">
                 <Label Content="{DynamicResource ex_close}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,-5,-1,-1.4"></Label>
             </Button>
         </DockPanel>

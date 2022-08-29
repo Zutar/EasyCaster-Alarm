@@ -80,20 +80,22 @@
     <system:String x:Key="webhookURL">URL адрес запроса</system:String>
     
     <!-- Scheduler -->
-    <system:String x:Key="scheduler_title">Планировщик</system:String>
+    <system:String x:Key="scheduler_title">События</system:String>
     <system:String x:Key="scheduler_start_word">Запуск по ключевой фразе</system:String>
     <system:String x:Key="scheduler_end_word">Остановка по ключевой фразе</system:String>
     <system:String x:Key="scheduler_app">Приложение</system:String>
     <system:String x:Key="scheduler_key_press">Кнопка для нажатия</system:String>
     <system:String x:Key="scheduler_ext_app">Приложение для запуска</system:String>
-    <system:String x:Key="scheduler_frequency">Частота запуска</system:String>
+    <system:String x:Key="scheduler_frequency">Период (в секундах)</system:String>
     <system:String x:Key="scheduler_add">Добавить</system:String>
-    <system:String x:Key="scheduler_table_header_start">КФ старт</system:String>
-    <system:String x:Key="scheduler_table_header_end">КФ стоп</system:String>
+    <system:String x:Key="scheduler_table_header_start">Старт</system:String>
+    <system:String x:Key="scheduler_table_header_end">Стоп</system:String>
     <system:String x:Key="scheduler_table_header_app">Приложение</system:String>
-    <system:String x:Key="scheduler_table_header_key_press">Кнопка для нажатия</system:String>
-    <system:String x:Key="scheduler_table_header_ext_app">Приложение для запуска</system:String>
-    <system:String x:Key="scheduler_table_header_frequency">Частота</system:String>
+    <system:String x:Key="scheduler_table_header_key_press_1">Кнопка</system:String>
+    <system:String x:Key="scheduler_table_header_key_press_2">для нажатия</system:String>
+    <system:String x:Key="scheduler_table_header_ext_app_1">Приложение</system:String>
+    <system:String x:Key="scheduler_table_header_ext_app_2">для запуска</system:String>
+    <system:String x:Key="scheduler_table_header_frequency">Период</system:String>
     <system:String x:Key="scheduler_table_header_action">Событие</system:String>
     <system:String x:Key="scheduler_clear_all">Очистить все</system:String>
 
@@ -166,6 +168,9 @@
     <system:String x:Key="tg_error_9">Вы пытались войти слишком много раз. Попробуйте позже</system:String>
     <system:String x:Key="alarm_error_1">Программа уже запущена. Пожалуйста проверьте диспетчер задач, возможно в фоновом режиме работает другой экземпляр программы, запущенный ранее</system:String>
     <system:String x:Key="alarm_error_1_1">Внимание</system:String>
+    <system:String x:Key="scheduler_error_1">Укажите номер ключевой фразы для запуска!</system:String>
+    <system:String x:Key="scheduler_error_2">Укажите номер ключевой фразы для остановки!</system:String>
+    <system:String x:Key="scheduler_error_3">Укажите период!</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>

@@ -48,7 +48,7 @@ namespace EasyCaster_Alarm {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.12.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.17.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -60,7 +60,7 @@ namespace EasyCaster_Alarm {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.4.9;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.5.1;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -74,7 +74,7 @@ namespace EasyCaster_Alarm {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.12.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.17.0")]
         public static void Main() {
             EasyCaster_Alarm.App app = new EasyCaster_Alarm.App();
             app.InitializeComponent();

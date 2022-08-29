@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EasyCaster_Alarm"
         mc:Ignorable="d"
         Title="{DynamicResource h_header}" Height="6000" Width="900" WindowStyle="ToolWindow" ResizeMode="NoResize" VerticalAlignment="Top">
-    <ScrollViewer>
+    <ScrollViewer Background="#FFF2F2F2">
         <StackPanel>
             <TextBlock TextWrapping="Wrap" Margin="0" Padding="50,25,50,10" FontSize="14">
                         <Run Text="Easycaster Alert" FontWeight="Bold" FontSize="24"/>
