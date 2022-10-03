@@ -1650,6 +1650,12 @@ namespace EasyCaster_Alarm
                 return;
             }
 
+            if (processAppNames.Count < scheduler_action_app_list.SelectedIndex || scheduler_action_app_list.SelectedIndex < 0)
+            {
+                MessageBox.Show(FindResource("scheduler_error_4").ToString(), FindResource("scheduler_error_3").ToString(), MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             int select_start = Convert.ToInt32(scheduler_select_start.Text);
             int select_end = Convert.ToInt32(scheduler_select_stop.Text);
             string app_list_item = processAppNames[scheduler_action_app_list.SelectedIndex];

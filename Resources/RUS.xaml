@@ -171,6 +171,7 @@
     <system:String x:Key="scheduler_error_1">Укажите номер ключевой фразы для запуска!</system:String>
     <system:String x:Key="scheduler_error_2">Укажите номер ключевой фразы для остановки!</system:String>
     <system:String x:Key="scheduler_error_3">Укажите период!</system:String>
+    <system:String x:Key="scheduler_error_4">Приложение не найдено</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Сохранить файл конфигурации</system:String>

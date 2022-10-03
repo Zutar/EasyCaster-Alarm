@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,7 +30,7 @@ namespace EasyCaster_Alarm
         {
             if ((bool)send_data.IsChecked)
             {
-                App.sendEmailMessage("Easycaster-Alarm: unhandled exception", App.errorMessage);
+                App.sendEmailMessage("Easycaster-Alarm " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ": unhandled exception", App.errorMessage);
             }
 
             this.Close();

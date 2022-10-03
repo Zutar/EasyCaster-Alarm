@@ -170,6 +170,7 @@
     <system:String x:Key="scheduler_error_1">Введіть номер ключової фрази для запуску!</system:String>
     <system:String x:Key="scheduler_error_2">Вкажіть номер ключової фрази для зупинки!</system:String>
     <system:String x:Key="scheduler_error_3">Вкажіть період!</system:String>
+    <system:String x:Key="scheduler_error_4">Додаток не знайдено</system:String>
 
     <!-- Other -->
     <system:String x:Key="saveFileDialog">Зберегти файл конфігурації</system:String>
