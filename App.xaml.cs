@@ -66,8 +66,9 @@ namespace EasyCaster_Alarm
                 }else if (errorMessage.IndexOf("because it is being used by another process") != -1)
                 {
                     MessageBox.Show(Current.TryFindResource("alarm_error_1").ToString());
-                }
-                else
+                }else if (errorMessage.IndexOf("10065") != -1) {
+                    return;
+                }else
                 {
                     ExceptionWindow exceptionWindow = new ExceptionWindow();
                     exceptionWindow.ShowDialog();

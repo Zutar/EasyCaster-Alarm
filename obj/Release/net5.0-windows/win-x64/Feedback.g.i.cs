@@ -54,7 +54,7 @@ namespace EasyCaster_Alarm {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.5.1;component/feedback.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EasyCaster Alarm;V1.0.5.3;component/feedback.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Feedback.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

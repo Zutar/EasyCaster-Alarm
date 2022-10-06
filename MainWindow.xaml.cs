@@ -152,15 +152,22 @@ namespace EasyCaster_Alarm
             {
                 BrushConverter bc = new BrushConverter();
 
-                bool connectionStatus = App.client.Disconnected;
-                if (connectionStatus)
+                try
                 {
-                    status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
-                }
-                else
+                    bool connectionStatus = !App.client.Disconnected;
+                    
+                    if (connectionStatus)
+                    {
+                        status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
+                    }
+                    else
+                    {
+                        status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
+                        await App.client.ConnectAsync();
+                    }
+                }catch(Exception error)
                 {
                     status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
-                    await App.client.ConnectAsync();
                 }
             }
         }
