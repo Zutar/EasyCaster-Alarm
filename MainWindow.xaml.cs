@@ -63,6 +63,7 @@ namespace EasyCaster_Alarm
         bool settingsOpen = false;
         bool logsOpen = true;
         bool isAlarm = false;
+        bool oldConnectedStatus = true;
 
         Storyboard sb;
 
@@ -155,19 +156,27 @@ namespace EasyCaster_Alarm
                 try
                 {
                     bool connectionStatus = !App.client.Disconnected;
-                    
-                    if (connectionStatus)
+                    if(oldConnectedStatus == false && connectionStatus)
+                    {
+                        await App.client.ConnectAsync();
+                    }
+                    else if (connectionStatus)
                     {
                         status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
                     }
                     else
                     {
-                        status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
+                        status.Background = (Brush)bc.ConvertFrom("#FFFF9300");
                         await App.client.ConnectAsync();
+                        status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
                     }
-                }catch(Exception error)
+
+                    oldConnectedStatus = connectionStatus;
+                }
+                catch(Exception error)
                 {
-                    status.Background = (Brush)bc.ConvertFrom("#FF2FC300");
+                    MessageBox.Show(error.ToString());
+                    status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
                 }
             }
         }

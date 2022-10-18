@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SFJqHVh52FDCQCkjthnLd3HXMktQ1VqZe+jXogDDYOx4AkDEh2Nqv4hHoC36cSzuSsGPkFcVWmQbRH4RB+YtVA==",
+  "dgSpecHash": "MMis8DeBbo7yehkFiIo+7ih1wWuxo0fGzGE+idC1vJnftKlOOu75C7S0EVDjDaI7sn13EmfhrAPiAZDXpceq0w==",
   "success": true,
   "projectFilePath": "F:\\Git\\live-tv\\EasyCaster-Alarm\\EasyCaster-Alarm\\EasyCaster-Alarm.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\Leonid\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512",
     "C:\\Users\\Leonid\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Leonid\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Leonid\\.nuget\\packages\\wtelegramclient\\2.6.2\\wtelegramclient.2.6.2.nupkg.sha512"
+    "C:\\Users\\Leonid\\.nuget\\packages\\wtelegramclient\\3.0.0\\wtelegramclient.3.0.0.nupkg.sha512"
   ],
   "logs": [
     {

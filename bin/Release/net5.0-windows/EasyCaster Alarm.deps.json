@@ -12,7 +12,7 @@
           "InputSimulator": "1.0.4",
           "Newtonsoft.Json": "13.0.1",
           "System.Management": "6.0.0",
-          "WTelegramClient": "2.6.2"
+          "WTelegramClient": "3.0.0"
         },
         "runtime": {
           "EasyCaster Alarm.dll": {}
@@ -84,11 +84,11 @@
         }
       },
       "System.Security.Principal.Windows/5.0.0": {},
-      "WTelegramClient/2.6.2": {
+      "WTelegramClient/3.0.0": {
         "runtime": {
           "lib/net5.0/WTelegramClient.dll": {
-            "assemblyVersion": "2.6.2.0",
-            "fileVersion": "2.6.2.0"
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       }
@@ -163,12 +163,12 @@
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
     },
-    "WTelegramClient/2.6.2": {
+    "WTelegramClient/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8fVsIfJHfD4fHm3gvMSgnRkDokvALr5bwO8uMawPiij37LhXhCwkmlabGR0m02qB0dCtGCF6lL/iafQbcwNqxA==",
-      "path": "wtelegramclient/2.6.2",
-      "hashPath": "wtelegramclient.2.6.2.nupkg.sha512"
+      "sha512": "sha512-NlPAnfFkgWrqvi2TqxGLbphqt4SaxlGxkMlAy/RxlxBLGX0qacf6GKHcX4dRF9cuOS383pNF5oMCzZM7DZK0fg==",
+      "path": "wtelegramclient/3.0.0",
+      "hashPath": "wtelegramclient.3.0.0.nupkg.sha512"
     }
   }
 }

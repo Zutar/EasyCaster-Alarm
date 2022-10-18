@@ -88,7 +88,7 @@ namespace EasyCaster_Alarm
             try
             {
                 var my = await client.LoginUserIfNeeded();
-                client.MaxAutoReconnects = 10;
+                client.MaxAutoReconnects = 100000000;
 
                 return true;
             }catch(Exception error)

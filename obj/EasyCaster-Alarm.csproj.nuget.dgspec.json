@@ -61,7 +61,7 @@
             },
             "WTelegramClient": {
               "target": "Package",
-              "version": "[2.6.2, )"
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
