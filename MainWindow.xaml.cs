@@ -163,7 +163,9 @@ namespace EasyCaster_Alarm
                     else
                     {
                         status.Background = (Brush)bc.ConvertFrom("#FFFF0000");
-                        await App.client.ConnectAsync();
+                        App.client.Reset(false, true);
+                        await App.client.LoginUserIfNeeded();
+
                     }
                 }catch(Exception error)
                 {
